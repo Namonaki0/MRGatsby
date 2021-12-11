@@ -1,597 +1,536 @@
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
-body {
+@import url(c:\Users\Andre\OneDrive\Desktop\Documents\GitHub\MRGatsby\MRizzo_Project\src\components\typography.css);
+* {
+  padding: 0;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+
+body {
+  background: black;
+  font-family: "basement grotesque", sans-serif;
+  letter-spacing: 1px;
+  z-index: 1000;
+  isolation: isolate;
+  color: white;
+  overflow-x: hidden;
 }
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-[hidden],
-template {
-  display: none;
-}
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-a:active,
-a:hover {
-  outline-width: 0;
-}
-abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-  text-decoration: none;
-}
-b,
-strong {
-  font-weight: inherit;
-  font-weight: bolder;
-}
-dfn {
-  font-style: italic;
-}
-h1 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
-  line-height: 1.1;
-}
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-img {
-  border-style: none;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-svg:not(:root) {
+
+body.merch-modal-active {
+  height: 100%;
   overflow: hidden;
 }
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace;
-  font-size: 1em;
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+  background: black;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
 }
-figure {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+nav.open-menu {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
-hr {
-  box-sizing: content-box;
-  overflow: visible;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
+
+nav.scroll-effect {
+  height: 80px;
+}
+
+nav .burger-menu {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 28px;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  z-index: 100;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+
+nav .burger-menu.scroll-effect {
+  top: 22px;
+}
+
+nav .burger-menu:hover {
+  cursor: pointer;
+}
+
+nav .burger-menu .bar-one,
+nav .burger-menu .bar-two,
+nav .burger-menu .bar-three {
+  display: block;
   height: 1px;
+  width: 40px;
+  background-color: white;
+  margin-bottom: 7px;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
 }
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit;
-  margin: 0;
+
+nav .burger-menu .bar-one {
+  margin-top: 8px;
 }
-optgroup {
-  font-weight: 700;
+
+nav .burger-menu .bar-one.effect {
+  -webkit-transform: translateY(5px) rotate(45deg);
+          transform: translateY(5px) rotate(45deg);
 }
-button,
-input {
-  overflow: visible;
+
+nav .burger-menu .bar-two.effect {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+  opacity: 0;
+  visibility: hidden;
 }
-button,
-select {
-  text-transform: none;
+
+nav .burger-menu .bar-three.effect {
+  -webkit-transform: translateY(-11px) rotate(-45deg);
+          transform: translateY(-11px) rotate(-45deg);
 }
-[type="reset"],
-[type="submit"],
-button,
-html [type="button"] {
-  -webkit-appearance: button;
+
+nav .logo-link {
+  margin: 0 auto;
 }
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
-button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+
+nav .logo-link .logo {
+  margin-top: 0.5rem;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+  width: 80px;
 }
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring,
-button:-moz-focusring {
-  outline: 1px dotted ButtonText;
+
+nav .logo-link .logo.open-menu {
+  visibility: hidden;
 }
-fieldset {
-  border: 1px solid silver;
-  padding: 0.35em 0.625em 0.75em;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+nav .logo-link .logo.scroll-effect {
+  margin-top: 0.5rem;
+  width: 50px;
 }
-legend {
-  box-sizing: border-box;
+
+nav ul {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background: black;
+}
+
+nav ul.open-menu {
+  visibility: unset;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  background: black;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
   color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
+  padding: 1rem 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.219);
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
 }
-textarea {
-  overflow: auto;
+
+nav ul li a:hover {
+  border-bottom: 1px solid rgba(192, 192, 192, 0.63);
+  color: white;
 }
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
+
+.router-outlet-wrapper {
+  margin-top: 120px;
 }
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+
+.router-outlet-wrapper h1 {
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2.5rem;
 }
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
+
+.router-outlet-wrapper #router-outlet.open-menu {
+  opacity: 0.2;
 }
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-* {
-  box-sizing: inherit;
-}
-*:before {
-  box-sizing: inherit;
-}
-*:after {
-  box-sizing: inherit;
-}
-h2 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
+
+.router-outlet-wrapper #router-outlet .bio {
+  padding: 1.5rem;
   padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
-  line-height: 1.1;
 }
-h3 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
-  line-height: 1.1;
+
+.router-outlet-wrapper #router-outlet .bio::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 120%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0.877)), to(rgba(0, 0, 0, 0.199)));
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.877), rgba(0, 0, 0, 0.199));
+  margin-left: -50px;
 }
-h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.1;
+
+.router-outlet-wrapper #router-outlet .bio .img-wrapper img {
+  width: 100%;
+  margin-left: -100px;
 }
-h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
-  line-height: 1.1;
+
+.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper {
+  background: rgba(0, 0, 0, 0.603);
+  margin-top: -120px;
+  padding: 15px;
+  font-weight: 300;
+  isolation: isolate;
+  -webkit-clip-path: polygon(15% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 15%);
+          clip-path: polygon(15% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 15%);
+  border-top: 2px solid rgba(255, 0, 0, 0.363);
 }
-h6 {
-  margin-left: 0;
-  margin-right: 0;
+
+.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper h2 {
   margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
-  line-height: 1.1;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-align: right;
+  width: 100%;
+  text-transform: uppercase;
 }
-hgroup {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper p {
+  padding: 0 15px;
+  line-height: 22px;
 }
-ul {
-  margin-left: 1.45rem;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
+
+.router-outlet-wrapper #router-outlet .track-previews {
+  margin-bottom: 1rem;
 }
-ol {
-  margin-left: 1.45rem;
-  margin-right: 0;
+
+.router-outlet-wrapper #router-outlet .track-previews h2 {
   margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-align: left;
+  width: 100%;
+  text-transform: uppercase;
 }
-dl {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .track-previews iframe {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5px;
 }
-dd {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .upcoming-shows h2 {
+  color: white;
+  text-transform: uppercase;
+  padding: 0.5rem 10px;
+  display: block;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
-p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  padding: 5px;
 }
-pre {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 1.45rem;
-  font-size: 0.85rem;
-  line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
-  overflow: auto;
-  word-wrap: normal;
-  padding: 1.45rem;
-}
-table {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-size: 1rem;
-  line-height: 1.45rem;
-  border-collapse: collapse;
+
+.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img {
   width: 100%;
 }
-blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img:nth-child(1) {
+  grid-column: span 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
 }
-form {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img:nth-child(2) {
+  grid-column: 2 / -1;
+  grid-row: span 2;
+  margin-top: -50px;
 }
-noscript {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper .social-media {
+  background: #1c1c1c;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 10px;
 }
-iframe {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper .social-media a {
+  color: white;
+  margin-right: 10px;
 }
-address {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+
+.router-outlet-wrapper .developed-by {
+  background: white;
+  color: #1c1c1c;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
 }
-b {
-  font-weight: bold;
+
+.projects-outer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  height: 200px;
+  background: black;
+  overflow: hidden;
 }
-strong {
-  font-weight: bold;
+
+.projects-outer-wrapper::before {
+  content: "PROJECTS";
+  height: 150px;
+  width: 100px;
+  color: white;
+  position: absolute;
+  margin-top: -10px;
 }
-dt {
-  font-weight: bold;
+
+.projects-outer-wrapper .slider-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 100%;
+  height: 200px;
+  width: 200px;
+  opacity: 0.8;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  transition: all 150ms linear;
 }
-th {
-  font-weight: bold;
+
+.projects-outer-wrapper .slider-wrapper:nth-of-type(1) {
+  background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584") no-repeat;
+  background-size: 400px;
 }
-li {
-  margin-bottom: calc(1.45rem / 2);
+
+.projects-outer-wrapper .slider-wrapper:nth-of-type(2) {
+  background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg") no-repeat;
+  background-size: 400px;
 }
-ol li {
-  padding-left: 0;
+
+.projects-outer-wrapper .slider-wrapper:nth-of-type(3) {
+  background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901") no-repeat;
+  background-size: 400px;
 }
-ul li {
-  padding-left: 0;
+
+.projects-outer-wrapper .slider-wrapper:hover {
+  opacity: 1;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  background-size: 400px;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  -webkit-clip-path: unset;
+          clip-path: unset;
+  z-index: 1;
 }
-li > ol {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+
+.projects-outer-wrapper .slider-wrapper:hover:nth-of-type(1) {
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(0, 0, 0, 0.7)), color-stop(85%, rgba(255, 255, 255, 0.1)), color-stop(99%, rgba(0, 0, 0, 0.8))) no-repeat, url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584") no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0.1) 85%, rgba(0, 0, 0, 0.8) 99%) no-repeat, url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584") no-repeat;
+  background-size: 400px;
 }
-li > ul {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+
+.projects-outer-wrapper .slider-wrapper:hover:nth-of-type(2) {
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(0, 0, 0, 0.7)), color-stop(49%, rgba(255, 255, 255, 0.1)), color-stop(90%, rgba(0, 0, 0, 0.8))) no-repeat, url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg") no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.8) 90%) no-repeat, url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg") no-repeat;
+  background-size: 400px;
 }
-blockquote *:last-child {
-  margin-bottom: 0;
+
+.projects-outer-wrapper .slider-wrapper:hover:nth-of-type(3) {
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(0, 0, 0, 0.7)), color-stop(49%, rgba(255, 255, 255, 0.1)), color-stop(90%, rgba(0, 0, 0, 0.8))) no-repeat, url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901") no-repeat;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.8) 90%) no-repeat, url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901") no-repeat;
+  background-size: 400px;
 }
-li *:last-child {
-  margin-bottom: 0;
-}
-p *:last-child {
-  margin-bottom: 0;
-}
-li > p {
-  margin-bottom: calc(1.45rem / 2);
-}
-code {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-kbd {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-samp {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-abbr {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-}
-acronym {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-}
-thead {
+
+.projects-outer-wrapper .slider-wrapper:hover section {
   text-align: left;
+  width: 70%;
+  margin-left: auto;
+  font-size: 1.2rem;
+  margin-top: 0;
+  font-family: sans-serif;
+  padding: 0.5rem;
+  display: unset;
 }
-td,
-th {
-  text-align: left;
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
-  font-feature-settings: "tnum";
-  -moz-font-feature-settings: "tnum";
-  -ms-font-feature-settings: "tnum";
-  -webkit-font-feature-settings: "tnum";
-  padding-left: 0.96667rem;
-  padding-right: 0.96667rem;
-  padding-top: 0.725rem;
-  padding-bottom: calc(0.725rem - 1px);
+
+.projects-outer-wrapper .slider-wrapper:hover title {
+  display: none;
 }
-th:first-child,
-td:first-child {
-  padding-left: 0;
+
+.projects-outer-wrapper .slider-wrapper section {
+  color: white;
+  display: none;
 }
-th:last-child,
-td:last-child {
-  padding-right: 0;
+
+.projects-outer-wrapper .slider-wrapper title {
+  color: white;
+  display: unset;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  opacity: 1;
+  margin-right: -120px;
 }
-tt,
-code {
-  background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+
+.merch-page-wrapper {
+  position: relative;
 }
-pre code {
-  background: none;
-  line-height: 1.42;
+
+.merch-page-wrapper .merch-display {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: " ";
+
+.merch-page-wrapper .merch-display img {
+  width: 100%;
+  cursor: pointer;
 }
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: "";
+
+.merch-page-wrapper .frontier-shop {
+  padding: 1rem;
+  margin-left: auto;
+  width: 100%;
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
+
+.merch-page-wrapper .frontier-shop a {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background: #353535;
+  padding: 0.6rem 1rem;
+  border: 1px solid #2b2b2b;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  text-align: center;
+  display: block;
 }
+
+.merch-page-wrapper .frontier-shop a:hover {
+  color: #1c1c1c;
+  background: #dfdfdf;
+  padding: 0.6rem 1rem;
+  border: 1px solid #2b2b2b;
+}
+
+.merch-page-wrapper #merch-page-modal {
+  visibility: hidden;
+  position: absolute;
+  background: rgba(10, 10, 10, 0.849);
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+.merch-page-wrapper #merch-page-modal span {
+  font-size: 2rem;
+  padding-right: 3rem;
+  text-align: right;
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, from(black), to(#313131));
+  background: linear-gradient(to left, black, #313131);
+}
+
+.merch-page-wrapper #merch-page-modal img {
+  padding: 2rem 0 0;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: -20px;
+}
+
+.merch-page-wrapper #merch-page-modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  visibility: unset;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 1;
+}
+
+.main-video iframe {
+  display: block;
+  margin: 5px auto;
+}
+
+.video-library-streaming {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+
+.video-library-streaming iframe {
+  border: none;
+}
+
+.video-library-other {
+  height: 100px;
+}
+/*# sourceMappingURL=layout.css.map */
