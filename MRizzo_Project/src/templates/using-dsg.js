@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 const UsingDSG = () => (
   <Layout>
     <Seo title="Using DSG" />
-    <h1>Hello from a DSG Page</h1>
+    {/* <h1>Hello from a DSG Page</h1>
     <p>This page is not created until requested by a user.</p>
     <p>
       To learn more, head over to our{" "}
@@ -16,7 +16,7 @@ const UsingDSG = () => (
       </a>
       .
     </p>
-    <Link to="/">Go back to the homepage</Link>
+    <Link to="/">Go back to the homepage</Link> */}
   </Layout>
 )
 

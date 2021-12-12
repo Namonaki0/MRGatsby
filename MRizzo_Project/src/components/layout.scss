@@ -131,9 +131,10 @@ nav {
         height: max-content;
         background: black;
 
-        &.open-menu {
+        &.menu-active {
             visibility: unset;
             opacity: 1;
+            // width: 100%;
             transform: translateX(0);
             background: $bg-primary;
         }

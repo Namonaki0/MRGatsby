@@ -142,7 +142,7 @@ nav ul {
   background: black;
 }
 
-nav ul.open-menu {
+nav ul.menu-active {
   visibility: unset;
   opacity: 1;
   -webkit-transform: translateX(0);
