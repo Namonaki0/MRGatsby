@@ -25,10 +25,7 @@ body {
     color: $color-primary;
     overflow-x: hidden;
 
-    &.merch-modal-active {
-        height: 100%;
-        overflow: hidden;
-    }
+
 }
 
 nav {
@@ -68,9 +65,9 @@ nav {
             cursor: pointer;
         }
 
-        .bar-one,
-        .bar-two,
-        .bar-three {
+        span:nth-child(1),
+        span:nth-child(2),
+        span:nth-child(3) {
             display: block;
             height: 1px;
             width: 40px;
@@ -79,26 +76,23 @@ nav {
             transition: all 100ms linear;
         }
 
-        .bar-one {
+        span:nth-child(1) {
             margin-top: 8px;
 
-            &.effect {
-                transform: translateY(5px) rotate(45deg);
-            }
+        }
+        
+        .open:nth-child(1) {
+            transform: translateY(5px) rotate(45deg);
+        }
+        
+        .open:nth-child(2) {
+            transform: translateX(-5px);
+            opacity: 0;
+            visibility: hidden;
         }
 
-        .bar-two {
-            &.effect {
-                transform: translateX(-5px);
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        .bar-three {
-            &.effect {
-                transform: translateY(-11px) rotate(-45deg);
-            }
+        .open:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
         }
     }
 
@@ -134,7 +128,6 @@ nav {
         &.menu-active {
             visibility: unset;
             opacity: 1;
-            // width: 100%;
             transform: translateX(0);
             background: $bg-primary;
         }
@@ -178,10 +171,7 @@ nav {
             opacity: 0.2;
         }
 
-        // &.merch-modal-active {
-        //   height: 100%;
-        //   overflow: hidden;
-        // }
+
 
         .bio {
             padding: 1.5rem;
@@ -461,40 +451,53 @@ nav {
         }
     }
 
-    #merch-page-modal {
-        visibility: hidden;
-        position: absolute;
-        background: rgba(10, 10, 10, 0.849);
-        transition: all 150ms linear;
 
-        span {
-            font-size: 2rem;
-            padding-right: 3rem;
-            text-align: right;
-            cursor: pointer;
-            background: linear-gradient(to left, black, rgb(49, 49, 49));
-        }
 
-        img {
-            padding: 2rem 0 0;
-            width: 80%;
-            height: 100%;
-            margin: 0 auto;
-            margin-top: -20px;
-        }
-
-        &.active {
-            display: flex;
-            width: 100%;
-            top: 0;
-            right: 0;
-            left: 0;
-            visibility: unset;
-            flex-direction: column;
-            opacity: 1;
+        .merch-page-modal {
+            display: none;
+            background: rgba(10, 10, 10, 0.849);
+            transition: all 150ms linear;
+            background: red;
+    
+                    //  .merch-modal-active {
+                    //      display: grid;
+                    //      opacity: 1;
+                    //      overflow: hidden;
+                    //  }
+    
+            span {
+                font-size: 2rem;
+                padding-right: 3rem;
+                text-align: right;
+                cursor: pointer;
+                background: linear-gradient(to left, black, rgb(49, 49, 49));
+            }
+    
+            img {
+                padding: 2rem 0 0;
+                width: 80%;
+                height: 100%;
+                margin: 0 auto;
+                margin-top: -20px;
+            }
+    
+            // &.active {
+            //     display: flex;
+            //     width: 100%;
+            //     top: 0;
+            //     right: 0;
+            //     left: 0;
+            //     visibility: unset;
+            //     flex-direction: column;
+            //     opacity: 1;
+            // }
         }
     }
-}
+
+
+
+   
+
 
 //? VIDEOS
 

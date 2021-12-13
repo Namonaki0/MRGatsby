@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 import { useState } from "react"
 
 export default function Nav() {
-  const [openMenu, setOpenMenu] = useState("")
+  const [openMenu, setOpenMenu] = useState(null)
+  const [burgerEffect, setBurgerEffect] = useState("close")
 
   return (
     <div>
@@ -34,12 +35,35 @@ export default function Nav() {
           </li>
         </ul>
 
-        <div className="burger-menu" onClick={() => setOpenMenu(!openMenu)}>
-          <span className="bar bar-one"></span>
-          <span className="bar bar-two"></span>
-          <span className="bar bar-three"></span>
+        <div
+          className="burger-menu"
+          onClick={() => {
+            setOpenMenu(!openMenu)
+            setBurgerEffect(burgerEffect === "open" ? "close" : "open")
+          }}
+        >
+          <span className={burgerEffect}></span>
+          <span className={burgerEffect}></span>
+          <span className={burgerEffect}></span>
         </div>
       </nav>
     </div>
   )
 }
+
+// if (nav) {
+//   //? NAVBAR BEHAVIOUR ON SCROLL
+//   window.addEventListener("scroll", () => {
+//     const nav = document.querySelector("nav")
+//     const logo = document.querySelector(".logo")
+//     if (window.scrollY > 0) {
+//       nav.className.add("scroll-effect")
+//       logo.className.add("scroll-effect")
+//       burgerMenu.className.add("scroll-effect")
+//     } else {
+//       nav.className.remove("scroll-effect")
+//       logo.className.remove("scroll-effect")
+//       burgerMenu.className.remove("scroll-effect")
+//     }
+//   })
+// }

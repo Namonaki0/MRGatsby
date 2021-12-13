@@ -16,11 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-body.merch-modal-active {
-  height: 100%;
-  overflow: hidden;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,9 +66,9 @@ nav .burger-menu:hover {
   cursor: pointer;
 }
 
-nav .burger-menu .bar-one,
-nav .burger-menu .bar-two,
-nav .burger-menu .bar-three {
+nav .burger-menu span:nth-child(1),
+nav .burger-menu span:nth-child(2),
+nav .burger-menu span:nth-child(3) {
   display: block;
   height: 1px;
   width: 40px;
@@ -83,23 +78,23 @@ nav .burger-menu .bar-three {
   transition: all 100ms linear;
 }
 
-nav .burger-menu .bar-one {
+nav .burger-menu span:nth-child(1) {
   margin-top: 8px;
 }
 
-nav .burger-menu .bar-one.effect {
+nav .burger-menu .open:nth-child(1) {
   -webkit-transform: translateY(5px) rotate(45deg);
           transform: translateY(5px) rotate(45deg);
 }
 
-nav .burger-menu .bar-two.effect {
+nav .burger-menu .open:nth-child(2) {
   -webkit-transform: translateX(-5px);
           transform: translateX(-5px);
   opacity: 0;
   visibility: hidden;
 }
 
-nav .burger-menu .bar-three.effect {
+nav .burger-menu .open:nth-child(3) {
   -webkit-transform: translateY(-11px) rotate(-45deg);
           transform: translateY(-11px) rotate(-45deg);
 }
@@ -473,15 +468,15 @@ nav ul li a:hover {
   border: 1px solid #2b2b2b;
 }
 
-.merch-page-wrapper #merch-page-modal {
-  visibility: hidden;
-  position: absolute;
+.merch-page-wrapper .merch-page-modal {
+  display: none;
   background: rgba(10, 10, 10, 0.849);
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
+  background: red;
 }
 
-.merch-page-wrapper #merch-page-modal span {
+.merch-page-wrapper .merch-page-modal span {
   font-size: 2rem;
   padding-right: 3rem;
   text-align: right;
@@ -490,28 +485,12 @@ nav ul li a:hover {
   background: linear-gradient(to left, black, #313131);
 }
 
-.merch-page-wrapper #merch-page-modal img {
+.merch-page-wrapper .merch-page-modal img {
   padding: 2rem 0 0;
   width: 80%;
   height: 100%;
   margin: 0 auto;
   margin-top: -20px;
-}
-
-.merch-page-wrapper #merch-page-modal.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  visibility: unset;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  opacity: 1;
 }
 
 .main-video iframe {
