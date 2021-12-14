@@ -23,17 +23,21 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 nav {
   display: flex;
   flex-direction: column;
   transition: all 100ms linear;
   background: $bg-primary;
   height: 100px;
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 
   &.open-menu {
     height: max-content;
@@ -154,8 +158,6 @@ nav {
   }
 }
 
-.router-outlet-wrapper {
-  margin-top: 120px;
 
   h1 {
     text-align: center;
@@ -164,10 +166,6 @@ nav {
     font-size: 2.5rem;
   }
 
-  #router-outlet {
-    &.open-menu {
-      opacity: 0.2;
-    }
 
     .bio {
       padding: 1.5rem;
@@ -269,17 +267,21 @@ nav {
         }
       }
     }
-  }
+
 
   .social-media {
     background: #1c1c1c;
     font-size: 1.8rem;
     text-align: center;
-    padding: 10px;
+    padding: 15px 10px 10px;
 
     a {
       color: $color-primary;
-      margin-right: 10px;
+      margin-right: 20px;
+
+      &:last-child {
+         margin-right: 0px;
+      }
     }
   }
 
@@ -290,7 +292,7 @@ nav {
     font-size: 0.8rem;
     text-align: center;
   }
-}
+
 
 .projects-outer-wrapper {
   display: flex;

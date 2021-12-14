@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,11 +32,11 @@ nav {
   transition: all 100ms linear;
   background: black;
   height: 100px;
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 nav.open-menu {
@@ -172,27 +176,19 @@ nav ul li a:hover {
   color: white;
 }
 
-.router-outlet-wrapper {
-  margin-top: 120px;
-}
-
-.router-outlet-wrapper h1 {
+h1 {
   text-align: center;
   font-weight: 900;
   text-transform: uppercase;
   font-size: 2.5rem;
 }
 
-.router-outlet-wrapper #router-outlet.open-menu {
-  opacity: 0.2;
-}
-
-.router-outlet-wrapper #router-outlet .bio {
+.bio {
   padding: 1.5rem;
   padding-top: 0;
 }
 
-.router-outlet-wrapper #router-outlet .bio::after {
+.bio::after {
   content: "";
   display: block;
   height: 2px;
@@ -202,12 +198,12 @@ nav ul li a:hover {
   margin-left: -50px;
 }
 
-.router-outlet-wrapper #router-outlet .bio .img-wrapper img {
+.bio .img-wrapper img {
   width: 100%;
   margin-left: -100px;
 }
 
-.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper {
+.bio .bio-description-wrapper {
   background: rgba(0, 0, 0, 0.603);
   margin-top: -120px;
   padding: 15px;
@@ -218,7 +214,7 @@ nav ul li a:hover {
   border-top: 2px solid rgba(255, 0, 0, 0.363);
 }
 
-.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper h2 {
+.bio .bio-description-wrapper h2 {
   margin-top: 0;
   margin-bottom: 10px;
   padding: 0 10px;
@@ -227,16 +223,16 @@ nav ul li a:hover {
   text-transform: uppercase;
 }
 
-.router-outlet-wrapper #router-outlet .bio .bio-description-wrapper p {
+.bio .bio-description-wrapper p {
   padding: 0 15px;
   line-height: 22px;
 }
 
-.router-outlet-wrapper #router-outlet .track-previews {
+.track-previews {
   margin-bottom: 1rem;
 }
 
-.router-outlet-wrapper #router-outlet .track-previews h2 {
+.track-previews h2 {
   margin-top: 0;
   margin-bottom: 10px;
   padding: 0 10px;
@@ -245,13 +241,13 @@ nav ul li a:hover {
   text-transform: uppercase;
 }
 
-.router-outlet-wrapper #router-outlet .track-previews iframe {
+.track-previews iframe {
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
 }
 
-.router-outlet-wrapper #router-outlet .upcoming-shows h2 {
+.upcoming-shows h2 {
   color: white;
   text-transform: uppercase;
   padding: 0.5rem 10px;
@@ -260,7 +256,7 @@ nav ul li a:hover {
   border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
-.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper {
+.upcoming-shows .img-wrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -270,36 +266,40 @@ nav ul li a:hover {
   padding: 5px;
 }
 
-.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img {
+.upcoming-shows .img-wrapper img {
   width: 100%;
 }
 
-.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img:nth-child(1) {
+.upcoming-shows .img-wrapper img:nth-child(1) {
   grid-column: span 2;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
 }
 
-.router-outlet-wrapper #router-outlet .upcoming-shows .img-wrapper img:nth-child(2) {
+.upcoming-shows .img-wrapper img:nth-child(2) {
   grid-column: 2 / -1;
   grid-row: span 2;
   margin-top: -50px;
 }
 
-.router-outlet-wrapper .social-media {
+.social-media {
   background: #1c1c1c;
   font-size: 1.8rem;
   text-align: center;
-  padding: 10px;
+  padding: 15px 10px 10px;
 }
 
-.router-outlet-wrapper .social-media a {
+.social-media a {
   color: white;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
-.router-outlet-wrapper .developed-by {
+.social-media a:last-child {
+  margin-right: 0px;
+}
+
+.developed-by {
   background: white;
   color: #1c1c1c;
   padding: 0.3rem;

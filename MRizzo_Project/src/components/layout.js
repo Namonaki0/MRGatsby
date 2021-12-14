@@ -1,8 +1,10 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Footer from "../pages/footer"
+import Nav from "./nav"
 
-import Header from "./header"
+// import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -18,11 +20,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
+      <Nav />
       <div>
         <main>{children}</main>
-        <footer></footer>
       </div>
+      <Footer />
     </>
   )
 }
