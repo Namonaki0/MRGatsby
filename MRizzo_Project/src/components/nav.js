@@ -19,17 +19,38 @@ export default function Nav() {
 
         <ul className={openMenu ? "menu-active" : ""}>
           <li className="nav-li">
-            <Link to="/" className="nav-link">
+            <Link
+              to="/"
+              className="nav-link"
+              onClick={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
+            >
               home
             </Link>
           </li>
           <li className="nav-li">
-            <Link to="/videos" className="nav-link">
+            <Link
+              to="/videos"
+              className="nav-link"
+              onClick={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
+            >
               videos
             </Link>
           </li>
           <li className="nav-li">
-            <Link to="/merch" className="nav-link">
+            <Link
+              to="/merch"
+              className="nav-link"
+              onClick={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
+            >
               merch
             </Link>
           </li>
@@ -42,7 +63,13 @@ export default function Nav() {
             setBurgerEffect(burgerEffect === "open" ? "close" : "open")
           }}
         >
-          <span className={burgerEffect}></span>
+          <span
+            className={burgerEffect}
+            onClick={() => {
+              setOpenMenu(!openMenu)
+              setBurgerEffect(burgerEffect === "open" ? "close" : "open")
+            }}
+          ></span>
           <span className={burgerEffect}></span>
           <span className={burgerEffect}></span>
         </div>

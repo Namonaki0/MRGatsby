@@ -15,7 +15,7 @@ export default function Merch() {
 
   return (
     <div className="merch-page-wrapper">
-      <Nav />
+      <Nav className="nav" />
       <h1>MERCH</h1>
 
       <div className="merch-display">

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Marc Rizzo Project`,
     description: `Marc Rizzo alternative project`,
-    author: `@gatsbyjs`,
+    author: `Andre Ferreira @Namonaki0`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [

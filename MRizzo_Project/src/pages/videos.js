@@ -4,7 +4,7 @@ import Nav from "../components/nav"
 export default function Videos() {
   return (
     <div className="videos-wrapper">
-      <Nav />
+      <Nav className="nav" />
 
       <h1>VIDEOS</h1>
 
