@@ -1,21 +1,23 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Nav from "../components/nav"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    {/* <Nav className="nav" /> */}
-    <div class="bio">
-      <div class="img-wrapper">
-        <img src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg" />
+    {/* <Nav classNameName="nav" /> */}
+    <div className="bio">
+      <div className="img-wrapper">
+        <StaticImage
+          alt=""
+          src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg"
+        />
       </div>
 
-      <div class="bio-description-wrapper">
+      <div className="bio-description-wrapper">
         <h2>About Marc</h2>
 
         <p>
@@ -26,7 +28,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <section class="track-previews">
+    <section className="track-previews">
       <h2>previews</h2>
 
       <iframe
@@ -34,7 +36,8 @@ const IndexPage = () => (
         width="95%"
         height="80"
         frameBorder="0"
-        allowfullscreen=""
+        allowFullScreen=""
+        title="Living Shred Vol.1"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
 
@@ -43,7 +46,8 @@ const IndexPage = () => (
         width="95%"
         height="80"
         frameBorder="0"
-        allowfullscreen=""
+        allowFullScreen=""
+        title="Legionnaire"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
 
@@ -52,7 +56,8 @@ const IndexPage = () => (
         width="95%"
         height="80"
         frameBorder="0"
-        allowfullscreen=""
+        allowFullScreen=""
+        title="The Ultimate Devotion"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
 
@@ -61,14 +66,15 @@ const IndexPage = () => (
         width="95%"
         height="80"
         frameBorder="0"
-        allowfullscreen=""
+        allowFullScreen=""
+        title="Colossal Myopia"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       ></iframe>
     </section>
 
-    <div class="upcoming-shows">
+    <div className="upcoming-shows">
       <h2>upcoming shows</h2>
-      <div class="img-wrapper">
+      <div className="img-wrapper">
         <StaticImage
           src="images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
           alt="Hail the Horns and Whiskey Dick banner"

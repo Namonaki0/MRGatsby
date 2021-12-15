@@ -26,6 +26,10 @@ export default function Nav() {
                 setOpenMenu(!openMenu)
                 setBurgerEffect("close")
               }}
+              onKeyDown={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
             >
               home
             </Link>
@@ -35,6 +39,10 @@ export default function Nav() {
               to="/videos"
               className="nav-link"
               onClick={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
+              onKeyDown={() => {
                 setOpenMenu(!openMenu)
                 setBurgerEffect("close")
               }}
@@ -50,6 +58,10 @@ export default function Nav() {
                 setOpenMenu(!openMenu)
                 setBurgerEffect("close")
               }}
+              onKeyDown={() => {
+                setOpenMenu(!openMenu)
+                setBurgerEffect("close")
+              }}
             >
               merch
             </Link>
@@ -58,16 +70,26 @@ export default function Nav() {
 
         <div
           className="burger-menu"
+          aria-hidden="true"
           onClick={() => {
             setOpenMenu(!openMenu)
             setBurgerEffect(burgerEffect === "open" ? "close" : "open")
           }}
+          onKeyDown={() => {
+            setOpenMenu(!openMenu)
+            setBurgerEffect("close")
+          }}
         >
           <span
             className={burgerEffect}
+            aria-hidden="true"
             onClick={() => {
               setOpenMenu(!openMenu)
               setBurgerEffect(burgerEffect === "open" ? "close" : "open")
+            }}
+            onKeyDown={() => {
+              setOpenMenu(!openMenu)
+              setBurgerEffect("close")
             }}
           ></span>
           <span className={burgerEffect}></span>

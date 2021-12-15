@@ -468,15 +468,22 @@ nav {
 
   .merch-page-modal {
     display: none;
+    // visibility: hidden;
     background: rgba(10, 10, 10, 0.849);
     transition: all 150ms linear;
     background: red;
+        // display: grid;
+        position: absolute;
+    //     width: 100%;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+    //     visibility: unset;
+    //     flex-direction: column;
+    //     opacity: 1;
+  
 
-    //  .merch-modal-active {
-    //      display: grid;
-    //      opacity: 1;
-    //      overflow: hidden;
-    //  }
 
     span {
       font-size: 2rem;
@@ -505,6 +512,20 @@ nav {
     //     opacity: 1;
     // }
   }
+
+  // .open {
+  //   visibility: visible;
+  //   position: sticky;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   opacity: 1;
+  //   overflow: hidden;
+  //   z-index: 1000;
+  // }
+
+    
 }
 
 //? VIDEOS
