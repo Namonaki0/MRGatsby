@@ -468,34 +468,62 @@ h1 {
   border: 1px solid #2b2b2b;
 }
 
-.merch-page-wrapper .merch-page-modal {
-  display: none;
-  background: rgba(10, 10, 10, 0.849);
-  -webkit-transition: all 150ms linear;
-  transition: all 150ms linear;
-  background: red;
+.merch-page-wrapper .merch-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.merch-page-wrapper .merch-modal .modal-close-btn {
+  all: unset;
   position: absolute;
   top: 10px;
   right: 10px;
-  left: 10px;
-  bottom: 10px;
-}
-
-.merch-page-wrapper .merch-page-modal span {
-  font-size: 2rem;
-  padding-right: 3rem;
-  text-align: right;
   cursor: pointer;
-  background: -webkit-gradient(linear, right top, left top, from(black), to(#313131));
-  background: linear-gradient(to left, black, #313131);
+  color: white;
+  font-size: 2rem;
 }
 
-.merch-page-wrapper .merch-page-modal img {
-  padding: 2rem 0 0;
+.merch-page-wrapper .merch-modal .modal-description-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+}
+
+.merch-page-wrapper .merch-modal .purchase-btn {
+  all: unset;
+  padding: 0.5rem 1rem;
+  background: #eeeeee;
+  cursor: pointer;
+  border-radius: 2px;
+  z-index: 100;
+  margin: auto;
   width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  margin-top: -20px;
+  text-align: center;
+  text-transform: uppercase;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+
+.merch-page-wrapper .merch-modal .purchase-btn:hover {
+  background: white;
 }
 
 .main-video iframe {
