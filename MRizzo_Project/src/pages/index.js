@@ -1,6 +1,6 @@
 import * as React from "react"
 // import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -11,7 +11,7 @@ const IndexPage = () => (
     {/* <Nav classNameName="nav" /> */}
     <div className="bio">
       <div className="img-wrapper">
-        <StaticImage
+        <img
           alt=""
           src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg"
         />
@@ -75,14 +75,23 @@ const IndexPage = () => (
     <div className="upcoming-shows">
       <h2>upcoming shows</h2>
       <div className="img-wrapper">
-        <StaticImage
-          src="images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
+        <div className="placeholder">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum."
+        </div>
+        {/* <img
+          src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
           alt="Hail the Horns and Whiskey Dick banner"
         />
-        <StaticImage
-          src="images/Winter_Wasteland.jpeg"
+        <img
+          src="/images/Winter_Wasteland.jpeg"
           alt="Winter Wasteland banner"
-        />
+        /> */}
       </div>
     </div>
   </Layout>
