@@ -52,7 +52,6 @@ nav {
     height: 28px;
     position: absolute;
     top: 1rem;
-    // padding: .5rem 1rem;
     right: 35px;
     z-index: 100;
     transition: all 100ms linear;
@@ -487,6 +486,7 @@ h1 {
       cursor: pointer;
       color: white;
       font-size: 2rem;
+      z-index: 1000;
     }
     .modal-description-wrapper {
       display: flex;
@@ -496,7 +496,6 @@ h1 {
     }
 
     .purchase-cta {
-      // flex: 1;
       all: unset;
       padding: 0.5rem 1rem;
       background: rgb(238, 238, 238);
@@ -508,7 +507,6 @@ h1 {
       height: max-content;
       text-align: center;
       text-transform: uppercase;
-      // align-self: center;
       transition: all 100ms linear;
 
       &:hover {

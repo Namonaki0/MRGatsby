@@ -501,6 +501,7 @@ h1 {
   cursor: pointer;
   color: white;
   font-size: 2rem;
+  z-index: 1000;
 }
 
 .merch-page-wrapper .merch-modal .modal-description-wrapper {
