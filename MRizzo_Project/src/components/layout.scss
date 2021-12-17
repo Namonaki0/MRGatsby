@@ -28,12 +28,11 @@ main {
 }
 
 nav {
-  display: flex;
+  position: fixed;
   flex-direction: column;
   transition: all 100ms linear;
-  background: $bg-primary;
+  background: transparent;
   height: 100px;
-  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -41,6 +40,7 @@ nav {
 
   &.open-menu {
     height: max-content;
+    background: $bg-primary;
   }
 
   &.scroll-effect {
@@ -51,7 +51,8 @@ nav {
     width: max-content;
     height: 28px;
     position: absolute;
-    top: 25px;
+    top: 1rem;
+    // padding: .5rem 1rem;
     right: 35px;
     z-index: 100;
     transition: all 100ms linear;
@@ -128,10 +129,16 @@ nav {
       opacity: 1;
       transform: translateX(0);
       background: $bg-primary;
+      height: 100vh;
     }
 
     li {
       text-align: center;
+
+         &:nth-of-type(1){
+          padding-top: 5rem;
+         }
+      
 
       a {
         display: flex;
@@ -419,6 +426,11 @@ h1 {
 .merch-page-wrapper {
   position: relative;
 
+  h1 {
+    text-align: left;
+    padding: .5rem 1rem;
+  }
+
   .merch-display {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -461,7 +473,11 @@ h1 {
   .merch-modal {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+
+    img {
+   margin: 2rem 0;
+    }
 
     .modal-close-btn {
       all: unset;
@@ -479,18 +495,20 @@ h1 {
       color: white;
     }
 
-    .purchase-btn {
+    .purchase-cta {
+      // flex: 1;
       all: unset;
       padding: 0.5rem 1rem;
       background: rgb(238, 238, 238);
       cursor: pointer;
       border-radius: 2px;
       z-index: 100;
-      margin: auto;
+      margin: 0 auto;
       width: 80%;
+      height: max-content;
       text-align: center;
       text-transform: uppercase;
-      align-self: center;
+      // align-self: center;
       transition: all 100ms linear;
 
       &:hover {
@@ -502,26 +520,32 @@ h1 {
 
 //? VIDEOS
 
-.main-video {
-  iframe {
-    display: block;
-    margin: 5px auto;
+.videos-wrapper {
+
+   h1 {
+     text-align: left;
+     padding: .5rem 1rem;
+   }
+
+  .main-video {
+    iframe {
+      display: block;
+      margin: 5px auto;
+    }
+  }
+  
+  .video-library-streaming {
+    display: flex;
+    overflow-x: auto;
+  
+    iframe {
+      border: none;
+    }
+  }
+  
+  .video-library-other {
+    height: 100px;
+  
   }
 }
 
-.video-library-streaming {
-  display: flex;
-  overflow-x: auto;
-
-  iframe {
-    border: none;
-  }
-}
-
-.video-library-other {
-  height: 100px;
-
-  // iframe {
-  //   border: none;
-  // }
-}

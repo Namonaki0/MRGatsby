@@ -9,13 +9,13 @@ export default function Nav() {
   return (
     <div>
       <nav>
-        <Link to="/" className="logo-link">
+        {/* <Link to="/" className="logo-link">
           <img
             src="https://www.storefrontier.com/sites/default/files/artwork_preview/front/66357/rizzo_4_200619_preview_34424_842_black.png"
             alt="logo"
             className="logo"
           />
-        </Link>
+        </Link> */}
 
         <ul className={openMenu ? "menu-active" : ""}>
           <li className="nav-li">

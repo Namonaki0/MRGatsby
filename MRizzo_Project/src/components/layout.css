@@ -21,18 +21,15 @@ main {
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: fixed;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
-  background: black;
+  background: transparent;
   height: 100px;
-  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -43,6 +40,7 @@ nav.open-menu {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  background: black;
 }
 
 nav.scroll-effect {
@@ -55,7 +53,7 @@ nav .burger-menu {
   width: max-content;
   height: 28px;
   position: absolute;
-  top: 25px;
+  top: 1rem;
   right: 35px;
   z-index: 100;
   -webkit-transition: all 100ms linear;
@@ -147,10 +145,15 @@ nav ul.menu-active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   background: black;
+  height: 100vh;
 }
 
 nav ul li {
   text-align: center;
+}
+
+nav ul li:nth-of-type(1) {
+  padding-top: 5rem;
 }
 
 nav ul li a {
@@ -426,6 +429,11 @@ h1 {
   position: relative;
 }
 
+.merch-page-wrapper h1 {
+  text-align: left;
+  padding: .5rem 1rem;
+}
+
 .merch-page-wrapper .merch-display {
   display: -ms-grid;
   display: grid;
@@ -476,9 +484,13 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.merch-page-wrapper .merch-modal img {
+  margin: 2rem 0;
 }
 
 .merch-page-wrapper .merch-modal .modal-close-btn {
@@ -504,45 +516,50 @@ h1 {
   color: white;
 }
 
-.merch-page-wrapper .merch-modal .purchase-btn {
+.merch-page-wrapper .merch-modal .purchase-cta {
   all: unset;
   padding: 0.5rem 1rem;
   background: #eeeeee;
   cursor: pointer;
   border-radius: 2px;
   z-index: 100;
-  margin: auto;
+  margin: 0 auto;
   width: 80%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   text-align: center;
   text-transform: uppercase;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
 }
 
-.merch-page-wrapper .merch-modal .purchase-btn:hover {
+.merch-page-wrapper .merch-modal .purchase-cta:hover {
   background: white;
 }
 
-.main-video iframe {
+.videos-wrapper h1 {
+  text-align: left;
+  padding: .5rem 1rem;
+}
+
+.videos-wrapper .main-video iframe {
   display: block;
   margin: 5px auto;
 }
 
-.video-library-streaming {
+.videos-wrapper .video-library-streaming {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: auto;
 }
 
-.video-library-streaming iframe {
+.videos-wrapper .video-library-streaming iframe {
   border: none;
 }
 
-.video-library-other {
+.videos-wrapper .video-library-other {
   height: 100px;
 }
 /*# sourceMappingURL=layout.css.map */
