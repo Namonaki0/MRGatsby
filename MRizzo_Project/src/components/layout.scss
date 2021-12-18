@@ -5,6 +5,8 @@ $ff-primary: "basement grotesque", sans-serif;
 $color-primary: white;
 $bg-primary: black;
 $bg-secondary: white;
+$md-screen: 600px;
+$lg-screen: 1000px;
 //? VARIABLES ---
 
 * {
@@ -134,10 +136,9 @@ nav {
     li {
       text-align: center;
 
-         &:nth-of-type(1){
-          padding-top: 5rem;
-         }
-      
+      &:nth-of-type(1) {
+        padding-top: 5rem;
+      }
 
       a {
         display: flex;
@@ -216,17 +217,16 @@ h1 {
   }
 }
 
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  text-align: left;
+  width: 100%;
+  text-transform: uppercase;
+}
 .track-previews {
   margin-bottom: 1rem;
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding: 0 10px;
-    text-align: left;
-    width: 100%;
-    text-transform: uppercase;
-  }
 
   iframe {
     display: block;
@@ -427,7 +427,7 @@ h1 {
 
   h1 {
     text-align: left;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .merch-display {
@@ -475,7 +475,7 @@ h1 {
     justify-content: center;
 
     img {
-   margin: 2rem 0;
+      margin: 2rem 0;
     }
 
     .modal-close-btn {
@@ -519,11 +519,10 @@ h1 {
 //? VIDEOS
 
 .videos-wrapper {
-
-   h1 {
-     text-align: left;
-     padding: .5rem 1rem;
-   }
+  h1 {
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
 
   .main-video {
     iframe {
@@ -531,19 +530,64 @@ h1 {
       margin: 5px auto;
     }
   }
-  
+
   .video-library-streaming {
     display: flex;
     overflow-x: auto;
-  
+
     iframe {
       border: none;
     }
   }
-  
+
   .video-library-other {
     height: 100px;
-  
   }
 }
 
+@media (min-width: $md-screen) {
+  main {
+    display: flex;
+    flex-direction: column;
+
+    .bio-description-wrapper {
+      max-width: 700px;
+      margin-left: auto;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      border-left: 1px solid rgba(192, 192, 192, 0.158);
+    }
+
+    .img-wrapper {
+      max-width: 600px;
+      margin-left: -100px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .track-previews {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (min-width: $lg-screen) {
+  main {
+    margin: 0 4rem;
+
+    .bio {
+      padding-bottom: 3rem;
+    }
+  }
+
+  .track-previews {
+    padding-bottom: 3rem;
+    display: flex;
+
+    iframe {
+      min-width: 25%;
+    }
+  }
+}

@@ -231,17 +231,17 @@ h1 {
   line-height: 22px;
 }
 
-.track-previews {
-  margin-bottom: 1rem;
-}
-
-.track-previews h2 {
+h2 {
   margin-top: 0;
   margin-bottom: 10px;
   padding: 0 10px;
   text-align: left;
   width: 100%;
   text-transform: uppercase;
+}
+
+.track-previews {
+  margin-bottom: 1rem;
 }
 
 .track-previews iframe {
@@ -431,7 +431,7 @@ h1 {
 
 .merch-page-wrapper h1 {
   text-align: left;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .merch-page-wrapper .merch-display {
@@ -541,7 +541,7 @@ h1 {
 
 .videos-wrapper h1 {
   text-align: left;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .videos-wrapper .main-video iframe {
@@ -562,5 +562,52 @@ h1 {
 
 .videos-wrapper .video-library-other {
   height: 100px;
+}
+
+@media (min-width: 600px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .bio-description-wrapper {
+    max-width: 700px;
+    margin-left: auto;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    border-left: 1px solid rgba(192, 192, 192, 0.158);
+  }
+  main .img-wrapper {
+    max-width: 600px;
+    margin-left: -100px;
+  }
+  main h2 {
+    font-size: 2rem;
+  }
+  main .track-previews {
+    margin: 0 10px;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    margin: 0 4rem;
+  }
+  main .bio {
+    padding-bottom: 3rem;
+  }
+  .track-previews {
+    padding-bottom: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .track-previews iframe {
+    min-width: 25%;
+  }
 }
 /*# sourceMappingURL=layout.css.map */

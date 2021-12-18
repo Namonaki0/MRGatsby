@@ -28,9 +28,8 @@ const IndexPage = () => (
       </div>
     </div>
 
+    <h2>previews</h2>
     <section className="track-previews">
-      <h2>previews</h2>
-
       <iframe
         src="https://open.spotify.com/embed/album/5z7NkjFyLKFA75yID4nkbH?utm_source=generator"
         width="95%"
