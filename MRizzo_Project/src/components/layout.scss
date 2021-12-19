@@ -7,6 +7,7 @@ $bg-primary: black;
 $bg-secondary: white;
 $md-screen: 600px;
 $lg-screen: 1000px;
+$xl-screen: 1200px;
 //? VARIABLES ---
 
 * {
@@ -172,6 +173,7 @@ h1 {
   padding: 1.5rem;
   padding-top: 0;
 
+
   &::after {
     content: "";
     display: block;
@@ -183,6 +185,8 @@ h1 {
       rgba(0, 0, 0, 0.199)
     );
     margin-left: -50px;
+    margin-top: .5rem;
+     
   }
 
   .img-wrapper {
@@ -215,6 +219,17 @@ h1 {
       line-height: 22px;
     }
   }
+  .bio-social-media {
+    display: none;
+
+    a {
+      color: white;
+      font-size: 1.5rem;
+      padding: 5px;
+
+    }
+  }
+
 }
 
 h2 {
@@ -579,6 +594,18 @@ h2 {
 
     .bio {
       padding-bottom: 3rem;
+      position: relative;
+      
+
+
+        // .bio-social-media {
+        //   display: unset;
+        //   position: absolute;
+        //   bottom: 15%;
+
+        // }
+      
+
     }
   }
 
@@ -590,4 +617,35 @@ h2 {
       min-width: 25%;
     }
   }
+}
+@media (min-width: $xl-screen) {
+  main {
+    margin: 0 4rem;
+
+    .bio {
+
+
+        .bio-social-media {
+          display: unset;
+          bottom: 15%;
+
+          a {
+            font-size: 1.8rem;
+            margin-right: 10px;
+          }
+
+        }
+      
+
+    }
+  }
+
+  // .track-previews {
+  //   padding-bottom: 3rem;
+  //   display: flex;
+
+  //   iframe {
+  //     min-width: 25%;
+  //   }
+  // }
 }
