@@ -31,8 +31,9 @@ const IndexPage = () => (
 
         <p>
           Marc Rizzo is an American guitarist best known for his presence in
-          metal band Soulfly, formerly of ill Nino and on the rise solo projects
-          Acoustic Vendetta and Revenge Beast.
+          metal band Soulfly where he spent 18 years of his life and Ill Nino
+          where he first gained mainstream attention. He is also part of solo
+          projects Acoustic Vendetta and Revenge Beast.
         </p>
       </div>
       <div className="bio-social-media">
