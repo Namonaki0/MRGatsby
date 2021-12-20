@@ -370,6 +370,10 @@ h2 {
   text-align: center;
 }
 
+.developed-by a {
+  color: #1c1c1c;
+}
+
 .projects-outer-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -335,6 +335,12 @@ h2 {
   padding: 0.3rem;
   font-size: 0.8rem;
   text-align: center;
+
+
+    a {
+      color: #1c1c1c;
+    }
+  
 }
 
 .projects-outer-wrapper {
@@ -715,6 +721,10 @@ h2 {
       }
     }
   }
+
+
+    
+  
 }
 @media (min-width: $xl-screen) {
   main {
