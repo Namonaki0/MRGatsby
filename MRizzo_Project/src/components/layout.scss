@@ -95,6 +95,8 @@ nav {
     .open:nth-child(3) {
       transform: translateY(-11px) rotate(-45deg);
     }
+
+    
   }
 
   .logo-link {
@@ -156,6 +158,38 @@ nav {
         &:hover {
           border-bottom: 1px solid rgba(192, 192, 192, 0.63);
           color: $color-primary;
+        }
+      }
+    }
+
+    .nav-social-media {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0 1rem;
+      flex-wrap: wrap;
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 2rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        color: white;
+        font-size: 2rem;
+        border-radius: 2px;
+        box-shadow: 0px 2px 1px rgba(167, 167, 167, 0.253);
+        transition: all 110ms linear;
+
+        &:hover {
+          box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.322);
+        }
+
+        svg {
+          height: .8em;
         }
       }
     }
@@ -593,9 +627,15 @@ h2 {
 }
 
 @media (min-width: $lg-screen) {
+
+  
   nav {
     max-width: 95%;
+    position: absolute;
+
     ul {
+      margin-top: .2rem;
+      margin-right: 2.8rem;
       visibility: visible;
       opacity: 1;
       z-index: 1000;
@@ -605,11 +645,27 @@ h2 {
       background: transparent;
 
       li {
+         position: relative;
         border: none;
         font-size: 1.5rem;
 
         &:nth-of-type(1) {
           padding-top: 0;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 45%;
+          right: -10%;
+          height: 2px;
+          width: 35px;
+          background: linear-gradient(to right,
+            rgba(255, 0, 0, 0.699),
+            rgba(97, 0, 0, 0.199));
+          
+          display: block;
+
         }
 
         a {
@@ -620,6 +676,10 @@ h2 {
             color: $color-primary;
           }
         }
+      }
+
+      .nav-social-media {
+        display: none;
       }
     }
   }
@@ -634,6 +694,10 @@ h2 {
     .bio {
       padding-bottom: 3rem;
       position: relative;
+
+       .bio-description-wrapper {
+         margin-top: -200px;
+       }
     }
 
     h2 {
@@ -657,14 +721,37 @@ h2 {
     margin: 0 4rem;
 
     .bio {
+      position: relative;
       .bio-social-media {
-        display: unset;
-        bottom: 15%;
+        display: flex;
+        position: absolute;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0 .5rem;
+        width: 100%;
+        margin-right: auto;
+        margin-top: .5rem;
+        margin-left: -24px;
 
         a {
-          font-size: 1.8rem;
-          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          padding: 10px;
+          color: white;
+          font-size: 2rem;
+          transition: all 110ms linear;
+
+          &:hover {
+            box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.322);
+          }
+
+          svg {
+            height: .8em;
+          }
         }
+
+
       }
     }
 
