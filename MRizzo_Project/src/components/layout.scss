@@ -592,7 +592,15 @@ h2 {
   }
 
   .video-library-other {
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 0 2px;
+
+    div {
+      border: 1px solid silver;
+      height: 100px;
+      width: 100px;
+    }
   }
 }
 
