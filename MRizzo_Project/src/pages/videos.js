@@ -8,9 +8,9 @@ export default function Videos() {
         <h1>VIDEOS</h1>
 
         <div className="main-video">
-          <div className="videos">
+          <div className="main-video-wrapper">
             <iframe
-              width="50%"
+              width="90%"
               height="315"
               src="https://www.youtube.com/embed/ECsDpg-OK3U"
               title="YouTube video player"
