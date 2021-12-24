@@ -21,19 +21,7 @@ export default function Videos() {
           </div>
         </div>
 
-        {/* <div className="video-library-streaming">
-          <div className="videos-playlist">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/videoseries?list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div> */}
+        <hr />
 
         <div className="video-library-other">
           <div>

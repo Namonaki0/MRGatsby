@@ -32,11 +32,11 @@ export default function Nav() {
               to="/"
               className="nav-link"
               onClick={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
               onKeyDown={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
             >
@@ -48,11 +48,11 @@ export default function Nav() {
               to="/videos"
               className="nav-link"
               onClick={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
               onKeyDown={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
             >
@@ -64,11 +64,11 @@ export default function Nav() {
               to="/merch"
               className="nav-link"
               onClick={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
               onKeyDown={() => {
-                setOpenMenu(!openMenu)
+                setOpenMenu(null)
                 setBurgerEffect("close")
               }}
             >
