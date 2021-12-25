@@ -18,6 +18,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_7_170032_1083_325093_470_black170746_nobg.png?1638400254"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/theflyer"
             alt="the flyer t-shirt"
             onClick={e => {

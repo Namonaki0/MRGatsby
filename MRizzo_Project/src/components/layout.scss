@@ -745,29 +745,14 @@ h2 {
       border-left: 3px solid red;
       border-right: 3px solid red;
       border-radius: 2px;
-      // width: 80%;
-      // outline: 5px solid rgb(255, 80, 80);
 
       .main-video-wrapper {
         margin: 0 auto;
-        // background: cyan;
         width: 90%;
         border-left: 3px solid red;
         border-right: 3px solid red;
         border-radius: 2px;
-        // &::before {
-        //   content: "";
-        //   border-radius: 2px;
-        //   height: 90%;
-        //   width: 3px;
-        //   display: block;
-        //   background: red;
-        //   z-index: 1000;
-        //   position: absolute;
-        //   left: 10%;
-        //   transform: translateY(5%);
 
-        // }
 
         iframe {
           min-width: 80%;
@@ -775,25 +760,70 @@ h2 {
           border-right: 3px solid red;
           padding: 0 25px;
           margin-top: 2rem;
-          // border-left: 3px solid red;
         }
 
-        // &::before {
-        //   content: "";
-        //   border-radius: 2px;
-        //   height: 90%;
-        //   width: 3px;
-        //   display: block;
-        //   background: red;
-        //   z-index: 1000;
-        //   position: absolute;
-        //   right: 24%;
-        //   transform: translateY(5%);
-
-        // }
       }
     }
   }
+
+  .merch-page-wrapper {
+
+    
+    .merch-display {
+      margin-top: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+
+    }
+
+      .merch-modal {
+       position: relative;
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+
+        .modal-close-btn {
+          all: unset;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          color: white;
+          font-size: 2rem;
+          z-index: 1000;
+        }
+
+        .modal-description-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          color: white;
+        }
+
+        .purchase-cta {
+          all: unset;
+          padding: 0.5rem 1rem;
+          background: rgb(238, 238, 238);
+          cursor: pointer;
+          border-radius: 2px;
+          z-index: 100;
+          margin: 0 auto;
+          width: 80%;
+          height: max-content;
+          text-align: center;
+          text-transform: uppercase;
+          transition: all 100ms linear;
+
+          &:hover {
+            background: white;
+          }
+        }
+      }
+  }
+
 }
 @media (min-width: $xl-screen) {
   main {

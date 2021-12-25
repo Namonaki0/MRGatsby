@@ -64,7 +64,7 @@ export default function Footer() {
           <BsTwitter />
         </a>
       </div>
-      <div class="developed-by">
+      <div className="developed-by">
         Marc Rizzo 2021 | Developed by{" "}
         <a href="https://github.com/Namonaki0" target="_blank" rel="noreferrer">
           Namonaki0
