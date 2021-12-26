@@ -541,6 +541,7 @@ h2 {
 }
 
 .merch-page-wrapper .merch-modal {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,21 +552,64 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 1px solid rgba(192, 192, 192, 0.301);
+  max-width: clamp(400px, 900px, 900px);
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 2px;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+  height: 90vh;
 }
 
-.merch-page-wrapper .merch-modal img {
-  margin: 2rem 0;
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper img {
+  width: clamp(200px, 400px, 800px);
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta {
+  display: block;
+  all: unset;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background: #eeeeee;
+  cursor: pointer;
+  z-index: 100;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta:hover {
+  background: white;
 }
 
 .merch-page-wrapper .merch-modal .modal-close-btn {
   all: unset;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
   cursor: pointer;
-  color: white;
+  background: white;
   font-size: 2rem;
   z-index: 1000;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: .5rem 1rem;
 }
 
 .merch-page-wrapper .merch-modal .modal-description-wrapper {
@@ -579,28 +623,6 @@ h2 {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   color: white;
-}
-
-.merch-page-wrapper .merch-modal .purchase-cta {
-  all: unset;
-  padding: 0.5rem 1rem;
-  background: #eeeeee;
-  cursor: pointer;
-  border-radius: 2px;
-  z-index: 100;
-  margin: 0 auto;
-  width: 80%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-transition: all 100ms linear;
-  transition: all 100ms linear;
-}
-
-.merch-page-wrapper .merch-modal .purchase-cta:hover {
-  background: white;
 }
 
 .videos-wrapper h1 {
@@ -795,60 +817,6 @@ h2 {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper {
-    height: 100vh;
-    width: 40%;
-    margin: 0 auto;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal {
-    position: relative;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal img {
-    width: 200px;
-    height: auto;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal .modal-close-btn {
-    all: unset;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 2rem;
-    z-index: 1000;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal .modal-description-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    color: white;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal .purchase-cta {
-    all: unset;
-    padding: 0.5rem 1rem;
-    background: #eeeeee;
-    cursor: pointer;
-    border-radius: 2px;
-    z-index: 100;
-    margin: 0 auto;
-    width: 80%;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-transition: all 100ms linear;
-    transition: all 100ms linear;
-  }
-  .merch-page-wrapper .merch-modal-inner-wrapper .merch-modal .purchase-cta:hover {
-    background: white;
   }
 }
 

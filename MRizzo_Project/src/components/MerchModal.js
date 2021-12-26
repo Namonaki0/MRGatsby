@@ -1,11 +1,6 @@
 import React from "react"
 
 const MERCH_MODAL_STYLING = {
-  position: "fixed",
-  top: "2%",
-  left: "2%",
-  right: "2%",
-  // bottom: "2%",
   zIndex: 1000,
   backgroundColor: "rgba(0,0,0,0.9)",
   color: "black",
@@ -19,7 +14,6 @@ const MERCH_MODAL_STYLING_LARGE_SCREEN = {
   right: "2%",
   bottom: "10%",
   zIndex: 1000,
-  // backgroundColor: "red",
   color: "black",
   transition: "all 100ms linear",
   opacity: 1,
@@ -31,7 +25,7 @@ const MERCH_MODAL_OVERLAY = {
   right: "0",
   bottom: "0",
   zIndex: 1000,
-  backgroundColor: "rgba(0,0,0,0.8)",
+  backgroundColor: "rgba(0,0,0,0.9)",
 }
 
 window.addEventListener("resize", () => window.innerWidth)
@@ -44,7 +38,7 @@ export default function MerchModal({ isOpen, onClose, children }) {
       <div
         className="merch-modal"
         style={
-          window.innerWidth > "1000"
+          window.innerWidth > "200"
             ? MERCH_MODAL_STYLING_LARGE_SCREEN
             : MERCH_MODAL_STYLING
         }

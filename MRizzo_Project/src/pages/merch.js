@@ -109,7 +109,7 @@ export default function Merch() {
 
         <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
           <div className="merch-modal-inner-wrapper">
-            <img src={imgSrc} alt="" style={{ width: "100%" }} />
+            <img src={imgSrc} alt="" />
 
             <a
               className="purchase-cta"
