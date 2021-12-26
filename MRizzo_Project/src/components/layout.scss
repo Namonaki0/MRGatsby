@@ -777,14 +777,21 @@ h2 {
 
     }
 
+    .merch-modal-inner-wrapper {
+
+      height: 100vh;
+      width: 40%;
+      margin: 0 auto;
+      
+
       .merch-modal {
        position: relative;
-
+  
         img {
           width: 200px;
           height: auto;
         }
-
+  
         .modal-close-btn {
           all: unset;
           position: absolute;
@@ -795,14 +802,14 @@ h2 {
           font-size: 2rem;
           z-index: 1000;
         }
-
+  
         .modal-description-wrapper {
           display: flex;
           align-items: center;
           justify-content: space-evenly;
           color: white;
         }
-
+  
         .purchase-cta {
           all: unset;
           padding: 0.5rem 1rem;
@@ -816,12 +823,14 @@ h2 {
           text-align: center;
           text-transform: uppercase;
           transition: all 100ms linear;
-
+  
           &:hover {
             background: white;
           }
         }
       }
+    }
+
   }
 
 }

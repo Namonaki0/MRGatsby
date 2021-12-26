@@ -108,16 +108,18 @@ export default function Merch() {
         </div>
 
         <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
-          <img src={imgSrc} alt="" style={{ width: "100%" }} />
+          <div className="merch-modal-inner-wrapper">
+            <img src={imgSrc} alt="" style={{ width: "100%" }} />
 
-          <a
-            className="purchase-cta"
-            href={extLink}
-            target="_blank"
-            rel="noreferrer"
-          >
-            purchase
-          </a>
+            <a
+              className="purchase-cta"
+              href={extLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              purchase
+            </a>
+          </div>
         </MerchModal>
 
         <div className="frontier-shop">
