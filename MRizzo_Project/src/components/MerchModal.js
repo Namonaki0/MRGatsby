@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 const MERCH_MODAL_STYLING = {
   zIndex: 1000,
@@ -28,10 +28,16 @@ const MERCH_MODAL_OVERLAY = {
   backgroundColor: "rgba(0,0,0,0.9)",
 }
 
-window.addEventListener("resize", () => window.innerWidth)
-
 export default function MerchModal({ isOpen, onClose, children }) {
+  useEffect(() => {
+    function windowSize() {
+      window.addEventListener("resize", () => window.innerWidth)
+    }
+    windowSize()
+  }, [])
+
   if (!isOpen) return false
+
   return (
     <>
       <div style={MERCH_MODAL_OVERLAY} />

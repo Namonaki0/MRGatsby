@@ -542,6 +542,7 @@ h2 {
 
 .merch-page-wrapper .merch-modal {
   position: relative;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,13 +567,31 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: hidden;
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper img {
   width: clamp(200px, 400px, 800px);
   height: auto;
   margin: 0 auto;
-  margin-bottom: 1rem;
+}
+
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper {
+  position: absolute;
+  color: #ebebeb;
+  text-transform: uppercase;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-size: 4rem;
+  margin-left: -25px;
+  top: -3px;
+}
+
+.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper span {
+  font-size: 1rem;
+  display: block;
+  color: #797979;
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta {
