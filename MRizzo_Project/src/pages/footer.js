@@ -11,7 +11,7 @@ import { FaDeezer } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <>
+    <footer>
       <div className="social-media">
         <a
           href="https://open.spotify.com/artist/4MzKbulWnDVjGnMDMz1g8j?si=Cw7D7ZOHT82IxqUa79OBLQ"
@@ -70,6 +70,6 @@ export default function Footer() {
           Namonaki0
         </a>
       </div>
-    </>
+    </footer>
   )
 }

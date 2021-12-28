@@ -83,7 +83,8 @@ export default function Merch() {
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_5_164140_1083_325064_470_black164615_nobg.png?itok=juaAOPEX"
             loading="lazy"
             data-link-cta="https://www.storefrontier.com/product/mrlivefeeling"
-            data-name="Live Feeling"
+            data-name="Feeling"
+            data-sub-name="Live"
             alt="live feeling t-shirt"
             onClick={e => {
               setImgSrc(e.target.src)

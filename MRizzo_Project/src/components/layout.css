@@ -346,32 +346,42 @@ h2 {
   margin-top: -50px;
 }
 
-.social-media {
+footer .social-media {
   background: #1c1c1c;
   font-size: 1.8rem;
   text-align: center;
   padding: 15px 10px 10px;
+  border-top: 1px solid rgba(192, 192, 192, 0.164);
 }
 
-.social-media a {
+footer .social-media a {
   color: white;
   margin-right: 20px;
 }
 
-.social-media a:last-child {
+footer .social-media a:last-child {
   margin-right: 0px;
 }
 
-.developed-by {
+footer .developed-by {
   background: white;
   color: #1c1c1c;
-  padding: 0.3rem;
   font-size: 0.8rem;
   text-align: center;
 }
 
-.developed-by a {
+footer .developed-by::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+}
+
+footer .developed-by a {
+  display: inline-block;
   color: #1c1c1c;
+  padding: .5rem 0;
 }
 
 .projects-outer-wrapper {
@@ -574,6 +584,8 @@ h2 {
   width: clamp(200px, 400px, 800px);
   height: auto;
   margin: 0 auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper {
@@ -592,6 +604,7 @@ h2 {
   font-size: 1rem;
   display: block;
   color: #797979;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.377);
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta {

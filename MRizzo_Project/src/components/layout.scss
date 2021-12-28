@@ -311,33 +311,52 @@ h2 {
   }
 }
 
-.social-media {
-  background: #1c1c1c;
-  font-size: 1.8rem;
-  text-align: center;
-  padding: 15px 10px 10px;
+footer {
 
-  a {
-    color: $color-primary;
-    margin-right: 20px;
 
-    &:last-child {
-      margin-right: 0px;
-    }
-  }
+
+ .social-media {
+   background: #1c1c1c;
+   font-size: 1.8rem;
+   text-align: center;
+   padding: 15px 10px 10px;
+  border-top: 1px solid rgba(192, 192, 192, 0.164);
+
+
+   a {
+     color: $color-primary;
+     margin-right: 20px;
+
+     &:last-child {
+       margin-right: 0px;
+     }
+   }
+ }
+ .developed-by {
+   background: $bg-secondary;
+   color: #1c1c1c;
+  
+   font-size: 0.8rem;
+   text-align: center;
+
+       &::before {
+         content: "";
+         display: block;
+         height: 2px;
+         width: 100%;
+         background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+       }
+ 
+   a {
+     display: inline-block;
+     color: #1c1c1c;
+     padding: .5rem 0;
+   }
+ }
 }
 
-.developed-by {
-  background: $bg-secondary;
-  color: #1c1c1c;
-  padding: 0.3rem;
-  font-size: 0.8rem;
-  text-align: center;
+ 
 
-  a {
-    color: #1c1c1c;
-  }
-}
 
 .projects-outer-wrapper {
   display: flex;
@@ -538,6 +557,7 @@ h2 {
         width: clamp(200px, 400px, 800px);
         height: auto;
         margin: 0 auto;
+        align-self: flex-start;
       }
 
       .merch-name-wrapper {
@@ -554,7 +574,7 @@ h2 {
           font-size: 1rem;
           display: block;
           color: rgb(121, 121, 121);
-          // margin-left: -5px;
+          border-bottom: 1px solid rgba(192, 192, 192, 0.377);
         }
       }
 
@@ -579,6 +599,8 @@ h2 {
         }
       }
     }
+
+
 
     .modal-close-btn {
       all: unset;
