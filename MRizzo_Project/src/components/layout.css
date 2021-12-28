@@ -514,11 +514,21 @@ footer .developed-by a {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   padding: 0.5rem;
+  gap: 2px;
 }
 
 .merch-page-wrapper .merch-display img {
   width: 100%;
   cursor: pointer;
+  border: 1px solid rgba(192, 192, 192, 0.089);
+  border-bottom: 3px solid rgba(192, 192, 192, 0.164);
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+
+.merch-page-wrapper .merch-display img:hover {
+  border: 1px solid rgba(192, 192, 192, 0.418);
+  border-bottom: 3px solid white;
 }
 
 .merch-page-wrapper .frontier-shop {
@@ -642,6 +652,8 @@ footer .developed-by a {
   height: -moz-max-content;
   height: max-content;
   padding: .5rem 1rem;
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
 }
 
 .merch-page-wrapper .merch-modal .modal-description-wrapper {

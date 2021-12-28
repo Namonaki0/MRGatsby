@@ -500,10 +500,20 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0.5rem;
+    gap: 2px;
 
     img {
       width: 100%;
       cursor: pointer;
+      border: 1px solid rgba(192, 192, 192, 0.089);
+      border-bottom: 3px solid rgba(192, 192, 192, 0.164);
+      transition: all 100ms linear;
+
+      &:hover {
+        border: 1px solid rgba(192, 192, 192, 0.418);
+        border-bottom: 3px solid white;
+      }
+      
     }
   }
 
@@ -600,8 +610,6 @@ footer {
       }
     }
 
-
-
     .modal-close-btn {
       all: unset;
       position: absolute;
@@ -613,7 +621,10 @@ footer {
       z-index: 1000;
       height: max-content;
       padding: .5rem 1rem;
+      border-left: 1px solid red;
+      border-bottom: 1px solid red;
     }
+
     .modal-description-wrapper {
       display: flex;
       align-items: center;
