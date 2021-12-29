@@ -142,8 +142,8 @@ export default function Merch() {
         <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
           <div className="merch-modal-inner-wrapper">
             <div className="merch-name-wrapper">
-              <p>{extName}</p>
               <span>{extSubName}</span>
+              <p>{extName}</p>
             </div>
             <img src={imgSrc} alt="" />
 
