@@ -207,7 +207,6 @@ h1 {
   padding: 1.5rem;
   padding-top: 0;
 
-
   &::after {
     content: "";
     display: block;
@@ -221,7 +220,6 @@ h1 {
     margin-left: -50px;
     margin-top: 0.5rem;
   }
-
 
   .img-wrapper {
     img {
@@ -240,10 +238,8 @@ h1 {
     background: linear-gradient(to right, #0c0c0ca1, #ffffff27);
     border-top: 1px solid rgba(192, 192, 192, 0.233);
     border-right: 1px solid rgba(192, 192, 192, 0.233);
-    border-left: 1px solid rgba(192, 192, 192, 0.020);
+    border-left: 1px solid rgba(192, 192, 192, 0.02);
     border-bottom: 1px solid rgba(192, 192, 192, 0.342);
-
-
 
     h2 {
       margin-top: 0;
@@ -585,16 +581,17 @@ footer {
         position: absolute;
         color: rgb(235, 235, 235);
         text-transform: uppercase;
-        writing-mode: vertical-rl;
-        font-size: 3.5rem;
-        margin-left: -20px;
-        top: -3px;
+        // writing-mode: vertical-rl;
+        font-size: 3rem;
+        margin-left: 2px;
+        top: 2px;
 
         span {
           font-size: 1rem;
+          margin-left: 2px;
           display: block;
           color: rgb(121, 121, 121);
-          border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+          border-bottom: 2px solid rgba(192, 192, 192, 0.377);
         }
       }
 
@@ -605,7 +602,7 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         background: rgb(238, 238, 238);
         cursor: pointer;
         z-index: 100;
@@ -747,6 +744,17 @@ footer {
     .track-previews {
       margin: 0 10px;
       margin-bottom: 2rem;
+    }
+
+    .merch-name-wrapper {
+      writing-mode: vertical-rl;
+      font-size: 3.5rem;
+      left: -10px;
+      top: 10px;
+
+      span {
+        border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+      }
     }
 
     .upcoming-shows {

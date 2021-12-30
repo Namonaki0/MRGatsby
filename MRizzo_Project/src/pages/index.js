@@ -8,42 +8,12 @@ import {
   BsTwitter,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
+// import tweets from "../../public/static/tweets"
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
-
+import tweet from "../../public/static/tweets"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-const tweet = () => {
-  return `
-    <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark">
-        <p lang="en" dir="ltr">
-          <a href="https://twitter.com/hashtag/CHICAGO?src=hash&amp;ref_src=twsrc%5Etfw">
-            #CHICAGO
-          </a>{" "}
-          TONIGHT!!!{" "}
-          <a href="https://twitter.com/hashtag/livemusic?src=hash&amp;ref_src=twsrc%5Etfw">
-            #livemusic
-          </a>{" "}
-          <a href="https://t.co/kAugQnTWZx">pic.twitter.com/kAugQnTWZx</a>
-        </p>
-        &mdash; Marc Rizzo (@RizzoMarc){" "}
-        <a href="https://twitter.com/RizzoMarc/status/1471235277914005508?ref_src=twsrc%5Etfw">
-          December 15, 2021
-        </a>
-      </blockquote>{" "}
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></script>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"
-      ></script>
-      `
-}
 
 const IndexPage = () => (
   <Layout>
@@ -167,19 +137,23 @@ const IndexPage = () => (
     <div className="upcoming-shows">
       <h2>upcoming shows</h2>
 
-      <div>{tweet}</div>
+      <div className="placeholder">
+        <div class="twitter-tweet" data-lang="en" data-theme="dark">
+          <p lang="en" dir="ltr">
+            I AM - REVENGE BEAST OFFICIAL MUSIC VIDEO{" "}
+            <a href="https://t.co/Jvt92AivU8">https://t.co/Jvt92AivU8</a>{" "}
+            <a href="https://twitter.com/hashtag/DEATHMETAL?src=hash&amp;ref_src=twsrc%5Etfw">
+              #DEATHMETAL
+            </a>
+          </p>
+          &mdash; Marc Rizzo (@RizzoMarc){" "}
+          <a href="https://twitter.com/RizzoMarc/status/1475919957057847300?ref_src=twsrc%5Etfw">
+            December 28, 2021
+          </a>
+        </div>{" "}
+      </div>
 
-      <div className="img-wrapper">
-        <div className="placeholder">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </div>
-        {/* <img
+      {/* <img
           src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
           alt="Hail the Horns and Whiskey Dick banner"
         />
@@ -187,7 +161,6 @@ const IndexPage = () => (
           src="/images/Winter_Wasteland.jpeg"
           alt="Winter Wasteland banner"
         /> */}
-      </div>
     </div>
   </Layout>
 )

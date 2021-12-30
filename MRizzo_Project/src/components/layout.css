@@ -618,19 +618,17 @@ footer .developed-by a {
   position: absolute;
   color: #ebebeb;
   text-transform: uppercase;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  font-size: 3.5rem;
-  margin-left: -20px;
-  top: -3px;
+  font-size: 3rem;
+  margin-left: 2px;
+  top: 2px;
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper span {
   font-size: 1rem;
+  margin-left: 2px;
   display: block;
   color: #797979;
-  border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+  border-bottom: 2px solid rgba(192, 192, 192, 0.377);
 }
 
 .merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta {
@@ -640,7 +638,7 @@ footer .developed-by a {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background: #eeeeee;
   cursor: pointer;
   z-index: 100;
@@ -792,6 +790,17 @@ footer .developed-by a {
   main .track-previews {
     margin: 0 10px;
     margin-bottom: 2rem;
+  }
+  main .merch-name-wrapper {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    font-size: 3.5rem;
+    left: -10px;
+    top: 10px;
+  }
+  main .merch-name-wrapper span {
+    border-bottom: 1px solid rgba(192, 192, 192, 0.377);
   }
   main .upcoming-shows h2 {
     padding: 0;
