@@ -33,10 +33,10 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1000;
 }
 
 nav.open-menu {
@@ -132,8 +132,6 @@ nav ul {
       -ms-flex-direction: column;
           flex-direction: column;
   list-style: none;
-  -webkit-transform: translateX(10px);
-          transform: translateX(10px);
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
   height: -webkit-max-content;
@@ -180,6 +178,7 @@ nav ul li a {
 nav ul li a:hover {
   border-bottom: 1px solid rgba(192, 192, 192, 0.63);
   color: white;
+  background-color: rgba(42, 79, 143, 0.322);
 }
 
 nav ul .nav-social-media {
@@ -309,6 +308,7 @@ h2 {
   text-align: left;
   width: 100%;
   text-transform: uppercase;
+  z-index: 1000;
 }
 
 .track-previews {
@@ -763,6 +763,51 @@ footer .developed-by a {
 }
 
 @media (min-width: 600px) {
+  nav {
+    background: -webkit-gradient(linear, left top, left bottom, from(#00000018), to(#3e475736));
+    background: linear-gradient(#00000018, #3e475736);
+    height: auto;
+  }
+  nav ul {
+    margin-right: auto;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background: rgba(62, 71, 87, 0.144);
+  }
+  nav ul li {
+    position: relative;
+    border: none;
+    font-size: 1.2rem;
+  }
+  nav ul li:nth-of-type(1) {
+    padding-top: 0;
+  }
+  nav ul li a {
+    border: none;
+    padding: 1rem .8rem;
+    letter-spacing: 3px;
+  }
+  nav ul li a:hover {
+    border-bottom: none;
+    color: white;
+  }
+  nav ul .nav-social-media {
+    display: none;
+  }
+  .burger-menu {
+    display: none;
+  }
   main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -809,58 +854,10 @@ footer .developed-by a {
 
 @media (min-width: 1000px) {
   nav {
-    max-width: 95%;
-    position: absolute;
-  }
-  nav ul {
-    margin-top: 0.2rem;
-    margin-right: 2.8rem;
-    visibility: visible;
-    opacity: 1;
-    z-index: 1000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    background: transparent;
+    margin: 0 4rem;
   }
   nav ul li {
-    position: relative;
-    border: none;
     font-size: 1.5rem;
-  }
-  nav ul li:nth-of-type(1) {
-    padding-top: 0;
-  }
-  nav ul li::after {
-    content: "";
-    position: absolute;
-    top: 45%;
-    right: -10%;
-    height: 2px;
-    width: 35px;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0.699)), to(rgba(97, 0, 0, 0.199)));
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.699), rgba(97, 0, 0, 0.199));
-    display: block;
-  }
-  nav ul li a {
-    border: none;
-  }
-  nav ul li a:hover {
-    border-bottom: none;
-    color: white;
-  }
-  nav ul .nav-social-media {
-    display: none;
-  }
-  .burger-menu {
-    display: none;
   }
   main {
     margin: 0 4rem;

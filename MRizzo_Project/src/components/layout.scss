@@ -38,10 +38,10 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1000;
 
   &.open-menu {
     height: max-content;
@@ -123,7 +123,6 @@ nav {
     opacity: 0;
     flex-direction: column;
     list-style: none;
-    transform: translateX(10px);
     transition: all 100ms linear;
     height: max-content;
     background: black;
@@ -158,6 +157,7 @@ nav {
         &:hover {
           border-bottom: 1px solid rgba(192, 192, 192, 0.63);
           color: $color-primary;
+          background-color: rgba(42, 79, 143, 0.322);
         }
       }
     }
@@ -276,6 +276,7 @@ h2 {
   text-align: left;
   width: 100%;
   text-transform: uppercase;
+  z-index: 1000;
 }
 .track-previews {
   margin-bottom: 1rem;
@@ -719,6 +720,53 @@ footer {
 }
 
 @media (min-width: $md-screen) {
+
+    nav {
+      background: linear-gradient(#00000018, #3e475736);
+      height: auto;
+
+      ul {
+        margin-right: auto;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        background: rgba(62, 71, 87, 0.144);
+
+        li {
+          position: relative;
+          border: none;
+          font-size: 1.2rem;
+
+          &:nth-of-type(1) {
+            padding-top: 0;
+          }
+
+          a {
+            border: none;
+            padding: 1rem .8rem;
+            letter-spacing: 3px;
+
+            &:hover {
+              border-bottom: none;
+              color: $color-primary;
+              // background-color: rgba(42, 79, 143, 0.322);
+            }
+          }
+        }
+
+        .nav-social-media {
+          display: none;
+        }
+      }
+    }
+
+    .burger-menu {
+      display: none;
+    }
+
   main {
     display: flex;
     flex-direction: column;
@@ -766,64 +814,15 @@ footer {
 }
 
 @media (min-width: $lg-screen) {
+
   nav {
-    max-width: 95%;
-    position: absolute;
-
+    margin: 0 4rem;
     ul {
-      margin-top: 0.2rem;
-      margin-right: 2.8rem;
-      visibility: visible;
-      opacity: 1;
-      z-index: 1000;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      background: transparent;
-
       li {
-        position: relative;
-        border: none;
         font-size: 1.5rem;
-
-        &:nth-of-type(1) {
-          padding-top: 0;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 45%;
-          right: -10%;
-          height: 2px;
-          width: 35px;
-          background: linear-gradient(
-            to right,
-            rgba(255, 0, 0, 0.699),
-            rgba(97, 0, 0, 0.199)
-          );
-
-          display: block;
-        }
-
-        a {
-          border: none;
-
-          &:hover {
-            border-bottom: none;
-            color: $color-primary;
-          }
-        }
       }
 
-      .nav-social-media {
-        display: none;
-      }
     }
-  }
-
-  .burger-menu {
-    display: none;
   }
 
   main {
