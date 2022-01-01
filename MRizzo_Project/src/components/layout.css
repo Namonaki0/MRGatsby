@@ -291,11 +291,29 @@ h2 {
   z-index: 1000;
 }
 
-.track-previews {
+.track-previews-wrapper {
+  background: rgba(192, 192, 192, 0.205);
+  padding: 1rem 0 0;
+  margin-top: 2rem;
+}
+
+.track-previews-wrapper h2 {
+  background: #424242;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: .5rem;
+  margin-top: -35px;
+  margin-left: 10px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.track-previews-wrapper .track-previews {
   margin-bottom: 1rem;
 }
 
-.track-previews iframe {
+.track-previews-wrapper .track-previews iframe {
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
@@ -796,20 +814,23 @@ footer .developed-by a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main .bio-description-wrapper {
-    max-width: 700px;
+  main .bio {
+    padding-bottom: 3rem;
+    position: relative;
+  }
+  main .bio .bio-description-wrapper {
+    max-width: 500px;
     margin-left: auto;
+    margin-top: -150px;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-left: 1px solid rgba(192, 192, 192, 0.158);
   }
-  main .img-wrapper {
-    max-width: 600px;
+  main .bio .img-wrapper {
     margin-left: -100px;
   }
-  main h2 {
-    font-size: 2rem;
-    margin-left: 20px;
+  main .bio .img-wrapper p {
+    top: 40%;
   }
   main .track-previews {
     margin: 0 10px;
@@ -846,11 +867,22 @@ footer .developed-by a {
     position: relative;
   }
   main .bio .bio-description-wrapper {
-    margin-top: -200px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-top: -150px;
+    margin-bottom: 0.5rem;
+    padding: .8rem;
+    font-size: 1.5rem;
+    border-left: 1px solid rgba(192, 192, 192, 0.158);
   }
-  main h2 {
-    margin-left: 0;
-    margin-top: 20px;
+  main .bio .img-wrapper {
+    margin-left: -100px;
+  }
+  main .bio .img-wrapper img {
+    opacity: .9;
+  }
+  main .bio .img-wrapper p {
+    top: 40%;
   }
   main .track-previews {
     padding-bottom: 3rem;

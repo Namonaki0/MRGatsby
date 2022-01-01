@@ -92,48 +92,50 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <h2>previews:</h2>
-    <section className="track-previews">
-      <iframe
-        src="https://open.spotify.com/embed/album/5z7NkjFyLKFA75yID4nkbH?utm_source=generator"
-        width="95%"
-        height="80"
-        frameBorder="0"
-        allowFullScreen=""
-        title="Living Shred Vol.1"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      ></iframe>
+    <div className="track-previews-wrapper">
+      <h2>previews:</h2>
+      <section className="track-previews">
+        <iframe
+          src="https://open.spotify.com/embed/album/5z7NkjFyLKFA75yID4nkbH?utm_source=generator"
+          width="95%"
+          height="80"
+          frameBorder="0"
+          allowFullScreen=""
+          title="Living Shred Vol.1"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
 
-      <iframe
-        src="https://open.spotify.com/embed/album/0NhTzQ1uuR7YUOTsqUP7kR?utm_source=generator"
-        width="95%"
-        height="80"
-        frameBorder="0"
-        allowFullScreen=""
-        title="Legionnaire"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      ></iframe>
+        <iframe
+          src="https://open.spotify.com/embed/album/0NhTzQ1uuR7YUOTsqUP7kR?utm_source=generator"
+          width="95%"
+          height="80"
+          frameBorder="0"
+          allowFullScreen=""
+          title="Legionnaire"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
 
-      <iframe
-        src="https://open.spotify.com/embed/album/0ceQJvREwK9rAh3bxytNHw?utm_source=generator"
-        width="95%"
-        height="80"
-        frameBorder="0"
-        allowFullScreen=""
-        title="The Ultimate Devotion"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      ></iframe>
+        <iframe
+          src="https://open.spotify.com/embed/album/0ceQJvREwK9rAh3bxytNHw?utm_source=generator"
+          width="95%"
+          height="80"
+          frameBorder="0"
+          allowFullScreen=""
+          title="The Ultimate Devotion"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
 
-      <iframe
-        src="https://open.spotify.com/embed/album/6Iu3IMF17LWMEDGG5Kr8Ax?utm_source=generator"
-        width="95%"
-        height="80"
-        frameBorder="0"
-        allowFullScreen=""
-        title="Colossal Myopia"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      ></iframe>
-    </section>
+        <iframe
+          src="https://open.spotify.com/embed/album/6Iu3IMF17LWMEDGG5Kr8Ax?utm_source=generator"
+          width="95%"
+          height="80"
+          frameBorder="0"
+          allowFullScreen=""
+          title="Colossal Myopia"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </section>
+    </div>
 
     <div className="upcoming-shows">
       <h2>upcoming shows</h2>
