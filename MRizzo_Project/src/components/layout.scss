@@ -99,24 +99,24 @@ nav {
     }
   }
 
-  .logo-link {
-    margin: 0 auto;
+  // .logo-link {
+  //   margin: 0 auto;
 
-    .logo {
-      margin-top: 0.5rem;
-      transition: all 100ms linear;
-      width: 80px;
+  //   .logo {
+  //     margin-top: 0.5rem;
+  //     transition: all 100ms linear;
+  //     width: 80px;
 
-      &.open-menu {
-        visibility: hidden;
-      }
+  //     &.open-menu {
+  //       visibility: hidden;
+  //     }
 
-      &.scroll-effect {
-        margin-top: 0.5rem;
-        width: 50px;
-      }
-    }
-  }
+  //     &.scroll-effect {
+  //       margin-top: 0.5rem;
+  //       width: 50px;
+  //     }
+  //   }
+  // }
 
   ul {
     visibility: hidden;
@@ -204,57 +204,96 @@ h1 {
 }
 
 .bio {
-  padding: 1.5rem;
+  padding: 1rem;
   padding-top: 0;
 
-  &::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 120%;
-    background: linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0.877),
-      rgba(0, 0, 0, 0.199)
-    );
-    margin-left: -50px;
-    margin-top: 0.5rem;
-  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   height: 2px;
+  //   width: 120%;
+  //   background: linear-gradient(
+  //     to right,
+  //     rgba(255, 0, 0, 0.877),
+  //     rgba(0, 0, 0, 0.199)
+  //   );
+  //   margin-left: -50px;
+  //   margin-top: 0.5rem;
+  // }
 
   .img-wrapper {
+    position: relative;
+
+    p {
+      position: absolute;
+      bottom: 30px;
+      right: 10px;
+      font-size: 2.5rem;
+      z-index: 100;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 5px;
+        margin-top: -5px;
+        background: rgba(255, 0, 0, 0.795);
+        // border-radius: 2px;
+      }
+    }
+
     img {
-      width: 100%;
-      margin-left: -100px;
+      // width: 100%;
+      opacity: 0.8;
+      margin-left: -150px;
     }
   }
 
   .bio-description-wrapper {
-    background: rgba(0, 0, 0, 0.603);
-    margin-top: -100px;
-    padding: 15px;
+    background: linear-gradient(to bottom right, #3e47575b, #3e475741);
+    margin-top: -20px;
+    padding: 10px 5px;
     font-weight: 300;
+    z-index: 100;
     isolation: isolate;
-    clip-path: polygon(5% 0%, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
-    background: linear-gradient(to right, #0c0c0ca1, #ffffff27);
-    border-top: 1px solid rgba(192, 192, 192, 0.233);
-    border-right: 1px solid rgba(192, 192, 192, 0.233);
-    border-left: 1px solid rgba(192, 192, 192, 0.02);
-    border-bottom: 1px solid rgba(192, 192, 192, 0.342);
+    background: white;
+    color: #1c1c1c;
+    box-shadow: 5px 5px 0px #3e4757f3;
+    border-right: 1px solid #1c1c1c27;
+    border-bottom: 1px solid #1c1c1c27;
 
-    h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      padding: 0 15px;
-      text-align: right;
-      width: 100%;
-      text-transform: uppercase;
-      font-size: 24px;
-    }
+    // clip-path: polygon(7% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 5%);
+    // background: linear-gradient(to right, #0c0c0ca1, #ffffff27);
+    // border-top: 1px solid rgba(192, 192, 192, 0.233);
+    // border-right: 1px solid rgba(192, 192, 192, 0.233);
+    // border-left: 1px solid rgba(192, 192, 192, 0.02);
+    // border-bottom: 1px solid rgba(192, 192, 192, 0.342);
+
+    // h2 {
+    //   margin-top: 0;
+    //   margin-bottom: 12px;
+    //   // padding: 0 15px;
+    //   text-align: right;
+    //   width: 100%;
+    //   text-transform: uppercase;
+    //   font-size: 24px;
+
+    //   &::after {
+    //     content: "";
+    //     display: block;
+    //     height: 3px;
+    //     width: 30%;
+    //     background: #3e4757f3;
+    //     margin-left: auto;
+    //     // margin-top: 0.5rem;
+    //   }
+
+    // }
 
     p {
       padding: 0 10px;
       line-height: 24px;
-      font-size: 20px;
+      font-size: 18px;
     }
   }
   .bio-social-media {
@@ -567,12 +606,10 @@ footer {
     .merch-modal-inner-wrapper {
       display: flex;
       overflow-x: hidden;
-      // height: auto;
 
       img {
         min-width: 300px;
         width: clamp(200px, 600px, 450px);
-        height: auto;
         margin: 0 auto;
         margin-top: -20px;
         align-self: flex-start;
@@ -582,7 +619,6 @@ footer {
         position: absolute;
         color: rgb(235, 235, 235);
         text-transform: uppercase;
-        // writing-mode: vertical-rl;
         font-size: 3rem;
         margin-left: 2px;
         top: 2px;
@@ -720,52 +756,51 @@ footer {
 }
 
 @media (min-width: $md-screen) {
+  nav {
+    background: linear-gradient(#00000018, #3e475736);
+    height: auto;
 
-    nav {
-      background: linear-gradient(#00000018, #3e475736);
-      height: auto;
+    ul {
+      margin-right: auto;
+      visibility: visible;
+      opacity: 1;
+      z-index: 1000;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      background: rgba(62, 71, 87, 0.144);
 
-      ul {
-        margin-right: auto;
-        visibility: visible;
-        opacity: 1;
-        z-index: 1000;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        background: rgba(62, 71, 87, 0.144);
+      li {
+        position: relative;
+        border: none;
+        font-size: 1.2rem;
 
-        li {
-          position: relative;
-          border: none;
-          font-size: 1.2rem;
-
-          &:nth-of-type(1) {
-            padding-top: 0;
-          }
-
-          a {
-            border: none;
-            padding: 1rem .8rem;
-            letter-spacing: 3px;
-
-            &:hover {
-              border-bottom: none;
-              color: $color-primary;
-              // background-color: rgba(42, 79, 143, 0.322);
-            }
-          }
+        &:nth-of-type(1) {
+          padding-top: 0;
         }
 
-        .nav-social-media {
-          display: none;
+        a {
+          border: none;
+          padding: 1rem 0.8rem;
+          letter-spacing: 3px;
+
+          &:hover {
+            border-bottom: none;
+            color: $color-primary;
+            // background-color: rgba(42, 79, 143, 0.322);
+          }
         }
       }
-    }
 
-    .burger-menu {
-      display: none;
+      .nav-social-media {
+        display: none;
+      }
     }
+  }
+
+  .burger-menu {
+    display: none;
+  }
 
   main {
     display: flex;
@@ -814,14 +849,12 @@ footer {
 }
 
 @media (min-width: $lg-screen) {
-
   nav {
     margin: 0 4rem;
     ul {
       li {
         font-size: 1.5rem;
       }
-
     }
   }
 

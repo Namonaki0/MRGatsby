@@ -21,6 +21,7 @@ const IndexPage = () => (
     {/* <Nav classNameName="nav" /> */}
     <div className="bio">
       <div className="img-wrapper">
+        <p>Marc Rizzo</p>
         <img
           alt=""
           src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg"
@@ -28,13 +29,13 @@ const IndexPage = () => (
       </div>
 
       <div className="bio-description-wrapper">
-        <h2>About Marc</h2>
+        {/* <h2>About Marc</h2> */}
 
         <p>
-          Marc Rizzo is an American guitarist best known for his presence in
-          metal band Soulfly where he spent 18 years of his life and Ill Nino
-          where he first gained mainstream attention. He is also part of solo
-          projects Acoustic Vendetta and Revenge Beast.
+          American guitarist Marc Rizzo is best known for his presence in metal
+          band Soulfly where he spent 18 years of his life and Ill Nino where he
+          first gained mainstream attention. He is also part of solo projects
+          Acoustic Vendetta and Revenge Beast.
         </p>
       </div>
       <div className="bio-social-media">
