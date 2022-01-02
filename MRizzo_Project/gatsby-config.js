@@ -25,15 +25,32 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: "fLm55H4QFtHVHLzSFGpZlnKxs",
+          consumer_secret: "tZMYNZd7Mr9gX5zgbS3Z8gsOt489HQmN5NGr6K48XVi4wswMO4",
+          bearer_token:
+            "AAAAAAAAAAAAAAAAAAAAANSiXgEAAAAAzeNQRyNLTKgJTpX%2BUT%2F72GkJ96w%3DR9dBH5rqr79c7ko5RJKrPuZGWzHnS0hqyuK9oRMVJgjV5CNr77",
+        },
+        queries: {
+          getPosts: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              screen_name: "RizzoMarc",
+              include_rts: false,
+              exclude_replies: true,
+              // q: "@RizzoMarc",
+              tweet_mode: "extended",
+            },
+          },
+        },
+      },
+    },
   ],
 }

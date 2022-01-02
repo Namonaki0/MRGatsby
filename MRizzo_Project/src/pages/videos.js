@@ -25,7 +25,7 @@ export default function Videos() {
 
         <div className="video-library-other">
           <div>
-            <a href="/watch?v=FvuUm89JtLc&list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_&index=3&t=1s"></a>
+            {/* <a href="/watch?v=FvuUm89JtLc&list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_&index=3&t=1s"></a> */}
             1
           </div>
           <div>2</div>
@@ -33,7 +33,7 @@ export default function Videos() {
           <div>4</div>
           <div>5</div>
           <div>
-            <a href="/watch?v=FvuUm89JtLc&list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_&index=3&t=1s"></a>
+            {/* <a href="/watch?v=FvuUm89JtLc&list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_&index=3&t=1s"></a> */}
             6
           </div>
           <div>7</div>

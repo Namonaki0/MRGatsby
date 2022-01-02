@@ -11,7 +11,6 @@ import { FaDeezer } from "react-icons/fa"
 // import tweets from "../../public/static/tweets"
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
-import tweet from "../../public/static/tweets"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
