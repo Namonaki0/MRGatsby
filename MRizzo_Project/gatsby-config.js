@@ -1,3 +1,8 @@
+const config = require("dotenv").config()
+const consumer_key = process.env.CONSUMER_KEY
+const consumer_secret = process.env.CONSUMER_SECRET
+const bearer_token = process.env.BEARER_TOKEN
+
 module.exports = {
   siteMetadata: {
     title: `Marc Rizzo Project`,
@@ -33,19 +38,17 @@ module.exports = {
       resolve: `gatsby-source-twitter`,
       options: {
         credentials: {
-          consumer_key: "fLm55H4QFtHVHLzSFGpZlnKxs",
-          consumer_secret: "tZMYNZd7Mr9gX5zgbS3Z8gsOt489HQmN5NGr6K48XVi4wswMO4",
-          bearer_token:
-            "AAAAAAAAAAAAAAAAAAAAANSiXgEAAAAAzeNQRyNLTKgJTpX%2BUT%2F72GkJ96w%3DR9dBH5rqr79c7ko5RJKrPuZGWzHnS0hqyuK9oRMVJgjV5CNr77",
+          consumer_key: consumer_key,
+          consumer_secret: consumer_secret,
+          bearer_token: bearer_token,
         },
         queries: {
           getPosts: {
-            endpoint: "statuses/user_timeline",
+            endpoint: "tweets",
             params: {
               screen_name: "RizzoMarc",
               include_rts: false,
               exclude_replies: true,
-              // q: "@RizzoMarc",
               tweet_mode: "extended",
             },
           },

@@ -161,20 +161,3 @@ export default function Nav() {
     </div>
   )
 }
-
-// if (nav) {
-//   //? NAVBAR BEHAVIOUR ON SCROLL
-//   window.addEventListener("scroll", () => {
-//     const nav = document.querySelector("nav")
-//     const logo = document.querySelector(".logo")
-//     if (window.scrollY > 0) {
-//       nav.className.add("scroll-effect")
-//       logo.className.add("scroll-effect")
-//       burgerMenu.className.add("scroll-effect")
-//     } else {
-//       nav.className.remove("scroll-effect")
-//       logo.className.remove("scroll-effect")
-//       burgerMenu.className.remove("scroll-effect")
-//     }
-//   })
-// }
