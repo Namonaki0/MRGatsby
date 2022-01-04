@@ -140,7 +140,7 @@ const IndexPage = () => (
       <h2>upcoming shows</h2>
 
       <div className="placeholder">
-        <div class="twitter-tweet" data-lang="en" data-theme="dark">
+        <div className="twitter-tweet" data-lang="en" data-theme="dark">
           <p lang="en" dir="ltr">
             I AM - REVENGE BEAST OFFICIAL MUSIC VIDEO{" "}
             <a href="https://t.co/Jvt92AivU8">https://t.co/Jvt92AivU8</a>{" "}

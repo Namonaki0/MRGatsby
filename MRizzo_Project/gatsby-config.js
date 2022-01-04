@@ -2,6 +2,10 @@ const config = require("dotenv").config()
 const consumer_key = process.env.CONSUMER_KEY
 const consumer_secret = process.env.CONSUMER_SECRET
 const bearer_token = process.env.BEARER_TOKEN
+const twitter_end_point =
+  "https://api.twitter.com/2/tweets/1478003786887086084?tweet.fields=author_id,created_at"
+
+console.log(twitter_end_point)
 
 module.exports = {
   siteMetadata: {
@@ -38,13 +42,13 @@ module.exports = {
       resolve: `gatsby-source-twitter`,
       options: {
         credentials: {
-          consumer_key: consumer_key,
-          consumer_secret: consumer_secret,
-          bearer_token: bearer_token,
+          consumer_key: `${consumer_key}`,
+          consumer_secret: `${consumer_secret}`,
+          bearer_token: `${bearer_token}`,
         },
         queries: {
           getPosts: {
-            endpoint: "tweets",
+            endpoint: `${twitter_end_point}`,
             params: {
               screen_name: "RizzoMarc",
               include_rts: false,
