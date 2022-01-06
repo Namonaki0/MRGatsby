@@ -20,7 +20,7 @@ const IndexPage = () => (
     {/* <Nav classNameName="nav" /> */}
     <div className="bio">
       <div className="img-wrapper">
-        <p>Marc Rizzo</p>
+        <h1>Marc Rizzo</h1>
         <img
           alt=""
           src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg"

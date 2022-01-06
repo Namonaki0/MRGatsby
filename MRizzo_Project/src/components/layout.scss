@@ -224,13 +224,15 @@ h1 {
   .img-wrapper {
     position: relative;
 
-    p {
+    h1 {
       position: absolute;
-      bottom: 30px;
+      bottom: 35px;
       right: 10px;
-      font-size: 2.5rem;
+      font-size: 3rem;
       z-index: 100;
       text-transform: uppercase;
+      -webkit-text-stroke: .5px $color-primary;
+      color:rgba(0, 0, 0, 0.9);
 
       &::after {
         content: "";
@@ -832,7 +834,7 @@ footer {
       //   margin-top: -200px;
       // }
       .bio-description-wrapper {
-        max-width: 500px;
+        max-width: 550px;
         margin-left: auto;
         margin-top: -150px;
         margin-bottom: 0.5rem;
@@ -844,8 +846,10 @@ footer {
         // max-width: 600px;
         margin-left: -100px;
   
-        p {
-          top: 40%;
+        h1 {
+          top: 38%;
+          font-size: 3.5rem;
+          -webkit-text-stroke: 1px $color-primary;
         }
       }
     }
@@ -920,8 +924,8 @@ footer {
 
         }
 
-        p {
-          top: 40%;
+        h1 {
+          top: 35%;
         }
       }
     }
