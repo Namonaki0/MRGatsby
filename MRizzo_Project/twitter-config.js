@@ -1,9 +1,21 @@
 require("dotenv").config()
+const http = require("http")
+const express = require("express")
+const path = require("path")
+const socketIo = require("socket.io")
 const needle = require("needle")
-// const consumer_key = process.env.CONSUMER_KEY
-// const consumer_secret = process.env.CONSUMER_SECRET
-const bearer_token = process.env.BEARER_TOKEN
-// const twitter_end_point = "/2/tweets/1478003786887086084"
+const TWITTER_BEARER_TOKEN = process.env.BEARER_TOKEN
+const PORT = process.env.PORT || 8000
+
+const app = express()
+
+const server = http.createServer(app)
+const io = socketIo(server)
+
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../", "src/pages", "index.js"))
+  console.log("working")
+})
 
 const twitterRulesURL = "https://api.twitter.com/2/tweets/search/stream/rules"
 const twitterStreamURL =
@@ -14,35 +26,40 @@ const timeline = "https://api.twitter.com/2/users/166445813/tweets"
 const rules = [{ value: "marc rizzo" }]
 
 async function getRules() {
-  const response = await needle("get", twitterRulesURL, {
-    headers: {
-      Authorization: `Bearer ${bearer_token}`,
-    },
-  })
-  console.log(response.body)
-  return response.body
-}
-
-async function setRules() {
   const data = {
     add: rules,
     value: "marc rizzo",
     id: "166445813",
   }
-  const response = await needle("post", twitterRulesURL, data, {
+  const response = await needle("get", twitterRulesURL, data, {
     headers: {
-      "content-type": "application/json",
-      Authorization: `Bearer ${bearer_token}`,
+      Authorization: `Bearer ${TWITTER_BEARER_TOKEN}`,
     },
   })
   console.log(response.body)
   return response.body
 }
 
+// async function setRules() {
+//   const data = {
+//     add: rules,
+//     value: "marc rizzo",
+//     id: "166445813",
+//   }
+//   const response = await needle("post", twitterRulesURL, data, {
+//     headers: {
+//       "content-type": "application/json",
+//       Authorization: `Bearer ${TWITTER_BEARER_TOKEN}`,
+//     },
+//   })
+//   console.log(response.body)
+//   return response.body
+// }
+
 function tweetStream() {
   const stream = needle.get(timeline, {
     headers: {
-      Authorization: `Bearer ${bearer_token}`,
+      Authorization: `Bearer ${TWITTER_BEARER_TOKEN}`,
     },
   })
   stream.on("data", data => {
@@ -56,11 +73,14 @@ function tweetStream() {
   return stream
 }
 
+io.on("connection", () => {
+  console.log("connected")
+})
 ;(async () => {
   let currentRules
 
   try {
-    await setRules()
+    // await setRules()
 
     currentRules = await getRules()
   } catch (error) {
@@ -69,3 +89,7 @@ function tweetStream() {
   }
   tweetStream()
 })()
+
+// export function ioFunction() {}
+
+server.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`))
