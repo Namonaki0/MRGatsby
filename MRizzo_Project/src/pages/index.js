@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Helmet } from "react-helmet"
+// import { Helmet } from "react-helmet"
 import {
   BsSpotify,
   BsYoutube,
@@ -9,25 +9,9 @@ import {
   BsTwitter,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
-// import tweets from "../../public/static/tweets"
-// import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-const http = require("http")
-const express = require("express")
-const app = express()
-const socketIo = require("socket.io")
-const path = require("path")
-
-const example = () => {
-  const server = http.createServer(app)
-  const socket = socketIo(server)
-  socket.on("connect", () => {
-    console.log("connected at last")
-  })
-}
+import twitterFeed from "../utils/twitter-feed"
 
 const IndexPage = () => (
   <>
@@ -181,15 +165,17 @@ const IndexPage = () => (
         /> */}
       </div>
     </Layout>
-    <Helmet>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"
-        integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-      <script>{example}</script>
-    </Helmet>
+    {/* <Helmet> */}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"
+      integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="http://yournodeserver/socket.io/socket.io.js"></script>
+    <script>{twitterFeed}</script>
+
+    {/* </Helmet> */}
   </>
 )
 

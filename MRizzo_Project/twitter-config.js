@@ -21,15 +21,12 @@ const twitterRulesURL = "https://api.twitter.com/2/tweets/search/stream/rules"
 const twitterStreamURL =
   "https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics&expansions=166445813"
 const timeline = "https://api.twitter.com/2/users/166445813/tweets"
-// console.log(twitterStreamURL)
 
-const rules = [{ value: "marc rizzo" }]
+const rules = [{ value: "marc rizzo", id: 166445813 }]
 
 async function getRules() {
   const data = {
-    add: rules,
-    value: "marc rizzo",
-    id: "166445813",
+    value: rules,
   }
   const response = await needle("get", twitterRulesURL, data, {
     headers: {
@@ -56,7 +53,7 @@ async function getRules() {
 //   return response.body
 // }
 
-function tweetStream() {
+function tweetStream(socket) {
   const stream = needle.get(timeline, {
     headers: {
       Authorization: `Bearer ${TWITTER_BEARER_TOKEN}`,
@@ -64,7 +61,12 @@ function tweetStream() {
   })
   stream.on("data", data => {
     try {
-      //   const jsonFormat = JSON.parse(data)
+      // const json = JSON.parse(data)
+      // socketIo.emit("tweet", data)
+
+      // io.on("tweet", data => {
+      //   console.log(data)
+      // })
       console.log(data)
     } catch (error) {
       console.log(error)
@@ -73,10 +75,8 @@ function tweetStream() {
   return stream
 }
 
-io.on("connection", () => {
+io.on("connection", async () => {
   console.log("connected")
-})
-;(async () => {
   let currentRules
 
   try {
@@ -87,7 +87,21 @@ io.on("connection", () => {
     console.log(error)
     process.exit(1)
   }
-  tweetStream()
+  tweetStream(io)
+})
+;(async () => {
+  console.log("connected")
+  let currentRules
+
+  try {
+    // await setRules()
+
+    currentRules = await getRules()
+  } catch (error) {
+    console.log(error)
+    process.exit(1)
+  }
+  tweetStream(io)
 })()
 
 // export function ioFunction() {}
