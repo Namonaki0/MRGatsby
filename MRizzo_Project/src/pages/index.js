@@ -1,4 +1,6 @@
 import * as React from "react"
+// import { useStaticQuery, graphql } from "gatsby"
+import Seo from "../components/seo"
 // import { Helmet } from "react-helmet"
 import {
   BsSpotify,
@@ -10,8 +12,8 @@ import {
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
-import twitterFeed from "../utils/twitter-feed"
+
+import TwitterFeed from "../components/TwitterFeed"
 
 const IndexPage = () => (
   <>
@@ -164,16 +166,9 @@ const IndexPage = () => (
           alt="Winter Wasteland banner"
         /> */}
       </div>
+      <TwitterFeed />
+      {/* <StaticQuery query={} render={} /> */}
     </Layout>
-    {/* <Helmet> */}
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"
-      integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="http://yournodeserver/socket.io/socket.io.js"></script>
-    <script>{twitterFeed}</script>
 
     {/* </Helmet> */}
   </>
