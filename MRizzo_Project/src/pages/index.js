@@ -1,5 +1,5 @@
 import * as React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import Seo from "../components/seo"
 // import { Helmet } from "react-helmet"
 import {
@@ -13,7 +13,7 @@ import {
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
 
-import TwitterFeed from "../components/TwitterFeed"
+// import TwitterFeed from "../components/TwitterFeed"
 
 const IndexPage = () => (
   <>
@@ -166,8 +166,33 @@ const IndexPage = () => (
           alt="Winter Wasteland banner"
         /> */}
       </div>
-      <TwitterFeed />
-      {/* <StaticQuery query={} render={} /> */}
+      {/* <TwitterFeed /> */}
+      <StaticQuery
+        query={graphql`
+          query TwitterStream {
+            allTwitterStatusesUserTimelineGetTweets {
+              edges {
+                node {
+                  full_text
+                  user {
+                    name
+                    profile_background_image_url
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div>
+            {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
+              (item, i) => (
+                <div id={i}>{item.node.full_text}</div>
+              )
+            )}
+          </div>
+        )}
+      />
     </Layout>
 
     {/* </Helmet> */}

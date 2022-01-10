@@ -29,13 +29,13 @@ module.exports = {
               exclude_replies: true,
               tweet_mode: "extended",
             },
-            nameofanotherthequery: {
-              endpoint: "search/tweets",
-              params: {
-                q: "#gatsbyjs",
-                tweet_mode: "extended",
-              },
-            },
+            // nameofanotherthequery: {
+            //   endpoint: "search/tweets",
+            //   params: {
+            //     q: "#gatsbyjs",
+            //     tweet_mode: "extended",
+            //   },
+            // },
           },
           // hashtagGatsby: {
           //   endpoint: "/2/tweets",
