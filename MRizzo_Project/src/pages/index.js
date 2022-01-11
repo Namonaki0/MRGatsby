@@ -149,13 +149,15 @@ const IndexPage = () => (
       <StaticQuery
         query={graphql`
           query TwitterStream {
-            allTwitterStatusesUserTimelineGetTweets {
+            allTwitterStatusesUserTimelineGetTweets(limit: 6) {
               edges {
                 node {
                   full_text
+                  created_at
                   user {
                     name
                     profile_image_url
+                    screen_name
                   }
                 }
               }
@@ -163,17 +165,24 @@ const IndexPage = () => (
           }
         `}
         render={data => (
-          <div className="tweet-wrapper">
+          <div className="tweets-wrapper">
             {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
               (item, i) => (
-                <div>
-                  <img
-                    alt="Mark's twitter profile avatar"
-                    src={item.node.user.profile_image_url}
-                    id={i}
-                  ></img>
-                  <div id={i}>{item.node.user.name}</div>
-                  <div id={i}>{item.node.full_text}</div>
+                <div className="individual-tweet">
+                  <div className="avatar-name-wrapper">
+                    <img
+                      alt="Mark's twitter profile avatar"
+                      src={item.node.user.profile_image_url}
+                      id={i}
+                    ></img>
+                    <div className="name-handle-wrapper">
+                      <h3 id={i}>{item.node.user.name}</h3>
+                      <span>@{item.node.user.screen_name}</span>
+                    </div>
+                  </div>
+                  <div id={i} className="full-text">
+                    {item.node.full_text}
+                  </div>
                 </div>
               )
             )}

@@ -231,8 +231,8 @@ h1 {
       font-size: 3rem;
       z-index: 100;
       text-transform: uppercase;
-      -webkit-text-stroke: .5px $color-primary;
-      color:rgba(0, 0, 0, 0.9);
+      -webkit-text-stroke: 0.5px $color-primary;
+      color: rgba(0, 0, 0, 0.9);
 
       &::after {
         content: "";
@@ -321,23 +321,21 @@ h2 {
 }
 
 .track-previews-wrapper {
-            background: rgba(192, 192, 192, 0.205);
-            padding: 1rem 0 0;
-            margin-top: 2rem;
+  background: rgba(192, 192, 192, 0.205);
+  padding: 1rem 0 0;
+  margin-top: 2rem;
 
-                h2 {
-                  background: rgb(66, 66, 66);
-                  width: max-content;
-                  padding: .5rem;
-                  margin-top: -35px;
-                  margin-left: 10px;
-                  box-shadow: 1px 1px 1px rgba(0,0,0,.8);
-                }
+  h2 {
+    background: rgb(66, 66, 66);
+    width: max-content;
+    padding: 0.5rem;
+    margin-top: -35px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  }
 
   .track-previews {
     margin-bottom: 1rem;
-
-
 
     iframe {
       display: block;
@@ -346,6 +344,59 @@ h2 {
     }
   }
 }
+
+//? TWITTER FEED
+
+.tweets-wrapper {
+  padding: 10px;
+  
+  .individual-tweet {
+    margin: 15px 0;
+    padding: 15px 12px 25px;
+    font-size: 14px;
+    border: 1px solid #ffffff07;
+    border-bottom: 5px solid #333333;
+    border-radius: 3px;
+    background: #222222;
+    // color: #1c1c1c;
+    width: 100%;
+    max-width: 500px;
+
+    .full-text {
+      border-left: 2px solid #3a3a3a;
+      padding-left: 8px;
+    }
+
+    .avatar-name-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      img {
+        // order: -1;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+
+      .name-handle-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      h3 {
+        margin-bottom: 1px;
+      }
+
+      span {
+        color:rgba(192, 192, 192, 0.596);
+      }
+    }
+
+  }
+}
+
+
+//? UPCOMING SHOWS
 
 .upcoming-shows {
   h2 {
@@ -841,11 +892,11 @@ footer {
         font-size: 1.5rem;
         border-left: 1px solid rgba(192, 192, 192, 0.158);
       }
-  
+
       .img-wrapper {
         // max-width: 600px;
         margin-left: -100px;
-  
+
         h1 {
           top: 38%;
           font-size: 3.5rem;
@@ -853,7 +904,6 @@ footer {
         }
       }
     }
-
 
     // h2 {
     //   font-size: 2rem;
@@ -863,7 +913,6 @@ footer {
     .track-previews {
       margin: 0 10px;
       margin-bottom: 2rem;
-
     }
 
     .merch-name-wrapper {
@@ -910,7 +959,7 @@ footer {
         margin-left: auto;
         margin-top: -150px;
         margin-bottom: 0.5rem;
-        padding: .8rem;
+        padding: 0.8rem;
         font-size: 1.5rem;
         border-left: 1px solid rgba(192, 192, 192, 0.158);
       }
@@ -918,10 +967,9 @@ footer {
       .img-wrapper {
         // max-width: 600px;
         margin-left: -100px;
-        
-        img {
-          opacity: .9;
 
+        img {
+          opacity: 0.9;
         }
 
         h1 {

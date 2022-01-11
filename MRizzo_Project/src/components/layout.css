@@ -304,7 +304,7 @@ h2 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-top: -35px;
   margin-left: 10px;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
@@ -319,6 +319,60 @@ h2 {
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
+}
+
+.tweets-wrapper {
+  padding: 10px;
+}
+
+.tweets-wrapper .individual-tweet {
+  margin: 15px 0;
+  padding: 15px 12px 25px;
+  font-size: 14px;
+  border: 1px solid #ffffff07;
+  border-bottom: 5px solid #333333;
+  border-radius: 3px;
+  background: #222222;
+  width: 100%;
+  max-width: 500px;
+}
+
+.tweets-wrapper .individual-tweet .full-text {
+  border-left: 2px solid #3a3a3a;
+  padding-left: 8px;
+}
+
+.tweets-wrapper .individual-tweet .avatar-name-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.tweets-wrapper .individual-tweet .avatar-name-wrapper img {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.tweets-wrapper .individual-tweet .avatar-name-wrapper .name-handle-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tweets-wrapper .individual-tweet .avatar-name-wrapper h3 {
+  margin-bottom: 1px;
+}
+
+.tweets-wrapper .individual-tweet .avatar-name-wrapper span {
+  color: rgba(192, 192, 192, 0.596);
 }
 
 .upcoming-shows h2 {
@@ -875,7 +929,7 @@ footer .developed-by a {
     margin-left: auto;
     margin-top: -150px;
     margin-bottom: 0.5rem;
-    padding: .8rem;
+    padding: 0.8rem;
     font-size: 1.5rem;
     border-left: 1px solid rgba(192, 192, 192, 0.158);
   }
@@ -883,7 +937,7 @@ footer .developed-by a {
     margin-left: -100px;
   }
   main .bio .img-wrapper img {
-    opacity: .9;
+    opacity: 0.9;
   }
   main .bio .img-wrapper h1 {
     top: 35%;
