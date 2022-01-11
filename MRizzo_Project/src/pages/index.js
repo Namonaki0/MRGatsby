@@ -1,7 +1,6 @@
 import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Seo from "../components/seo"
-// import { Helmet } from "react-helmet"
 import {
   BsSpotify,
   BsYoutube,
@@ -13,13 +12,11 @@ import {
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
 
-// import TwitterFeed from "../components/TwitterFeed"
-
 const IndexPage = () => (
   <>
     <Layout>
       <Seo title="Home" />
-      {/* <Nav classNameName="nav" /> */}
+
       <div className="bio">
         <div className="img-wrapper">
           <h1>Marc Rizzo</h1>
@@ -30,8 +27,6 @@ const IndexPage = () => (
         </div>
 
         <div className="bio-description-wrapper">
-          {/* <h2>About Marc</h2> */}
-
           <p>
             American guitarist Marc Rizzo is best known for his presence in
             metal band Soulfly where he spent 18 years of his life and Ill Nino
@@ -137,36 +132,20 @@ const IndexPage = () => (
           ></iframe>
         </section>
       </div>
-
+      {/* 
       <div className="upcoming-shows">
         <h2>upcoming shows</h2>
 
-        <div className="placeholder">
-          <div className="twitter-tweet" data-lang="en" data-theme="dark">
-            <p lang="en" dir="ltr">
-              I AM - REVENGE BEAST OFFICIAL MUSIC VIDEO{" "}
-              <a href="https://t.co/Jvt92AivU8">https://t.co/Jvt92AivU8</a>{" "}
-              <a href="https://twitter.com/hashtag/DEATHMETAL?src=hash&amp;ref_src=twsrc%5Etfw">
-                #DEATHMETAL
-              </a>
-            </p>
-            &mdash; Marc Rizzo (@RizzoMarc){" "}
-            <a href="https://twitter.com/RizzoMarc/status/1475919957057847300?ref_src=twsrc%5Etfw">
-              December 28, 2021
-            </a>
-          </div>{" "}
-        </div>
-
-        {/* <img
+        <img
           src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
           alt="Hail the Horns and Whiskey Dick banner"
         />
         <img
           src="/images/Winter_Wasteland.jpeg"
           alt="Winter Wasteland banner"
-        /> */}
-      </div>
-      {/* <TwitterFeed /> */}
+        />
+      </div> */}
+
       <StaticQuery
         query={graphql`
           query TwitterStream {
@@ -176,7 +155,7 @@ const IndexPage = () => (
                   full_text
                   user {
                     name
-                    profile_background_image_url
+                    profile_image_url
                   }
                 }
               }
@@ -184,18 +163,24 @@ const IndexPage = () => (
           }
         `}
         render={data => (
-          <div>
+          <div className="tweet-wrapper">
             {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
               (item, i) => (
-                <div id={i}>{item.node.full_text}</div>
+                <div>
+                  <img
+                    alt="Mark's twitter profile avatar"
+                    src={item.node.user.profile_image_url}
+                    id={i}
+                  ></img>
+                  <div id={i}>{item.node.user.name}</div>
+                  <div id={i}>{item.node.full_text}</div>
+                </div>
               )
             )}
           </div>
         )}
       />
     </Layout>
-
-    {/* </Helmet> */}
   </>
 )
 

@@ -11,43 +11,6 @@ module.exports = {
     `gatsby-plugin-sass`,
 
     {
-      resolve: `gatsby-source-twitter`,
-      options: {
-        credentials: {
-          consumer_key: process.env.CONSUMER_KEY,
-          consumer_secret: process.env.CONSUMER_SECRET,
-          bearer_token:
-            "AAAAAAAAAAAAAAAAAAAAANSiXgEAAAAAtPk2I3S2ACgsPt5y8tizad22S1c%3DwCvImhMAa3jRJo9HOhobTLV13FdaSdx8siZ4VKsQlWrLGwLrFR",
-        },
-        queries: {
-          getTweets: {
-            endpoint: "statuses/user_timeline",
-            params: {
-              screen_name: "RizzoMarc",
-              // screen_name: "gatsbyjs",
-              include_rts: false,
-              exclude_replies: true,
-              tweet_mode: "extended",
-            },
-            // nameofanotherthequery: {
-            //   endpoint: "search/tweets",
-            //   params: {
-            //     q: "#gatsbyjs",
-            //     tweet_mode: "extended",
-            //   },
-            // },
-          },
-          // hashtagGatsby: {
-          //   endpoint: "/2/tweets",
-          //   params: {
-          //     q: "#gatsbyjs",
-          //     tweet_mode: "extended",
-          //   },
-          // },
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -73,6 +36,28 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: process.env.CONSUMER_KEY,
+          consumer_secret: process.env.CONSUMER_SECRET,
+          bearer_token:
+            "AAAAAAAAAAAAAAAAAAAAANSiXgEAAAAAtPk2I3S2ACgsPt5y8tizad22S1c%3DwCvImhMAa3jRJo9HOhobTLV13FdaSdx8siZ4VKsQlWrLGwLrFR",
+        },
+        queries: {
+          getTweets: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              screen_name: "RizzoMarc",
+              include_rts: false,
+              exclude_replies: true,
+              tweet_mode: "extended",
+            },
+          },
+        },
       },
     },
   ],

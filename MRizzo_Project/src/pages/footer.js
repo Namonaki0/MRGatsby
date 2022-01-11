@@ -65,7 +65,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="developed-by">
-        Marc Rizzo 2021 | Developed by{" "}
+        Marc Rizzo 2022 | Developed by{" "}
         <a href="https://github.com/Namonaki0" target="_blank" rel="noreferrer">
           Namonaki0
         </a>
