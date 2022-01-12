@@ -11,6 +11,8 @@ import {
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
+import image from "../../public/static/images/layered-waves-haikei (6).svg"
+// import { url } from "inspector"
 
 const IndexPage = () => (
   <>
@@ -131,6 +133,7 @@ const IndexPage = () => (
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           ></iframe>
         </section>
+        <div className="wave-image wave-svg"></div>
       </div>
       {/* 
       <div className="upcoming-shows">
@@ -166,6 +169,7 @@ const IndexPage = () => (
         `}
         render={data => (
           <div className="tweets-wrapper">
+            <h2>social:</h2>
             {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
               (item, i) => (
                 <div className="individual-tweet">

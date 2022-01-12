@@ -1,7 +1,9 @@
 @import "typography.css";
+// @import "../../public/static/images/layered-waves-haikei\ \(6\).svg";
 
 //? VARIABLES ---
-$ff-primary: "basement grotesque", sans-serif;
+$ff-primary: "basement grotesque",
+sans-serif;
 $color-primary: white;
 $bg-primary: black;
 $bg-secondary: white;
@@ -298,6 +300,7 @@ h1 {
       font-size: 18px;
     }
   }
+
   .bio-social-media {
     display: none;
     padding-right: 25px;
@@ -317,13 +320,31 @@ h2 {
   text-align: left;
   width: 100%;
   text-transform: uppercase;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .track-previews-wrapper {
-  background: rgba(192, 192, 192, 0.205);
+  background: #c0c0c034;
   padding: 1rem 0 0;
   margin-top: 2rem;
+  border-top: .5px solid #c0c0c010;
+
+  .wave-image {
+    aspect-ratio: 1200/600;
+    // width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -20px;
+   
+
+  }
+  .wave-svg {
+    background-image: url("../../public/static/images/layered-waves-haikei\ \(6\).svg");
+    width: 100%;
+     z-index: 100;
+  }
+
 
   h2 {
     background: rgb(66, 66, 66);
@@ -335,12 +356,15 @@ h2 {
   }
 
   .track-previews {
-    margin-bottom: 1rem;
+    // padding-bottom: 1rem;
+
+    // margin-bottom: 1.5rem;
 
     iframe {
       display: block;
       margin: 0 auto;
       margin-bottom: 5px;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -348,19 +372,19 @@ h2 {
 //? TWITTER FEED
 
 .tweets-wrapper {
-  padding: 10px;
-  
+  padding: 1rem 10px;
+  background-color: #272727;
+
   .individual-tweet {
     margin: 15px 0;
     padding: 15px 12px 25px;
     font-size: 14px;
-    border: 1px solid #ffffff07;
-    border-bottom: 5px solid #333333;
+    border-top: 1px solid #ffffff07;
+    border-bottom: 5px solid #920202;
     border-radius: 3px;
     background: #222222;
-    // color: #1c1c1c;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
 
     .full-text {
       border-left: 2px solid #3a3a3a;
@@ -388,13 +412,11 @@ h2 {
       }
 
       span {
-        color:rgba(192, 192, 192, 0.596);
+        color: rgba(192, 192, 192, 0.596);
       }
     }
-
   }
 }
-
 
 //? UPCOMING SHOWS
 
@@ -448,6 +470,7 @@ footer {
       }
     }
   }
+
   .developed-by {
     background: $bg-secondary;
     color: #1c1c1c;
@@ -501,20 +524,17 @@ footer {
     transition: all 150ms linear;
 
     &:nth-of-type(1) {
-      background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-        no-repeat;
+      background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584") no-repeat;
       background-size: 400px;
     }
 
     &:nth-of-type(2) {
-      background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-        no-repeat;
+      background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg") no-repeat;
       background-size: 400px;
     }
 
     &:nth-of-type(3) {
-      background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-        no-repeat;
+      background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901") no-repeat;
       background-size: 400px;
     }
 
@@ -527,41 +547,29 @@ footer {
       z-index: 1;
 
       &:nth-of-type(1) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 85%,
-              rgba(0, 0, 0, 0.8) 99%
-            )
-            no-repeat,
-          url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-            no-repeat;
+        background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.7) 20%,
+            rgba(255, 255, 255, 0.1) 85%,
+            rgba(0, 0, 0, 0.8) 99%) no-repeat,
+          url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584") no-repeat;
         background-size: 400px;
       }
 
       &:nth-of-type(2) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 49%,
-              rgba(0, 0, 0, 0.8) 90%
-            )
-            no-repeat,
-          url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-            no-repeat;
+        background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.7) 20%,
+            rgba(255, 255, 255, 0.1) 49%,
+            rgba(0, 0, 0, 0.8) 90%) no-repeat,
+          url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg") no-repeat;
         background-size: 400px;
       }
 
       &:nth-of-type(3) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 49%,
-              rgba(0, 0, 0, 0.8) 90%
-            )
-            no-repeat,
-          url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-            no-repeat;
+        background: linear-gradient(to left,
+            rgba(0, 0, 0, 0.7) 20%,
+            rgba(255, 255, 255, 0.1) 49%,
+            rgba(0, 0, 0, 0.8) 90%) no-repeat,
+          url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901") no-repeat;
         background-size: 400px;
       }
 
@@ -755,6 +763,7 @@ footer {
         left: -7px;
         margin-top: 15px;
       }
+
       &::before {
         content: "";
         position: absolute;
@@ -912,7 +921,7 @@ footer {
 
     .track-previews {
       margin: 0 10px;
-      margin-bottom: 2rem;
+      // padding-bottom: 1.5rem;
     }
 
     .merch-name-wrapper {
@@ -923,6 +932,15 @@ footer {
 
       span {
         border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+      }
+    }
+
+    .tweets-wrapper {
+
+      margin: 0 auto;
+
+      .individual-tweet {
+        margin: 15px 10px;
       }
     }
 
@@ -937,6 +955,7 @@ footer {
 @media (min-width: $lg-screen) {
   nav {
     margin: 0 4rem;
+
     ul {
       li {
         font-size: 1.5rem;
@@ -978,19 +997,23 @@ footer {
       }
     }
 
-    // h2 {
-    //   margin-left: 0;
-    //   margin-top: 20px;
-    // }
-
     .track-previews {
-      padding-bottom: 3rem;
       display: flex;
       flex-wrap: wrap;
 
       iframe {
         flex: 1;
         margin: 2px;
+      }
+    }
+
+    .tweets-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      .individual-tweet {
+        max-width: 520px;
       }
     }
   }
@@ -1028,12 +1051,14 @@ footer {
     }
   }
 }
+
 @media (min-width: $xl-screen) {
   main {
     margin: 0 4rem;
 
     .bio {
       position: relative;
+
       .bio-social-media {
         display: flex;
         position: absolute;

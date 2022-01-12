@@ -290,13 +290,28 @@ h2 {
   text-align: left;
   width: 100%;
   text-transform: uppercase;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .track-previews-wrapper {
-  background: rgba(192, 192, 192, 0.205);
+  background: #c0c0c034;
   padding: 1rem 0 0;
   margin-top: 2rem;
+  border-top: .5px solid #c0c0c010;
+}
+
+.track-previews-wrapper .wave-image {
+  aspect-ratio: 1200/600;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -20px;
+}
+
+.track-previews-wrapper .wave-svg {
+  background-image: url("../../public/static/images/layered-waves-haikei (6).svg");
+  width: 100%;
+  z-index: 100;
 }
 
 .track-previews-wrapper h2 {
@@ -311,30 +326,29 @@ h2 {
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-.track-previews-wrapper .track-previews {
-  margin-bottom: 1rem;
-}
-
 .track-previews-wrapper .track-previews iframe {
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .tweets-wrapper {
-  padding: 10px;
+  padding: 1rem 10px;
+  background-color: #272727;
 }
 
 .tweets-wrapper .individual-tweet {
   margin: 15px 0;
   padding: 15px 12px 25px;
   font-size: 14px;
-  border: 1px solid #ffffff07;
-  border-bottom: 5px solid #333333;
+  border-top: 1px solid #ffffff07;
+  border-bottom: 5px solid #920202;
   border-radius: 3px;
   background: #222222;
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
 }
 
 .tweets-wrapper .individual-tweet .full-text {
@@ -892,7 +906,6 @@ footer .developed-by a {
   }
   main .track-previews {
     margin: 0 10px;
-    margin-bottom: 2rem;
   }
   main .merch-name-wrapper {
     -webkit-writing-mode: vertical-rl;
@@ -904,6 +917,12 @@ footer .developed-by a {
   }
   main .merch-name-wrapper span {
     border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+  }
+  main .tweets-wrapper {
+    margin: 0 auto;
+  }
+  main .tweets-wrapper .individual-tweet {
+    margin: 15px 10px;
   }
   main .upcoming-shows h2 {
     padding: 0;
@@ -943,7 +962,6 @@ footer .developed-by a {
     top: 35%;
   }
   main .track-previews {
-    padding-bottom: 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -955,6 +973,19 @@ footer .developed-by a {
         -ms-flex: 1;
             flex: 1;
     margin: 2px;
+  }
+  main .tweets-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .tweets-wrapper .individual-tweet {
+    max-width: 520px;
   }
   .videos-wrapper .main-video {
     margin: 0 auto;
