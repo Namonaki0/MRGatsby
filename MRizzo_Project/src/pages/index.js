@@ -135,19 +135,6 @@ const IndexPage = () => (
         </section>
         <div className="wave-image wave-svg"></div>
       </div>
-      {/* 
-      <div className="upcoming-shows">
-        <h2>upcoming shows</h2>
-
-        <img
-          src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
-          alt="Hail the Horns and Whiskey Dick banner"
-        />
-        <img
-          src="/images/Winter_Wasteland.jpeg"
-          alt="Winter Wasteland banner"
-        />
-      </div> */}
 
       <StaticQuery
         query={graphql`
@@ -193,6 +180,18 @@ const IndexPage = () => (
           </div>
         )}
       />
+
+      <div className="upcoming-shows">
+        <h2>upcoming shows</h2>
+        {/* <img
+          src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
+          alt="Hail the Horns and Whiskey Dick banner"
+        />
+        <img
+          src="/images/Winter_Wasteland.jpeg"
+          alt="Winter Wasteland banner"
+        /> */}
+      </div>
     </Layout>
   </>
 )

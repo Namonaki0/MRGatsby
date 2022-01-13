@@ -324,47 +324,50 @@ h2 {
 }
 
 .track-previews-wrapper {
-  background: #c0c0c034;
+  background: linear-gradient(to top, #c0c0c034, #49251e);
   padding: 1rem 0 0;
   margin-top: 2rem;
-  border-top: .5px solid #c0c0c010;
+  // border-top: .5px solid #c0c0c010;
+
 
   .wave-image {
-    aspect-ratio: 1200/600;
-    // width: 100%;
+    height: 120px;
+    width: 2000px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: -20px;
-   
+    margin-top: -80px;
+    opacity: .6;
 
   }
   .wave-svg {
     background-image: url("../../public/static/images/layered-waves-haikei\ \(6\).svg");
-    width: 100%;
      z-index: 100;
+     height: 180px;
   }
 
 
   h2 {
-    background: rgb(66, 66, 66);
+    // background: #15190E;
     width: max-content;
     padding: 0.5rem;
     margin-top: -35px;
     margin-left: 10px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    // box-shadow: 1px 1px 1px rgba(66, 66, 66, .8);
   }
 
   .track-previews {
-    // padding-bottom: 1rem;
 
-    // margin-bottom: 1.5rem;
+
+
 
     iframe {
+      position: relative;
       display: block;
       margin: 0 auto;
       margin-bottom: 5px;
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+      z-index: 100;
     }
   }
 }
@@ -372,8 +375,11 @@ h2 {
 //? TWITTER FEED
 
 .tweets-wrapper {
-  padding: 1rem 10px;
-  background-color: #272727;
+  padding: 1rem 10px .5rem;
+  // margin-bottom: 1rem;
+  // background-color: #272727;
+  background: linear-gradient(to bottom, #272727, #000000 85%);
+  // margin-top: -150px;
 
   .individual-tweet {
     margin: 15px 0;
@@ -382,13 +388,14 @@ h2 {
     border-top: 1px solid #ffffff07;
     border-bottom: 5px solid #920202;
     border-radius: 3px;
-    background: #222222;
+    background: #333333;
     width: 100%;
     max-width: 550px;
 
     .full-text {
-      border-left: 2px solid #3a3a3a;
+      border-left: 2px solid #4b4b4b;
       padding-left: 8px;
+      line-height: 20px;
     }
 
     .avatar-name-wrapper {
@@ -424,9 +431,9 @@ h2 {
   h2 {
     color: $color-primary;
     text-transform: uppercase;
-    padding: 0.5rem 10px;
     display: block;
     margin-bottom: 10px;
+    margin-left: 10px;
     border-bottom: 2px solid rgba(255, 0, 0, 0.432);
   }
 

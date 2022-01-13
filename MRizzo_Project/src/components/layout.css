@@ -294,49 +294,51 @@ h2 {
 }
 
 .track-previews-wrapper {
-  background: #c0c0c034;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c0c0c034), to(#49251e));
+  background: linear-gradient(to top, #c0c0c034, #49251e);
   padding: 1rem 0 0;
   margin-top: 2rem;
-  border-top: .5px solid #c0c0c010;
 }
 
 .track-previews-wrapper .wave-image {
-  aspect-ratio: 1200/600;
+  height: 120px;
+  width: 2000px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-top: -20px;
+  margin-top: -80px;
+  opacity: .6;
 }
 
 .track-previews-wrapper .wave-svg {
   background-image: url("../../public/static/images/layered-waves-haikei (6).svg");
-  width: 100%;
   z-index: 100;
+  height: 180px;
 }
 
 .track-previews-wrapper h2 {
-  background: #424242;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   padding: 0.5rem;
   margin-top: -35px;
   margin-left: 10px;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 .track-previews-wrapper .track-previews iframe {
+  position: relative;
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 .tweets-wrapper {
-  padding: 1rem 10px;
-  background-color: #272727;
+  padding: 1rem 10px .5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#272727), color-stop(85%, #000000));
+  background: linear-gradient(to bottom, #272727, #000000 85%);
 }
 
 .tweets-wrapper .individual-tweet {
@@ -346,14 +348,15 @@ h2 {
   border-top: 1px solid #ffffff07;
   border-bottom: 5px solid #920202;
   border-radius: 3px;
-  background: #222222;
+  background: #333333;
   width: 100%;
   max-width: 550px;
 }
 
 .tweets-wrapper .individual-tweet .full-text {
-  border-left: 2px solid #3a3a3a;
+  border-left: 2px solid #4b4b4b;
   padding-left: 8px;
+  line-height: 20px;
 }
 
 .tweets-wrapper .individual-tweet .avatar-name-wrapper {
@@ -392,9 +395,9 @@ h2 {
 .upcoming-shows h2 {
   color: white;
   text-transform: uppercase;
-  padding: 0.5rem 10px;
   display: block;
   margin-bottom: 10px;
+  margin-left: 10px;
   border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
