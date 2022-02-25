@@ -324,27 +324,28 @@ h2 {
 }
 
 .track-previews-wrapper {
-  background: linear-gradient(to top, #c0c0c034, #49251e);
-  padding: 1rem 0 0;
+  background: linear-gradient(to top, #4e1d13, #49251e);
+  padding: 1rem 0 1rem;
   margin-top: 2rem;
+  margin-bottom: 1rem;
   // border-top: .5px solid #c0c0c010;
 
 
-  .wave-image {
-    height: 120px;
-    width: 2000px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-top: -80px;
-    opacity: .6;
+  // .wave-image {
+  //   height: 120px;
+  //   width: 2000px;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  //   margin-top: -80px;
+  //   opacity: .6;
 
-  }
-  .wave-svg {
-    background-image: url("../../public/static/images/layered-waves-haikei\ \(6\).svg");
-     z-index: 100;
-     height: 180px;
-  }
+  // }
+  // .wave-svg {
+  //   background-image: url("../../public/static/images/layered-waves-haikei\ \(6\).svg");
+  //    z-index: 100;
+  //    height: 180px;
+  // }
 
 
   h2 {
@@ -375,11 +376,13 @@ h2 {
 //? TWITTER FEED
 
 .tweets-wrapper {
-  padding: 1rem 10px .5rem;
-  // margin-bottom: 1rem;
-  // background-color: #272727;
-  background: linear-gradient(to bottom, #272727, #000000 85%);
-  // margin-top: -150px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 93%;
+  scroll-behavior: auto;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to bottom, #1d1d1d, #000000 85%);
 
   .individual-tweet {
     margin: 15px 0;
@@ -388,9 +391,10 @@ h2 {
     border-top: 1px solid #ffffff07;
     border-bottom: 5px solid #920202;
     border-radius: 3px;
-    background: #333333;
-    width: 100%;
-    max-width: 550px;
+    background: #292929;
+    width: 95%;
+    // max-width: 550px;
+    margin-inline: auto;
 
     .full-text {
       border-left: 2px solid #4b4b4b;

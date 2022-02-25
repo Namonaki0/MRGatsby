@@ -156,7 +156,7 @@ const IndexPage = () => (
         `}
         render={data => (
           <div className="tweets-wrapper">
-            <h2>social:</h2>
+            {/* <h2>social:</h2> */}
             {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
               (item, i) => (
                 <div className="individual-tweet">
