@@ -155,28 +155,31 @@ const IndexPage = () => (
           }
         `}
         render={data => (
-          <div className="tweets-wrapper">
-            {/* <h2>social:</h2> */}
-            {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
-              (item, i) => (
-                <div className="individual-tweet">
-                  <div className="avatar-name-wrapper">
-                    <img
-                      alt="Mark's twitter profile avatar"
-                      src={item.node.user.profile_image_url}
-                      id={i}
-                    ></img>
-                    <div className="name-handle-wrapper">
-                      <h3 id={i}>{item.node.user.name}</h3>
-                      <span>@{item.node.user.screen_name}</span>
+          <div class="tweets-outer-wrapper">
+            <h2>SOCIAL</h2>
+            <div className="tweets-wrapper">
+              {/* <h2>social:</h2> */}
+              {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
+                (item, i) => (
+                  <div className="individual-tweet">
+                    <div className="avatar-name-wrapper">
+                      <img
+                        alt="Mark's twitter profile avatar"
+                        src={item.node.user.profile_image_url}
+                        id={i}
+                      ></img>
+                      <div className="name-handle-wrapper">
+                        <h3 id={i}>{item.node.user.name}</h3>
+                        <span>@{item.node.user.screen_name}</span>
+                      </div>
+                    </div>
+                    <div id={i} className="full-text">
+                      {item.node.full_text}
                     </div>
                   </div>
-                  <div id={i} className="full-text">
-                    {item.node.full_text}
-                  </div>
-                </div>
-              )
-            )}
+                )
+              )}
+            </div>
           </div>
         )}
       />

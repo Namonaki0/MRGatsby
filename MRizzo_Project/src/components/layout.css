@@ -220,6 +220,7 @@ h1 {
 .bio {
   padding: 1rem;
   padding-top: 0;
+  margin-bottom: 2rem;
 }
 
 .bio .img-wrapper {
@@ -283,31 +284,21 @@ h1 {
   padding: 5px;
 }
 
-h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding: 0 10px;
-  text-align: left;
-  width: 100%;
-  text-transform: uppercase;
-  z-index: 10000;
-}
-
 .track-previews-wrapper {
   background: -webkit-gradient(linear, left bottom, left top, from(#4e1d13), to(#49251e));
   background: linear-gradient(to top, #4e1d13, #49251e);
   padding: 1rem 0 1rem;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .track-previews-wrapper h2 {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 0.5rem;
-  margin-top: -35px;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 15px;
   margin-left: 10px;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
 .track-previews-wrapper .track-previews iframe {
@@ -320,37 +311,51 @@ h2 {
   z-index: 100;
 }
 
-.tweets-wrapper {
+.tweets-outer-wrapper {
+  background: -webkit-gradient(linear, left top, left bottom, from(#1d1d1d), color-stop(85%, #000000));
+  background: linear-gradient(to bottom, #1d1d1d, #000000 85%);
+  padding: 1em 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.tweets-outer-wrapper h2 {
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.432);
+}
+
+.tweets-outer-wrapper .tweets-wrapper {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 93%;
   scroll-behavior: auto;
   overflow-x: auto;
-  margin-bottom: 1.5rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#1d1d1d), color-stop(85%, #000000));
-  background: linear-gradient(to bottom, #1d1d1d, #000000 85%);
 }
 
-.tweets-wrapper .individual-tweet {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet {
   margin: 15px 0;
-  padding: 15px 12px 25px;
+  padding: 30px 18px;
   font-size: 14px;
   border-top: 1px solid #ffffff07;
   border-bottom: 5px solid #920202;
   border-radius: 3px;
   background: #292929;
   width: 95%;
+  max-width: 450px;
   margin-inline: auto;
 }
 
-.tweets-wrapper .individual-tweet .full-text {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .full-text {
   border-left: 2px solid #4b4b4b;
   padding-left: 8px;
   line-height: 20px;
 }
 
-.tweets-wrapper .individual-tweet .avatar-name-wrapper {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -360,12 +365,12 @@ h2 {
   margin-bottom: 15px;
 }
 
-.tweets-wrapper .individual-tweet .avatar-name-wrapper img {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper img {
   border-radius: 50%;
   margin-right: 15px;
 }
 
-.tweets-wrapper .individual-tweet .avatar-name-wrapper .name-handle-wrapper {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper .name-handle-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -375,11 +380,11 @@ h2 {
           flex-direction: column;
 }
 
-.tweets-wrapper .individual-tweet .avatar-name-wrapper h3 {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper h3 {
   margin-bottom: 1px;
 }
 
-.tweets-wrapper .individual-tweet .avatar-name-wrapper span {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper span {
   color: rgba(192, 192, 192, 0.596);
 }
 
