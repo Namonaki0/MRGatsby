@@ -11,8 +11,12 @@ import {
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
-import image from "../../public/static/images/layered-waves-haikei (6).svg"
-// import { url } from "inspector"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
+
+const image = getImage()
+const bgImage = convertToBgImage(image)
 
 const IndexPage = () => (
   <>
@@ -22,19 +26,16 @@ const IndexPage = () => (
       <div className="bio">
         <div className="img-wrapper">
           <h1>Marc Rizzo</h1>
-          <img
-            alt=""
-            src="https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg"
-          />
+          <div class="bio-img"></div>
         </div>
 
         <div className="bio-description-wrapper">
-          <p>
+          {/* <p>
             American guitarist Marc Rizzo is best known for his presence in
             metal band Soulfly where he spent 18 years of his life and Ill Nino
             where he first gained mainstream attention. He is also part of solo
             projects Acoustic Vendetta and Revenge Beast.
-          </p>
+          </p> */}
         </div>
         <div className="bio-social-media">
           <a

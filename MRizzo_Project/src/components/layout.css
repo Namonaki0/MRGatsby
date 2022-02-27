@@ -218,59 +218,26 @@ h1 {
 }
 
 .bio {
+  display: -ms-grid;
+  display: grid;
   padding: 1rem;
   padding-top: 0;
   margin-bottom: 2rem;
-}
-
-.bio .img-wrapper {
-  position: relative;
+  height: 100vh;
+  place-content: center;
 }
 
 .bio .img-wrapper h1 {
-  position: absolute;
-  bottom: 35px;
-  right: 10px;
   font-size: 3rem;
-  z-index: 100;
+  z-index: 1000;
   text-transform: uppercase;
-  -webkit-text-stroke: 0.5px white;
-  color: rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke: 1px #f03838;
+  color: transparent;
 }
 
-.bio .img-wrapper h1::after {
-  content: "";
-  display: block;
-  height: 5px;
-  margin-top: -5px;
-  background: rgba(255, 0, 0, 0.795);
-}
-
-.bio .img-wrapper img {
-  opacity: 0.8;
-  margin-left: -150px;
-}
-
-.bio .bio-description-wrapper {
-  background: -webkit-gradient(linear, left top, right bottom, from(#3e47575b), to(#3e475741));
-  background: linear-gradient(to bottom right, #3e47575b, #3e475741);
-  margin-top: -20px;
-  padding: 10px 5px;
-  font-weight: 300;
+.bio .img-wrapper .bio-img {
+  background-image: url("../images/Marc Rizzo stage pose.jpg");
   z-index: 100;
-  isolation: isolate;
-  background: white;
-  color: #1c1c1c;
-  -webkit-box-shadow: 5px 5px 0px #3e4757f3;
-          box-shadow: 5px 5px 0px #3e4757f3;
-  border-right: 1px solid #1c1c1c27;
-  border-bottom: 1px solid #1c1c1c27;
-}
-
-.bio .bio-description-wrapper p {
-  padding: 0 10px;
-  line-height: 24px;
-  font-size: 18px;
 }
 
 .bio .bio-social-media {

@@ -186,57 +186,51 @@ h1 {
 }
 
 .bio {
+  display: grid;
   padding: 1rem;
   padding-top: 0;
   margin-bottom: $section-divider;
+  height: 100vh;
+  place-content: center;
 
   .img-wrapper {
-    position: relative;
 
     h1 {
-      position: absolute;
-      bottom: 35px;
-      right: 10px;
       font-size: 3rem;
-      z-index: 100;
+      z-index: 1000;
       text-transform: uppercase;
-      -webkit-text-stroke: 0.5px $color-primary;
-      color: rgba(0, 0, 0, 0.9);
+      -webkit-text-stroke: 1px rgb(240, 56, 56);
+      color: transparent;
 
-      &::after {
-        content: "";
-        display: block;
-        height: 5px;
-        margin-top: -5px;
-        background: rgba(255, 0, 0, 0.795);
-      }
     }
 
-    img {
-      opacity: 0.8;
-      margin-left: -150px;
+    .bio-img {
+      background-image: url("../images/Marc\ Rizzo\ stage\ pose.jpg");
+      z-index: 100;
+      // opacity: 0.8;
+      // margin-left: -150px;
     }
   }
 
-  .bio-description-wrapper {
-    background: linear-gradient(to bottom right, #3e47575b, #3e475741);
-    margin-top: -20px;
-    padding: 10px 5px;
-    font-weight: 300;
-    z-index: 100;
-    isolation: isolate;
-    background: white;
-    color: #1c1c1c;
-    box-shadow: 5px 5px 0px #3e4757f3;
-    border-right: 1px solid #1c1c1c27;
-    border-bottom: 1px solid #1c1c1c27;
+  // .bio-description-wrapper {
+  //   background: linear-gradient(to bottom right, #3e47575b, #3e475741);
+  //   margin-top: -20px;
+  //   padding: 10px 5px;
+  //   font-weight: 300;
+  //   z-index: 10;
+  //   isolation: isolate;
+  //   background: white;
+  //   color: #1c1c1c;
+  //   box-shadow: 5px 5px 0px #3e4757f3;
+  //   border-right: 1px solid #1c1c1c27;
+  //   border-bottom: 1px solid #1c1c1c27;
 
-    p {
-      padding: 0 10px;
-      line-height: 24px;
-      font-size: 18px;
-    }
-  }
+  //   p {
+  //     padding: 0 10px;
+  //     line-height: 24px;
+  //     font-size: 18px;
+  //   }
+  // }
 
   .bio-social-media {
     display: none;
