@@ -15,9 +15,6 @@ import Layout from "../components/layout"
 // import { convertToBgImage } from "gbimage-bridge"
 // import BackgroundImage from "gatsby-background-image"
 
-// const image = getImage()
-// const bgImage = convertToBgImage(image)
-
 const IndexPage = () => (
   <>
     <Layout>
@@ -187,14 +184,6 @@ const IndexPage = () => (
 
       <div className="upcoming-shows">
         <h2>upcoming shows</h2>
-        {/* <img
-          src="/images/Hail_The_Horns_And_Whiskey_Dick.jpeg"
-          alt="Hail the Horns and Whiskey Dick banner"
-        />
-        <img
-          src="/images/Winter_Wasteland.jpeg"
-          alt="Winter Wasteland banner"
-        /> */}
       </div>
     </Layout>
   </>
