@@ -1,7 +1,27 @@
 import React from "react"
 import Layout from "../components/layout"
+import { useState, useEffect } from "react"
 
 export default function Videos() {
+  const baseUrl =
+    " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D"
+
+  const [videos, setVideos] = useState([])
+  const [currentChannelId, setCurrentChannelId] = useState(
+    "UCuvTObpdx__W966kbdIZ4_Q"
+  )
+
+  useEffect(() => {
+    ;(async () => {
+      const data = await fetch(`${baseUrl}${currentChannelId}`).then(res =>
+        res.json()
+      )
+
+      setVideos(data.items)
+      console.log(videos)
+    })()
+  }, [currentChannelId])
+
   return (
     <Layout>
       <div className="videos-wrapper">
