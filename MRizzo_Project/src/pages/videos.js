@@ -1,5 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
+import Layout from "../components/layout"
+import MerchModal from "../components/MerchModal"
 
 export default function Videos() {
   const baseUrl =
@@ -9,6 +11,8 @@ export default function Videos() {
 
   const [videos, setVideos] = useState([])
   const [feedVideos, setFeedVideos] = useState([])
+  const [openModal, setOpenModal] = useState(false)
+  const [currentVideo, setCurrentvideo] = useState(null)
   const [currentChannelId, setCurrentChannelId] = useState(
     "UCkNW3tA-mFGnkviFNPzTq5A"
   )
@@ -32,62 +36,81 @@ export default function Videos() {
   }, [currentChannelId, livestreamPlaylist])
 
   return (
-    <div className="video-library-wrapper">
-      <h1>VIDEOS</h1>
-      <div className="videos-section-block">
-        <h2>Latest</h2>
-        {videos.map(video => (
-          <div key={video.guid} className="library-video">
-            <a href={video.link} target="_blank" rel="noreferrer">
-              <img
-                alt="video-template"
-                src={`https://i4.ytimg.com/vi/${
-                  video.guid.split(":")[2]
-                }/mqdefault.jpg`}
-              />
-            </a>
-            <div className="video-footer">
-              <p>{video.title}</p>
+    <Layout>
+      <div className="video-library-wrapper">
+        <h1>VIDEOS</h1>
+        <div className="videos-section-block">
+          <h2>Latest</h2>
+          {videos.map(video => (
+            <div key={video.guid} className="library-video">
+              <a
+                data-link-cta={video.link}
+                // target="_blank"
+                // rel="noreferrer"
+                onClick={e => {
+                  setOpenModal(true)
+                  setCurrentvideo(e.target.dataset.linkCta)
+                }}
+              >
+                <img
+                  alt="video-template"
+                  src={`https://i4.ytimg.com/vi/${
+                    video.guid.split(":")[2]
+                  }/mqdefault.jpg`}
+                />
+              </a>
+              <div className="video-footer">
+                <p>{video.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
-        <a
-          href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
-          alt="more videos"
-          className="more-videos-cta"
-          target="_blank"
-          rel="noreferrer"
-        >
-          more videos
-        </a>
-      </div>
-      <div className="videos-section-block">
-        <h2>Livestreams</h2>
-        {feedVideos.map(feedVideo => (
-          <div key={feedVideo.guid} className="library-video">
-            <a href={feedVideo.link} target="_blank" rel="noreferrer">
-              <img
-                alt="video-template"
-                src={`https://i4.ytimg.com/vi/${
-                  feedVideo.guid.split(":")[2]
-                }/mqdefault.jpg`}
-              />
-            </a>
-            <div className="video-footer">
-              <p>{feedVideo.title}</p>
+          ))}
+          <a
+            href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
+            alt="more videos"
+            className="more-videos-cta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            more videos
+          </a>
+        </div>
+        <div className="videos-section-block">
+          <h2>Livestreams</h2>
+          {feedVideos.map(feedVideo => (
+            <div key={feedVideo.guid} className="library-video">
+              <a href={feedVideo.link} target="_blank" rel="noreferrer">
+                <img
+                  alt="video-template"
+                  src={`https://i4.ytimg.com/vi/${
+                    feedVideo.guid.split(":")[2]
+                  }/mqdefault.jpg`}
+                />
+              </a>
+              <div className="video-footer">
+                <p>{feedVideo.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
-        <a
-          href="https://www.youtube.com/playlist?list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
-          alt="more videos"
-          className="more-videos-cta"
-          target="_blank"
-          rel="noreferrer"
-        >
-          more videos
-        </a>
+          ))}
+          <a
+            href="https://www.youtube.com/playlist?list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
+            alt="more videos"
+            className="more-videos-cta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            more videos
+          </a>
+        </div>
       </div>
-    </div>
+      <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
+        <div className="merch-modal-inner-wrapper">
+          <div className="merch-name-wrapper">
+            <video controls>
+              <source src={currentVideo} type="video/webm"></source>
+            </video>
+          </div>
+        </div>
+      </MerchModal>
+    </Layout>
   )
 }
