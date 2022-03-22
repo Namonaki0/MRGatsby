@@ -2,7 +2,7 @@ import { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Layout from "../components/layout"
-import MerchModal from "../components/MerchModal"
+import Modal from "../components/Modal"
 
 export default function Merch() {
   const [openModal, setOpenModal] = useState(false)
@@ -139,7 +139,7 @@ export default function Merch() {
           />
         </div>
 
-        <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
+        <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
           <div className="merch-modal-inner-wrapper">
             <div className="merch-name-wrapper">
               <span>{extSubName}</span>
@@ -156,7 +156,7 @@ export default function Merch() {
               purchase
             </a>
           </div>
-        </MerchModal>
+        </Modal>
 
         <div className="frontier-shop">
           <a

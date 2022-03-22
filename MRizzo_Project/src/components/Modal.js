@@ -28,7 +28,7 @@ const MERCH_MODAL_OVERLAY = {
   backgroundColor: "rgba(0,0,0,0.9)",
 }
 
-export default function MerchModal({ isOpen, onClose, children }) {
+export default function Modal({ isOpen, onClose, children }) {
   useEffect(() => {
     function windowSize() {
       window.addEventListener("resize", () => window.innerWidth)

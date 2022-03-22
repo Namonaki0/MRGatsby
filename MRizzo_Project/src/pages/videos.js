@@ -1,7 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import MerchModal from "../components/MerchModal"
+import Modal from "../components/Modal"
 
 export default function Videos() {
   const baseUrl =
@@ -31,7 +31,6 @@ export default function Videos() {
 
       setVideos(data.items)
       setFeedVideos(livestream.items)
-      console.log(livestream)
     })()
   }, [currentChannelId, livestreamPlaylist])
 
@@ -45,11 +44,11 @@ export default function Videos() {
             <div key={video.guid} className="library-video">
               <a
                 data-link-cta={video.link}
-                // target="_blank"
-                // rel="noreferrer"
                 onClick={e => {
                   setOpenModal(true)
-                  setCurrentvideo(e.target.dataset.linkCta)
+                  setCurrentvideo(
+                    e.target.dataset.linkCta.replace("watch?v=", "embed/")
+                  )
                 }}
               >
                 <img
@@ -78,7 +77,15 @@ export default function Videos() {
           <h2>Livestreams</h2>
           {feedVideos.map(feedVideo => (
             <div key={feedVideo.guid} className="library-video">
-              <a href={feedVideo.link} target="_blank" rel="noreferrer">
+              <a
+                data-link-cta={feedVideo.link}
+                onClick={e => {
+                  setOpenModal(true)
+                  setCurrentvideo(
+                    e.target.dataset.linkCta.replace("watch?v=", "embed/")
+                  )
+                }}
+              >
                 <img
                   alt="video-template"
                   src={`https://i4.ytimg.com/vi/${
@@ -102,15 +109,13 @@ export default function Videos() {
           </a>
         </div>
       </div>
-      <MerchModal isOpen={openModal} onClose={() => setOpenModal(false)}>
-        <div className="merch-modal-inner-wrapper">
-          <div className="merch-name-wrapper">
-            <video controls>
-              <source src={currentVideo} type="video/webm"></source>
-            </video>
+      <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
+        <div className="video-modal-inner-wrapper">
+          <div className="video-name-wrapper">
+            <iframe src={currentVideo}></iframe>
           </div>
         </div>
-      </MerchModal>
+      </Modal>
     </Layout>
   )
 }
