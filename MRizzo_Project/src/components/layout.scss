@@ -602,6 +602,7 @@ footer {
     }
   }
 
+  //? MERCH MODAL
   .merch-modal {
     position: relative;
     overflow-x: hidden;
@@ -720,11 +721,30 @@ footer {
   }
 }
 
+//? VIDEO MODAL
+.video-modal-inner-wrapper {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+
+  
+      iframe {
+        width: 450px;
+        height: 350px;
+        border: none;
+      }
+
+}
+
 //? VIDEOS
 
 .video-library-wrapper {
   margin: 0 auto;
   text-align: center;
+ 
+
+
 
   h1 {
     text-align: left;
@@ -739,7 +759,7 @@ footer {
 
   .videos-section-block {
     background: $bg-secondary;
-    margin: 1rem 2rem 2rem;
+    margin: 1rem .5rem 2rem;
     border-top: 2px solid rgba(192, 192, 192, 0.295);
 
     img {
@@ -751,17 +771,32 @@ footer {
 
     .library-video {
       margin-bottom: 1.8rem;
-      width: max-content;
       margin: 1rem 2rem;
       margin-left: auto;
       margin-right: auto;
       inline-size: min-content;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          background:#333333ab;
+          top: 10px;
+          bottom: 10px;
+          left: -50px;
+          right: -50px;
+          z-index: -10;
+        }
 
       .video-footer {
         font-size: 0.8rem;
         padding: 1rem 0.5rem;
         background: rgba(250, 250, 250, 0.116);
         overflow: hidden;
+        
       }
     }
     .more-videos-cta {
