@@ -110,7 +110,7 @@ export default function Videos() {
         </div>
       </div>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
-        <div className="video-modal-inner-wrapper">
+        <div className="modal-inner-wrapper">
           <div className="video-player-wrapper">
             <iframe src={`${currentVideo}?autoplay=1`}></iframe>
           </div>

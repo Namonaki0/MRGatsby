@@ -140,7 +140,7 @@ export default function Merch() {
         </div>
 
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
-          <div className="merch-modal-inner-wrapper">
+          <div className="modal-inner-wrapper">
             <div className="merch-name-wrapper">
               <span>{extSubName}</span>
               <p>{extName}</p>
