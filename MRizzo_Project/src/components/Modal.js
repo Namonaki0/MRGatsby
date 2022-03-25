@@ -42,7 +42,7 @@ export default function Modal({ isOpen, onClose, children }) {
     <>
       <div style={MERCH_MODAL_OVERLAY} />
       <div
-        className="merch-modal"
+        className="modal"
         style={
           window.innerWidth > "200"
             ? MERCH_MODAL_STYLING_LARGE_SCREEN

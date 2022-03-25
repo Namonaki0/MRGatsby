@@ -127,6 +127,9 @@ nav ul.menu-active {
           transform: translateX(0);
   background: black;
   height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 nav ul li {
@@ -544,6 +547,7 @@ footer .developed-by a {
 
 .merch-page-wrapper {
   position: relative;
+  margin-top: 4rem;
 }
 
 .merch-page-wrapper h1 {
@@ -605,7 +609,7 @@ footer .developed-by a {
   border: 1px solid #2b2b2b;
 }
 
-.merch-page-wrapper .merch-modal {
+.merch-page-wrapper .modal {
   position: relative;
   overflow-x: hidden;
   display: -webkit-box;
@@ -629,14 +633,14 @@ footer .developed-by a {
   background-color: rgba(0, 0, 0, 0.048);
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper img {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper img {
   min-width: 300px;
   width: clamp(200px, 600px, 450px);
   margin: 0 auto;
@@ -645,7 +649,7 @@ footer .developed-by a {
       align-self: flex-start;
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper .merch-name-wrapper {
   position: absolute;
   color: #ebebeb;
   text-transform: uppercase;
@@ -654,7 +658,7 @@ footer .developed-by a {
   top: 2px;
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .merch-name-wrapper span {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper .merch-name-wrapper span {
   font-size: 1rem;
   margin-left: 2px;
   display: block;
@@ -662,7 +666,7 @@ footer .developed-by a {
   border-bottom: 2px solid rgba(192, 192, 192, 0.377);
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper .purchase-cta {
   display: block;
   all: unset;
   position: absolute;
@@ -681,12 +685,12 @@ footer .developed-by a {
   transition: all 100ms linear;
 }
 
-.merch-page-wrapper .merch-modal .merch-modal-inner-wrapper .purchase-cta:hover {
+.merch-page-wrapper .modal .merch-modal-inner-wrapper .purchase-cta:hover {
   background: white;
   letter-spacing: 2px;
 }
 
-.merch-page-wrapper .merch-modal .modal-close-btn {
+.merch-page-wrapper .modal .modal-close-btn {
   all: unset;
   position: absolute;
   top: 0;
@@ -703,12 +707,12 @@ footer .developed-by a {
   transition: all 100ms linear;
 }
 
-.merch-page-wrapper .merch-modal .modal-close-btn:hover {
+.merch-page-wrapper .modal .modal-close-btn:hover {
   background: rgba(255, 0, 0, 0.685);
   color: white;
 }
 
-.merch-page-wrapper .merch-modal .modal-close-btn::after {
+.merch-page-wrapper .modal .modal-close-btn::after {
   content: "";
   position: absolute;
   display: block;
@@ -719,7 +723,7 @@ footer .developed-by a {
   margin-top: 15px;
 }
 
-.merch-page-wrapper .merch-modal .modal-close-btn::before {
+.merch-page-wrapper .modal .modal-close-btn::before {
   content: "";
   position: absolute;
   display: block;
@@ -730,7 +734,7 @@ footer .developed-by a {
   bottom: -8px;
 }
 
-.merch-page-wrapper .merch-modal .modal-description-wrapper {
+.merch-page-wrapper .modal .modal-description-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,6 +763,8 @@ footer .developed-by a {
 .video-library-wrapper {
   margin: 0 auto;
   text-align: center;
+  overflow-x: auto;
+  position: relative;
 }
 
 .video-library-wrapper h1 {
@@ -773,8 +779,17 @@ footer .developed-by a {
 }
 
 .video-library-wrapper .videos-section-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-auto-flow: unset;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #1c1c1c;
-  margin: 1rem .5rem 2rem;
+  margin: 1rem 0.5rem 3rem;
   border-top: 2px solid rgba(192, 192, 192, 0.295);
 }
 
@@ -787,27 +802,11 @@ footer .developed-by a {
 
 .video-library-wrapper .videos-section-block .library-video {
   margin-bottom: 1.8rem;
-  margin: 1rem 2rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem 0.5rem;
   inline-size: -webkit-min-content;
   inline-size: -moz-min-content;
   inline-size: min-content;
   cursor: pointer;
-  position: relative;
-  z-index: 10;
-}
-
-.video-library-wrapper .videos-section-block .library-video::after {
-  content: "";
-  display: block;
-  position: absolute;
-  background: #333333ab;
-  top: 10px;
-  bottom: 10px;
-  left: -50px;
-  right: -50px;
-  z-index: -10;
 }
 
 .video-library-wrapper .videos-section-block .library-video .video-footer {
@@ -840,12 +839,11 @@ footer .developed-by a {
 
 @media (min-width: 600px) {
   nav {
-    background: -webkit-gradient(linear, left top, left bottom, from(#00000018), to(#3e475736));
-    background: linear-gradient(#00000018, #3e475736);
+    background: #1c1c1c;
     height: auto;
+    position: fixed;
   }
   nav ul {
-    margin-right: auto;
     visibility: visible;
     opacity: 1;
     z-index: 1000;
@@ -856,9 +854,9 @@ footer .developed-by a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background: rgba(62, 71, 87, 0.144);
   }
   nav ul li {
@@ -871,12 +869,15 @@ footer .developed-by a {
   }
   nav ul li a {
     border: none;
-    padding: 1rem 0.8rem;
+    padding: 1rem 1.5rem;
     letter-spacing: 3px;
   }
   nav ul li a:hover {
     border-bottom: none;
     color: white;
+  }
+  nav ul li a:last-child {
+    margin-right: 0;
   }
   nav ul .nav-social-media {
     display: none;
@@ -946,6 +947,9 @@ footer .developed-by a {
   main .upcoming-shows h2 {
     padding: 0;
   }
+  .video-library-wrapper {
+    margin-top: 4rem;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -992,12 +996,6 @@ footer .developed-by a {
         -ms-flex: 1;
             flex: 1;
     margin: 2px;
-  }
-  .merch-page-wrapper .merch-display {
-    margin-top: 2rem;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
 }
 

@@ -37,9 +37,9 @@ export default function Videos() {
   return (
     <Layout>
       <div className="video-library-wrapper">
-        <h1>VIDEOS</h1>
+        {/* <h1>VIDEOS</h1> */}
+        <h2>Latest</h2>
         <div className="videos-section-block">
-          <h2>Latest</h2>
           {videos.map(video => (
             <div key={video.guid} className="library-video">
               <a
@@ -73,8 +73,8 @@ export default function Videos() {
             more videos
           </a>
         </div>
+        <h2>Livestreams</h2>
         <div className="videos-section-block">
-          <h2>Livestreams</h2>
           {feedVideos.map(feedVideo => (
             <div key={feedVideo.guid} className="library-video">
               <a
@@ -110,11 +110,11 @@ export default function Videos() {
         </div>
       </div>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
-        {/* <div className="video-modal-inner-wrapper"> */}
-        <div className="video-player-wrapper">
-          <iframe src={`${currentVideo}?autoplay=1`}></iframe>
+        <div className="video-modal-inner-wrapper">
+          <div className="video-player-wrapper">
+            <iframe src={`${currentVideo}?autoplay=1`}></iframe>
+          </div>
         </div>
-        {/* </div> */}
       </Modal>
     </Layout>
   )

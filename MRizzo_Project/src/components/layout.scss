@@ -115,6 +115,8 @@ nav {
       transform: translateX(0);
       background: $bg-primary;
       height: 100vh;
+      display: grid;
+      place-content: center;
     }
 
     li {
@@ -546,6 +548,7 @@ footer {
 
 .merch-page-wrapper {
   position: relative;
+  margin-top: 4rem;
 
   h1 {
     text-align: left;
@@ -603,7 +606,7 @@ footer {
   }
 
   //? MERCH MODAL
-  .merch-modal {
+  .modal {
     position: relative;
     overflow-x: hidden;
     display: flex;
@@ -719,6 +722,8 @@ footer {
       color: white;
     }
   }
+
+
 }
 
 //? VIDEO MODAL
@@ -727,13 +732,11 @@ footer {
   height: 100vh;
   place-content: center;
 
-
-  
-      iframe {
-        width: 450px;
-        height: 350px;
-        border: none;
-      }
+  iframe {
+    width: 450px;
+    height: 350px;
+    border: none;
+  }
 
 }
 
@@ -742,9 +745,9 @@ footer {
 .video-library-wrapper {
   margin: 0 auto;
   text-align: center;
- 
-
-
+  overflow-x: auto;
+  position: relative;
+  
 
   h1 {
     text-align: left;
@@ -758,8 +761,12 @@ footer {
   }
 
   .videos-section-block {
+    display: flex;
+    flex-wrap: wrap;
+    grid-auto-flow: unset;
+    justify-content: center;
     background: $bg-secondary;
-    margin: 1rem .5rem 2rem;
+    margin: 1rem 0.5rem 3rem;
     border-top: 2px solid rgba(192, 192, 192, 0.295);
 
     img {
@@ -771,34 +778,18 @@ footer {
 
     .library-video {
       margin-bottom: 1.8rem;
-      margin: 1rem 2rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1rem 0.5rem;
       inline-size: min-content;
       cursor: pointer;
-      position: relative;
-      z-index: 10;
-
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          background:#333333ab;
-          top: 10px;
-          bottom: 10px;
-          left: -50px;
-          right: -50px;
-          z-index: -10;
-        }
 
       .video-footer {
         font-size: 0.8rem;
         padding: 1rem 0.5rem;
         background: rgba(250, 250, 250, 0.116);
         overflow: hidden;
-        
       }
     }
+
     .more-videos-cta {
       background: rgba(223, 223, 223, 0.103);
       color: $color-primary;
@@ -823,17 +814,17 @@ footer {
 
 @media (min-width: $md-screen) {
   nav {
-    background: linear-gradient(#00000018, #3e475736);
+    background: $bg-secondary;
     height: auto;
+    position: fixed;
 
     ul {
-      margin-right: auto;
       visibility: visible;
       opacity: 1;
       z-index: 1000;
       display: flex;
       flex-direction: row;
-      justify-content: flex-end;
+      justify-content: center;
       background: rgba(62, 71, 87, 0.144);
 
       li {
@@ -847,7 +838,7 @@ footer {
 
         a {
           border: none;
-          padding: 1rem 0.8rem;
+          padding: 1rem 1.5rem;
           letter-spacing: 3px;
 
           &:hover {
@@ -855,6 +846,10 @@ footer {
             color: $color-primary;
             // background-color: rgba(42, 79, 143, 0.322);
           }
+
+           &:last-child {
+             margin-right: 0;
+           }
         }
       }
 
@@ -932,6 +927,12 @@ footer {
       }
     }
   }
+
+  .video-library-wrapper{
+    margin-top: 4rem;
+  }
+
+
 }
 
 @media (min-width: $lg-screen) {
@@ -986,13 +987,7 @@ footer {
     }
   }
 
-  .merch-page-wrapper {
-    .merch-display {
-      margin-top: 2rem;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-  }
+
 }
 
 @media (min-width: $xl-screen) {
@@ -1040,6 +1035,7 @@ footer {
       }
     }
   }
+
   .tweets-wrapper {
     gap: 5rem;
 

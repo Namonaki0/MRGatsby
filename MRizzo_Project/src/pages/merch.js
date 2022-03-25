@@ -14,7 +14,7 @@ export default function Merch() {
   return (
     <Layout>
       <div className="merch-page-wrapper">
-        <h1>MERCH</h1>
+        {/* <h1>MERCH</h1> */}
 
         <div className="merch-display">
           <StaticImage
