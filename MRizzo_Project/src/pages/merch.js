@@ -2,6 +2,8 @@ import { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Layout from "../components/layout"
+import { container } from "../components/FramerMotion"
+import { motion } from "framer-motion"
 import Modal from "../components/Modal"
 
 export default function Merch() {
@@ -16,7 +18,12 @@ export default function Merch() {
       <div className="merch-page-wrapper">
         {/* <h1>MERCH</h1> */}
 
-        <div className="merch-display">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="merch-display"
+        >
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_7_170032_1083_325093_470_black170746_nobg.png?1638400254"
             loading="lazy"
@@ -37,6 +44,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_1_155452_1083_324971_470_black155810_nobg.png?itok=ljd-UQGE"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlive"
             data-name="MR-Live"
             data-sub-name=""
@@ -52,6 +60,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_2_160250_1083_324990_470_black160826_nobg.png?itok=buJkTnTz"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrsignature"
             data-name="Signature"
             data-sub-name="Marc Rizzo"
@@ -67,6 +76,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_3_161224_1083_325007_470_black161529_nobg.png?itok=9LLiVPvo"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrliveblackandwhite"
             data-name="MR-Live"
             data-sub-name="Black & White"
@@ -82,6 +92,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_5_164140_1083_325064_470_black164615_nobg.png?itok=juaAOPEX"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlivefeeling"
             data-name="Feeling"
             data-sub-name="Live"
@@ -97,6 +108,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_8_171056_1083_325113_470_black171801_nobg.png?itok=AAhl2EjB"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/inadream"
             data-name="In A Dream"
             alt="in a dream t-shirt"
@@ -111,6 +123,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_9_172200_1083_325128_470_black172607_nobg.png?itok=kkX_x-u_"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/ripandshredmmxx"
             data-name="Rip & Shred"
             data-sub-name="MMXX"
@@ -126,6 +139,7 @@ export default function Merch() {
           <StaticImage
             src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_10_173139_1083_325150_470_black173515_nobg.png?itok=m2pDW7zm"
             loading="lazy"
+            className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlogo"
             data-name="Logo"
             alt="logo t-shirt"
@@ -137,7 +151,7 @@ export default function Merch() {
               setExtSubName(e.target.dataset.subName)
             }}
           />
-        </div>
+        </motion.div>
 
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
           <div className="modal-inner-wrapper">

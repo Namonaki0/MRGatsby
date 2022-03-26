@@ -11,9 +11,6 @@ import {
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
-// import { getImage, GatsbyImage } from "gatsby-plugin-image"
-// import { convertToBgImage } from "gbimage-bridge"
-// import BackgroundImage from "gatsby-background-image"
 
 const IndexPage = () => (
   <>

@@ -564,7 +564,7 @@ footer .developed-by a {
   gap: 2px;
 }
 
-.merch-page-wrapper .merch-display img {
+.merch-page-wrapper .merch-display .merch-img {
   width: 100%;
   cursor: pointer;
   border: 1px solid rgba(192, 192, 192, 0.089);
@@ -574,7 +574,7 @@ footer .developed-by a {
   border-radius: 2px;
 }
 
-.merch-page-wrapper .merch-display img:hover {
+.merch-page-wrapper .merch-display .merch-img:hover {
   border: 1px solid rgba(192, 192, 192, 0.418);
   border-bottom: 3px solid white;
 }

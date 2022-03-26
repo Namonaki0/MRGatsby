@@ -1,6 +1,8 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import Layout from "../components/layout"
+import { motion } from "framer-motion"
+import { container } from "../components/FramerMotion"
 import Modal from "../components/Modal"
 
 export default function Videos() {
@@ -41,7 +43,13 @@ export default function Videos() {
         <h2>Latest</h2>
         <div className="videos-section-block">
           {videos.map(video => (
-            <div key={video.guid} className="library-video">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              key={video.guid}
+              className="library-video"
+            >
               <a
                 data-link-cta={video.link}
                 onClick={e => {
@@ -61,7 +69,7 @@ export default function Videos() {
               <div className="video-footer">
                 <p>{video.title}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
           <a
             href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
