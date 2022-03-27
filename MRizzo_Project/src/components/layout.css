@@ -227,21 +227,20 @@ h1 {
   padding-top: 0;
   height: 100vh;
   place-content: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#201816), color-stop(95%, #49251e));
-  background: linear-gradient(#201816, #49251e 95%);
+  background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
+  background-color: #c00000;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  z-index: 100;
+  width: 100%;
 }
 
 .bio .img-wrapper h1 {
   font-size: 3rem;
   z-index: 1000;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px #f03838;
+  -webkit-text-stroke: 1px #c5c5c5;
   color: transparent;
-}
-
-.bio .img-wrapper .bio-img {
-  background-image: url("../images/Marc Rizzo stage pose.jpg");
-  z-index: 100;
 }
 
 .bio .bio-social-media {

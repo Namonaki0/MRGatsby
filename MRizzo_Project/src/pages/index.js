@@ -20,7 +20,7 @@ const IndexPage = () => (
       <div className="bio">
         <div className="img-wrapper">
           <h1>Marc Rizzo</h1>
-          <div class="bio-img"></div>
+          {/* <div class="bio-img"></div> */}
         </div>
 
         <div className="bio-description-wrapper">
