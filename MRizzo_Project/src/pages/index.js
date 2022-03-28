@@ -24,6 +24,7 @@ const IndexPage = () => (
         </div>
 
         <div className="bio-description-wrapper">
+          about marc
           {/* <p>
             American guitarist Marc Rizzo is best known for his presence in
             metal band Soulfly where he spent 18 years of his life and Ill Nino
