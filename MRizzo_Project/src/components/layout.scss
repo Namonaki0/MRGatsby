@@ -240,7 +240,28 @@ h1 {
       cursor: pointer;
       background: $color-primary;
       color: rgb(197, 34, 34);
+      
     }
+
+    .bio-description-text {
+      transition: all 100ms linear;
+    //    animation: bio-desc 100ms linear;
+        
+    // }
+    }
+
+    // @keyframes bio-desc {
+    //   from {
+    //     width: 0;
+    //     transform: scale(0);
+    //   }
+    //   to {
+    //     transform: scale(1);
+    //     width: 100%;
+    //   }
+    // }
+
+
   //   background: linear-gradient(to bottom right, #3e47575b, #3e475741);
   //   margin-top: -20px;
   //   padding: 10px 5px; 

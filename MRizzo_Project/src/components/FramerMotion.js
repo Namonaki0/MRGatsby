@@ -9,3 +9,15 @@ export const container = {
     },
   },
 }
+
+export const bioDescription = {
+  firstState: { opacity: 0, width: 0 },
+  expand: {
+    opacity: 1,
+    width: 100,
+    transition: {
+      delayChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+}
