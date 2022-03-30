@@ -20,6 +20,12 @@ const BIO_DESCRIPTION_CLOSED = {
 }
 const BIO_DESCRIPTION = {
   display: "block",
+  color: "black",
+  backgroundColor: "white",
+}
+const ABOUT_SPAN_OPEN = {
+  display: "none",
+  backgroundColor: "white",
 }
 
 function IndexPage() {
@@ -40,19 +46,25 @@ function IndexPage() {
             className="bio-description-wrapper"
             onClick={() => setDisplayBio(!displayBio)}
           >
-            about marc
-            <motion.p
-              variants={bioDescription}
-              initial="firstState"
-              animate="expand"
-              // style={displayBio ? BIO_DESCRIPTION : BIO_DESCRIPTION_CLOSED}
+            <span
+              className="about-mark-span"
+              style={{ display: displayBio ? "none" : "block" }}
+            >
+              about marc
+            </span>
+            <p
+              // variants={bioDescription}
+              // initial="firstState"
+              // animate="expand"
+              style={displayBio ? BIO_DESCRIPTION : BIO_DESCRIPTION_CLOSED}
               className="bio-description-text"
             >
               American guitarist Marc Rizzo is best known for his presence in
               metal band Soulfly where he spent 18 years of his life and Ill
               Nino where he first gained mainstream attention. He is also part
               of solo projects Acoustic Vendetta and Revenge Beast.
-            </motion.p>
+              <span className="bio-description-close-span">close ></span>
+            </p>
           </div>
           <div className="bio-social-media">
             <a

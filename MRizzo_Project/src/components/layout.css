@@ -241,11 +241,10 @@ h1 {
   display: grid;
   height: 100vh;
   place-content: center;
-  font-size: 4.5rem;
+  font-size: 4.2rem;
   z-index: 1000;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px #c5c5c5;
-  color: transparent;
+  color: white;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
@@ -258,25 +257,38 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 1.2rem 1rem;
-  background: #c52222;
+  background: white;
+  color: #c52222;
   z-index: 1000;
-  color: white;
   letter-spacing: 2px;
   font-size: 1.2rem;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
+  text-transform: uppercase;
 }
 
-.bio .bio-description-wrapper:hover {
+.bio .bio-description-wrapper .about-mark-span {
   cursor: pointer;
-  background: white;
-  color: #c52222;
+  padding: 1.2rem 1rem;
 }
 
 .bio .bio-description-wrapper .bio-description-text {
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
+  padding: 1.2rem 1rem;
+}
+
+.bio .bio-description-wrapper .bio-description-close-span {
+  display: block;
+  text-align: right;
+  background: #c52222;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 10px;
+}
+
+.bio .bio-description-wrapper .bio-description-close-span:hover {
+  cursor: pointer;
 }
 
 .bio .bio-social-media {
