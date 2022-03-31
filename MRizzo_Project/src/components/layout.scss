@@ -180,49 +180,47 @@ nav {
   }
 }
 
-h1 {
-  text-align: center;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-}
+// h1 {
+//   text-align: center;
+//   font-weight: 900;
+//   text-transform: uppercase;
+//   font-size: 2.5rem;
+// }
 
 .bio {
-  display: grid;
+  display: flex;
   position: relative;
+  grid-template-columns: 2fr 1fr;
   padding: 1rem;
   padding-top: 0;
   height: 100vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
-  background-color: #c00000;
+  background-size: 600px;
+  background-color:#c00000;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   z-index: 100;
   width: 100%;
 
-  .img-wrapper {
-    h1 {
-      display: grid;
-      height: 100vh;
-      place-content: center;
-      font-size: 4.2rem;
-      z-index: 1000;
-      text-transform: uppercase;
-      // -webkit-text-stroke: 1px rgb(197, 197, 197);
-      color: $color-primary;
-      writing-mode: vertical-lr;
-      position: absolute;
-      left: -18px;
-      top: 0;
-    }
+  h1 {
+    height: 100vh;
+    place-content: center;
+    font-size: 4.2rem;
+    z-index: 1000;
+    text-transform: uppercase;
+    // -webkit-text-stroke: 1px rgb(197, 197, 197);
+    color: $color-primary;
+    writing-mode: vertical-lr;
+    position: absolute;
+    left: -18px;
+    text-align: right;
   }
 
   .bio-description-wrapper {
     position: absolute;
     bottom: 0;
     right: 0;
-
     background: $color-primary;
     color: rgb(197, 34, 34);
     z-index: 1000;
@@ -257,7 +255,7 @@ h1 {
 
   .bio-social-media {
     display: none;
-    padding-right: 25px;
+    // padding-right: 25px;
 
     a {
       color: white;
@@ -940,25 +938,40 @@ footer {
     flex-direction: column;
 
     .bio {
+        grid-template-columns: 2fr 1fr;
       padding-bottom: 3rem;
       position: relative;
 
       .bio-description-wrapper {
         max-width: 550px;
-        margin-left: auto;
-        margin-top: -150px;
-        margin-bottom: 0.5rem;
-        font-size: 1.5rem;
-        border-left: 1px solid rgba(192, 192, 192, 0.158);
+        font-size: 1.3rem;
       }
 
-      .img-wrapper {
-        margin-left: -100px;
+            .bio-social-media {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
-        h1 {
-          font-size: 4rem;
-          justify-content: flex-end;
+        a {
+
+          svg {
+            background: #ffffffcb;
+            color:#c12127;
+            border-radius: 50%;
+            padding: 10px;
+            width: 40px;
+            height: auto;
+          }
+
         }
+      }
+
+      h1 {
+        font-size: 4rem;
+        justify-content: flex-end;
       }
     }
 
@@ -1007,12 +1020,6 @@ footer {
 @media (min-width: $lg-screen) {
   nav {
     margin: 0 4rem;
-
-    ul {
-      li {
-        font-size: 1.5rem;
-      }
-    }
   }
 
   main {
@@ -1024,25 +1031,10 @@ footer {
 
       .bio-description-wrapper {
         max-width: 700px;
-        margin-left: auto;
-        margin-top: -150px;
-        margin-bottom: 0.5rem;
-        padding: 0.8rem;
-        font-size: 1.5rem;
         border-left: 1px solid rgba(192, 192, 192, 0.158);
       }
 
-      .img-wrapper {
-        margin-left: -100px;
 
-        img {
-          opacity: 0.9;
-        }
-
-        // h1 {
-        //   top: 35%;
-        // }
-      }
     }
 
     .track-previews {
@@ -1064,35 +1056,35 @@ footer {
     .bio {
       position: relative;
 
-      .bio-social-media {
-        display: none;
-        position: absolute;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 0 0.5rem;
-        width: 100%;
-        margin-right: auto;
-        margin-top: 0.5rem;
-        margin-left: -24px;
+      // .bio-social-media {
+      //   display: none;
+      //   position: absolute;
+      //   justify-content: flex-end;
+      //   align-items: center;
+      //   gap: 0 0.5rem;
+      //   width: 100%;
+      //   margin-right: auto;
+      //   margin-top: 0.5rem;
+      //   margin-left: -24px;
 
-        a {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          padding: 10px;
-          color: white;
-          font-size: 2rem;
-          transition: all 110ms linear;
+      //   a {
+      //     display: flex;
+      //     align-items: center;
+      //     margin-bottom: 10px;
+      //     padding: 10px;
+      //     color: white;
+      //     font-size: 2rem;
+      //     transition: all 110ms linear;
 
-          &:hover {
-            box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.322);
-          }
+      //     &:hover {
+      //       box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.322);
+      //     }
 
-          svg {
-            height: 0.8em;
-          }
-        }
-      }
+      //     svg {
+      //       height: 0.8em;
+      //     }
+      //   }
+      // }
     }
 
     .track-previews {

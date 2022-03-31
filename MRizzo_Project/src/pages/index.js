@@ -37,10 +37,10 @@ function IndexPage() {
         <Seo title="Home" />
 
         <div className="bio">
-          <div className="img-wrapper">
-            <h1>Marc Rizzo</h1>
-            {/* <div class="bio-img"></div> */}
-          </div>
+          {/* <div className="img-wrapper"> */}
+          {/* <div class="bio-img"></div> */}
+          {/* </div> */}
+          <h1>Marc Rizzo</h1>
 
           <div
             className="bio-description-wrapper"
