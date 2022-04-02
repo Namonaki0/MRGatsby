@@ -66,6 +66,7 @@ function IndexPage() {
               <span className="bio-description-close-span">close ></span>
             </p>
           </div>
+          <div className="bio-separator"></div>
           <div className="bio-social-media">
             <a
               href="https://open.spotify.com/artist/4MzKbulWnDVjGnMDMz1g8j?si=Cw7D7ZOHT82IxqUa79OBLQ"

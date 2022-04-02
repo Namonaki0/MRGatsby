@@ -225,7 +225,7 @@ nav ul .nav-social-media a svg {
   height: 100vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
-  background-size: 600px;
+  background-size: 650px;
   background-color: #c00000;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -294,6 +294,25 @@ nav ul .nav-social-media a svg {
   color: white;
   font-size: 1.5rem;
   padding: 5px;
+}
+
+.bio .bio-separator {
+  display: none;
+  width: 350px;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(#7d0000c1), to(#430000e8));
+  background: linear-gradient(to right, #7d0000c1, #430000e8);
+  position: absolute;
+  right: 0;
+  -webkit-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.bio .bio-separator::after {
+  content: "";
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.705);
 }
 
 .track-previews-wrapper {
@@ -1059,6 +1078,10 @@ footer .developed-by a {
   main .bio .bio-social-media a svg:hover {
     color: #e1262d;
   }
+  main .bio .bio-separator {
+    display: -ms-grid;
+    display: grid;
+  }
   main .bio h1 {
     font-size: 4rem;
     -webkit-box-pack: end;
@@ -1139,6 +1162,9 @@ footer .developed-by a {
   }
   main .bio {
     position: relative;
+  }
+  main .bio .bio-separator {
+    width: 580px;
   }
   main .track-previews iframe {
     min-width: 24%;

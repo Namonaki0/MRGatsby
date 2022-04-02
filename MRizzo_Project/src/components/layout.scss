@@ -196,7 +196,7 @@ nav {
   height: 100vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
-  background-size: 600px;
+  background-size: 650px;
   background-color: #c00000;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -261,6 +261,23 @@ nav {
       color: white;
       font-size: 1.5rem;
       padding: 5px;
+    }
+  }
+
+  .bio-separator {
+    display: none;
+    width: 350px;
+    height: 100vh;
+    background: linear-gradient(to right, #7d0000c1, #430000e8);
+    position: absolute;
+    right: 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,.2);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: auto;
+      background: rgba(0, 0, 0, 0.705);
     }
   }
 }
@@ -984,6 +1001,11 @@ footer {
         }
       }
 
+      .bio-separator {
+        display: grid;
+
+      }
+
       h1 {
         font-size: 4rem;
         justify-content: flex-end;
@@ -1098,6 +1120,10 @@ footer {
       //     }
       //   }
       // }
+
+      .bio-separator {
+        width: 580px;
+      }
     }
 
     .track-previews {
