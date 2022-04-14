@@ -33,7 +33,7 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
-  z-index: 1000;
+  z-index: 1200;
   left: 0;
   right: 0;
   top: 0;
@@ -222,7 +222,7 @@ nav ul .nav-social-media a svg {
       grid-template-columns: 2fr 1fr;
   padding: 1rem;
   padding-top: 0;
-  height: 100vh;
+  height: 85vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
   background-size: 650px;
@@ -236,7 +236,7 @@ nav ul .nav-social-media a svg {
 .bio h1 {
   height: 100vh;
   place-content: center;
-  font-size: 4.2rem;
+  font-size: 3.5rem;
   z-index: 1000;
   text-transform: uppercase;
   color: white;
@@ -245,7 +245,7 @@ nav ul .nav-social-media a svg {
           writing-mode: vertical-lr;
   position: absolute;
   left: -18px;
-  text-align: right;
+  bottom: -95px;
 }
 
 .bio .bio-description-wrapper {
@@ -318,7 +318,8 @@ nav ul .nav-social-media a svg {
 .track-previews-wrapper {
   background: -webkit-gradient(linear, left bottom, left top, from(#4e1d13), to(#49251e));
   background: linear-gradient(to top, #4e1d13, #49251e);
-  padding: 1rem 0 2rem;
+  padding: 2rem 0 2rem;
+  z-index: 1000;
 }
 
 .track-previews-wrapper h2 {
@@ -330,11 +331,24 @@ nav ul .nav-social-media a svg {
   border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
+.track-previews-wrapper .track-previews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-auto-flow: unset;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .track-previews-wrapper .track-previews iframe {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 5px;
+  margin: 0 3px 5px;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   z-index: 100;
@@ -1032,6 +1046,7 @@ footer .developed-by a {
         grid-template-columns: 2fr 1fr;
     padding-bottom: 3rem;
     position: relative;
+    height: 100vh;
   }
   main .bio .bio-description-wrapper {
     max-width: 550px;
@@ -1084,12 +1099,7 @@ footer .developed-by a {
   }
   main .bio h1 {
     font-size: 4rem;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  main .track-previews {
-    margin: 0 10px;
+    bottom: -50px;
   }
   main .merch-name-wrapper {
     -webkit-writing-mode: vertical-rl;
@@ -1141,19 +1151,6 @@ footer .developed-by a {
     max-width: 700px;
     border-left: 1px solid rgba(192, 192, 192, 0.158);
   }
-  main .track-previews {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  main .track-previews iframe {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    margin: 2px;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -1165,10 +1162,6 @@ footer .developed-by a {
   }
   main .bio .bio-separator {
     width: 580px;
-  }
-  main .track-previews iframe {
-    min-width: 24%;
-    margin: 1px;
   }
   .tweets-wrapper {
     gap: 5rem;

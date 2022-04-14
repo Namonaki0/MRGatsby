@@ -39,7 +39,7 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
-  z-index: 1000;
+  z-index: 1200;
   left: 0;
   right: 0;
   top: 0;
@@ -193,7 +193,7 @@ nav {
   grid-template-columns: 2fr 1fr;
   padding: 1rem;
   padding-top: 0;
-  height: 100vh;
+  height: 85vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
   background-size: 650px;
@@ -206,7 +206,7 @@ nav {
   h1 {
     height: 100vh;
     place-content: center;
-    font-size: 4.2rem;
+    font-size: 3.5rem;
     z-index: 1000;
     text-transform: uppercase;
     // -webkit-text-stroke: 1px rgb(197, 197, 197);
@@ -214,7 +214,7 @@ nav {
     writing-mode: vertical-lr;
     position: absolute;
     left: -18px;
-    text-align: right;
+    bottom: -95px;
   }
 
   .bio-description-wrapper {
@@ -284,7 +284,8 @@ nav {
 
 .track-previews-wrapper {
   background: linear-gradient(to top, #4e1d13, #49251e);
-  padding: 1rem 0 $section-divider;
+  padding: 2rem 0 $section-divider;
+  z-index: 1000;
 
   h2 {
     color: $color-primary;
@@ -296,13 +297,18 @@ nav {
   }
 
   .track-previews {
+          display: flex;
+    flex-wrap: wrap;
+    grid-auto-flow: unset;
+    justify-content: center;
+
     iframe {
+      flex: 1;
       position: relative;
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 5px;
+      margin: 0 3px 5px;
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
       z-index: 100;
+
     }
   }
 }
@@ -958,6 +964,7 @@ footer {
       grid-template-columns: 2fr 1fr;
       padding-bottom: 3rem;
       position: relative;
+      height: 100vh;
 
       .bio-description-wrapper {
         max-width: 550px;
@@ -1008,12 +1015,8 @@ footer {
 
       h1 {
         font-size: 4rem;
-        justify-content: flex-end;
+        bottom: -50px;
       }
-    }
-
-    .track-previews {
-      margin: 0 10px;
     }
 
     .merch-name-wrapper {
@@ -1072,15 +1075,6 @@ footer {
       }
     }
 
-    .track-previews {
-      display: flex;
-      flex-wrap: wrap;
-
-      iframe {
-        flex: 1;
-        margin: 2px;
-      }
-    }
   }
 }
 
@@ -1126,12 +1120,6 @@ footer {
       }
     }
 
-    .track-previews {
-      iframe {
-        min-width: 24%;
-        margin: 1px;
-      }
-    }
   }
 
   .tweets-wrapper {

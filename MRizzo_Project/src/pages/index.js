@@ -133,6 +133,15 @@ function IndexPage() {
               title="Living Shred Vol.1"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             ></iframe>
+            <iframe
+              src="https://open.spotify.com/embed?uri=spotify%3Aalbum%3A22zzEMT2SZ0cZgKFAcfiJU"
+              width="95%"
+              height="80"
+              frameBorder="0"
+              allowFullScreen=""
+              title="Rotation"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
 
             <iframe
               src="https://open.spotify.com/embed/album/0NhTzQ1uuR7YUOTsqUP7kR?utm_source=generator"
