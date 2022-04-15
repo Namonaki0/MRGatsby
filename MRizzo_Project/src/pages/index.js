@@ -12,8 +12,8 @@ import {
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { bioDescription } from "../components/FramerMotion"
+// import { motion } from "framer-motion"
+// import { bioDescription } from "../components/FramerMotion"
 
 const BIO_DESCRIPTION_CLOSED = {
   display: "none",

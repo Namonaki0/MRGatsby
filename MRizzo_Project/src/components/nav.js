@@ -18,18 +18,11 @@ export default function Nav() {
   return (
     <div>
       <nav>
-        {/* <Link to="/" className="logo-link">
-          <img
-            src="https://www.storefrontier.com/sites/default/files/artwork_preview/front/66357/rizzo_4_200619_preview_34424_842_black.png"
-            alt="logo"
-            className="logo"
-          />
-        </Link> */}
-
         <ul className={openMenu ? "menu-active" : ""}>
           <li className="nav-li">
             <Link
               to="/"
+              activeStyle={{ color: "#c00000" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)
@@ -46,6 +39,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/videos"
+              activeStyle={{ color: "#c00000" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)
@@ -62,6 +56,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/merch"
+              activeStyle={{ color: "#c00000" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)

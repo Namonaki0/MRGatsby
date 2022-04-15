@@ -33,7 +33,7 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
-  z-index: 1200;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
@@ -236,7 +236,7 @@ nav ul .nav-social-media a svg {
 .bio h1 {
   height: 100vh;
   place-content: center;
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   z-index: 1000;
   text-transform: uppercase;
   color: white;
@@ -245,7 +245,8 @@ nav ul .nav-social-media a svg {
           writing-mode: vertical-lr;
   position: absolute;
   left: -18px;
-  bottom: -95px;
+  text-align: left;
+  display: block;
 }
 
 .bio .bio-description-wrapper {
@@ -298,7 +299,7 @@ nav ul .nav-social-media a svg {
 
 .bio .bio-separator {
   display: none;
-  width: 350px;
+  width: 420px;
   height: 100vh;
   background: -webkit-gradient(linear, left top, right top, from(#7d0000c1), to(#430000e8));
   background: linear-gradient(to right, #7d0000c1, #430000e8);
@@ -319,7 +320,7 @@ nav ul .nav-social-media a svg {
   background: -webkit-gradient(linear, left bottom, left top, from(#4e1d13), to(#49251e));
   background: linear-gradient(to top, #4e1d13, #49251e);
   padding: 2rem 0 2rem;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .track-previews-wrapper h2 {
@@ -705,6 +706,7 @@ footer .developed-by a {
   transition: all 100ms linear;
   height: 90vh;
   background-color: rgba(0, 0, 0, 0.048);
+  z-index: 1500;
 }
 
 .merch-page-wrapper .modal .modal-inner-wrapper {
@@ -761,7 +763,6 @@ footer .developed-by a {
 
 .merch-page-wrapper .modal .modal-inner-wrapper .purchase-cta:hover {
   background: white;
-  letter-spacing: 2px;
 }
 
 .merch-page-wrapper .modal .modal-close-btn {
@@ -772,13 +773,14 @@ footer .developed-by a {
   cursor: pointer;
   background: white;
   font-size: 2rem;
-  z-index: 1000;
+  z-index: 1500;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding: 0.5rem 1rem;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
+  z-index: 2000;
 }
 
 .merch-page-wrapper .modal .modal-close-btn:hover {
@@ -920,6 +922,7 @@ footer .developed-by a {
   transition: all 100ms linear;
   height: 90vh;
   background-color: rgba(0, 0, 0, 0.048);
+  z-index: 1500;
 }
 
 .modal .modal-inner-wrapper {
@@ -947,13 +950,14 @@ footer .developed-by a {
   cursor: pointer;
   background: white;
   font-size: 2rem;
-  z-index: 1000;
+  z-index: 1500;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding: 0.5rem 1rem;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
+  z-index: inherit;
 }
 
 .modal .modal-close-btn:hover {
@@ -1147,6 +1151,9 @@ footer .developed-by a {
     padding-bottom: 3rem;
     position: relative;
   }
+  main .bio h1 {
+    font-size: 4.8rem;
+  }
   main .bio .bio-description-wrapper {
     max-width: 700px;
     border-left: 1px solid rgba(192, 192, 192, 0.158);
@@ -1168,6 +1175,28 @@ footer .developed-by a {
   }
   .tweets-wrapper .individual-tweet {
     margin: 8px 10px;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-device-width: 828px) and (max-device-width: 1792px) {
+  .bio h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+            writing-mode: unset;
+    position: relative;
+    text-align: right;
+  }
+  .bio .bio-social-media {
+    display: none;
   }
 }
 /*# sourceMappingURL=layout.css.map */

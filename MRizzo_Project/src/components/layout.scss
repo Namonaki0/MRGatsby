@@ -39,7 +39,7 @@ nav {
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
-  z-index: 1200;
+  z-index: 1000;
   left: 0;
   right: 0;
   top: 0;
@@ -180,13 +180,6 @@ nav {
   }
 }
 
-// h1 {
-//   text-align: center;
-//   font-weight: 900;
-//   text-transform: uppercase;
-//   font-size: 2.5rem;
-// }
-
 .bio {
   display: flex;
   position: relative;
@@ -206,15 +199,15 @@ nav {
   h1 {
     height: 100vh;
     place-content: center;
-    font-size: 3.5rem;
+    font-size: 3.6rem;
     z-index: 1000;
     text-transform: uppercase;
-    // -webkit-text-stroke: 1px rgb(197, 197, 197);
     color: $color-primary;
     writing-mode: vertical-lr;
     position: absolute;
     left: -18px;
-    bottom: -95px;
+    text-align: left;
+    display: block;
   }
 
   .bio-description-wrapper {
@@ -255,7 +248,6 @@ nav {
 
   .bio-social-media {
     display: none;
-    // padding-right: 25px;
 
     a {
       color: white;
@@ -266,12 +258,12 @@ nav {
 
   .bio-separator {
     display: none;
-    width: 350px;
+    width: 420px;
     height: 100vh;
     background: linear-gradient(to right, #7d0000c1, #430000e8);
     position: absolute;
     right: 0;
-    box-shadow: -2px 0 5px rgba(0,0,0,.2);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
 
     &::after {
       content: "";
@@ -285,7 +277,7 @@ nav {
 .track-previews-wrapper {
   background: linear-gradient(to top, #4e1d13, #49251e);
   padding: 2rem 0 $section-divider;
-  z-index: 1000;
+  z-index: 100;
 
   h2 {
     color: $color-primary;
@@ -297,7 +289,7 @@ nav {
   }
 
   .track-previews {
-          display: flex;
+    display: flex;
     flex-wrap: wrap;
     grid-auto-flow: unset;
     justify-content: center;
@@ -308,7 +300,6 @@ nav {
       margin: 0 3px 5px;
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
       z-index: 100;
-
     }
   }
 }
@@ -660,6 +651,7 @@ footer {
     transition: all 100ms linear;
     height: 90vh;
     background-color: rgba(0, 0, 0, 0.048);
+    z-index: 1500;
 
     .modal-inner-wrapper {
       display: flex;
@@ -709,7 +701,7 @@ footer {
 
         &:hover {
           background: white;
-          letter-spacing: 2px;
+          // letter-spacing: 2px;
         }
       }
     }
@@ -722,10 +714,11 @@ footer {
       cursor: pointer;
       background: white;
       font-size: 2rem;
-      z-index: 1000;
+      z-index: 1500;
       height: max-content;
       padding: 0.5rem 1rem;
       transition: all 100ms linear;
+      z-index: 2000;
 
       &:hover {
         background: rgba(255, 0, 0, 0.685);
@@ -849,6 +842,7 @@ footer {
   transition: all 100ms linear;
   height: 90vh;
   background-color: rgba(0, 0, 0, 0.048);
+  z-index: 1500;
 
   .modal-inner-wrapper {
     display: flex;
@@ -870,10 +864,11 @@ footer {
     cursor: pointer;
     background: white;
     font-size: 2rem;
-    z-index: 1000;
+    z-index: 1500;
     height: max-content;
     padding: 0.5rem 1rem;
     transition: all 100ms linear;
+    z-index: inherit;
 
     &:hover {
       background: rgba(255, 0, 0, 0.685);
@@ -937,7 +932,6 @@ footer {
           &:hover {
             border-bottom: none;
             color: $color-primary;
-            // background-color: rgba(42, 79, 143, 0.322);
           }
 
           &:last-child {
@@ -1010,7 +1004,6 @@ footer {
 
       .bio-separator {
         display: grid;
-
       }
 
       h1 {
@@ -1069,12 +1062,15 @@ footer {
       padding-bottom: 3rem;
       position: relative;
 
+      h1 {
+        font-size: 4.8rem;
+      }
+
       .bio-description-wrapper {
         max-width: 700px;
         border-left: 1px solid rgba(192, 192, 192, 0.158);
       }
     }
-
   }
 }
 
@@ -1085,41 +1081,10 @@ footer {
     .bio {
       position: relative;
 
-      // .bio-social-media {
-      //   display: none;
-      //   position: absolute;
-      //   justify-content: flex-end;
-      //   align-items: center;
-      //   gap: 0 0.5rem;
-      //   width: 100%;
-      //   margin-right: auto;
-      //   margin-top: 0.5rem;
-      //   margin-left: -24px;
-
-      //   a {
-      //     display: flex;
-      //     align-items: center;
-      //     margin-bottom: 10px;
-      //     padding: 10px;
-      //     color: white;
-      //     font-size: 2rem;
-      //     transition: all 110ms linear;
-
-      //     &:hover {
-      //       box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.322);
-      //     }
-
-      //     svg {
-      //       height: 0.8em;
-      //     }
-      //   }
-      // }
-
       .bio-separator {
         width: 580px;
       }
     }
-
   }
 
   .tweets-wrapper {
@@ -1127,6 +1092,25 @@ footer {
 
     .individual-tweet {
       margin: 8px 10px;
+    }
+  }
+}
+
+@media screen and (orientation:landscape) 
+and (min-device-width: 828px) 
+and (max-device-width: 1792px) {
+  .bio {
+    h1 {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      writing-mode: unset;
+      position: relative;
+      text-align: right;
+    }
+
+    .bio-social-media {
+      display: none;
     }
   }
 }
