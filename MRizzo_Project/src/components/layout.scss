@@ -230,6 +230,41 @@ nav {
     .bio-description-text {
       transition: all 100ms linear;
       padding: 1.2rem 1rem;
+
+      &[data-bio-effect="true"] {
+        display: block;
+        animation: bioOpen 250ms linear;
+      }
+      &[data-bio-effect="false"] {
+        display: none;
+        animation: bioClose 150ms linear;
+      }
+
+      @keyframes bioOpen {
+        0% {
+          width: 0;
+          height: 0;
+        }
+        50% {
+          width: max-content;
+        }
+        100% {
+          height: auto;
+        }
+      }
+      @keyframes bioClose {
+        0% {
+          width: max-content;
+          height: auto;
+        }
+        50% {
+          width: max-content;
+        }
+        100% {
+          width: 0;
+          height: 0;
+        }
+      }
     }
 
     .bio-description-close-span {
@@ -1072,6 +1107,12 @@ footer {
       }
     }
   }
+
+  .merch-page-wrapper {
+    .merch-display {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 @media (min-width: $xl-screen) {
@@ -1096,9 +1137,7 @@ footer {
   }
 }
 
-@media screen and (orientation:landscape) 
-and (min-device-width: 828px) 
-and (max-device-width: 1792px) {
+@media screen and (orientation: landscape) and (min-device-width: 828px) and (max-device-width: 1792px) {
   .bio {
     h1 {
       display: flex;

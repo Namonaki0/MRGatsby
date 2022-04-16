@@ -12,16 +12,31 @@ import {
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
 import { useState } from "react"
-// import { motion } from "framer-motion"
-// import { bioDescription } from "../components/FramerMotion"
+import { motion } from "framer-motion"
+import { bioDescription } from "../components/FramerMotion"
+
+const widthOut = () => {
+  return {
+    width: "100%",
+    height: "auto",
+  }
+}
+
+const widthIn = () => {
+  return {
+    width: "0",
+  }
+}
 
 const BIO_DESCRIPTION_CLOSED = {
   display: "none",
+  transition: "all 150ms linear",
 }
-const BIO_DESCRIPTION = {
+const BIO_DESCRIPTION_OPEN = {
   display: "block",
   color: "black",
   backgroundColor: "white",
+  transition: "all 150ms linear",
 }
 const ABOUT_SPAN_OPEN = {
   display: "none",
@@ -30,6 +45,7 @@ const ABOUT_SPAN_OPEN = {
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
+  const [displayBioEffect, setDisplayBioEffect] = useState(false)
 
   return (
     <>
@@ -37,14 +53,14 @@ function IndexPage() {
         <Seo title="Home" />
 
         <div className="bio">
-          {/* <div className="img-wrapper"> */}
-          {/* <div class="bio-img"></div> */}
-          {/* </div> */}
           <h1>Marc Rizzo</h1>
 
           <div
             className="bio-description-wrapper"
-            onClick={() => setDisplayBio(!displayBio)}
+            onClick={() => {
+              setDisplayBio(!displayBio)
+              setDisplayBioEffect(!displayBioEffect)
+            }}
           >
             <span
               className="about-mark-span"
@@ -53,10 +69,8 @@ function IndexPage() {
               about marc
             </span>
             <p
-              // variants={bioDescription}
-              // initial="firstState"
-              // animate="expand"
-              style={displayBio ? BIO_DESCRIPTION : BIO_DESCRIPTION_CLOSED}
+              // style={displayBio ? BIO_DESCRIPTION_OPEN : BIO_DESCRIPTION_CLOSED}
+              data-bio-effect={displayBioEffect}
               className="bio-description-text"
             >
               American guitarist Marc Rizzo is best known for his presence in
