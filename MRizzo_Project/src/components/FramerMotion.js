@@ -1,8 +1,32 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 
+const navbarEffect = {
+  hidden: { opacity: 0, y: -10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.5,
+    },
+  },
+}
+
 const container = {
   hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+}
+
+const mainTitle = {
+  hidden: { opacity: 0, y: -10 },
   show: {
     opacity: 1,
     y: 0,
@@ -43,10 +67,10 @@ const FadeInWhenVisible = ({ children }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
       variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 10 },
       }}
     >
       {children}
@@ -54,4 +78,11 @@ const FadeInWhenVisible = ({ children }) => {
   )
 }
 
-export { container, bioDescription, bioSocial, FadeInWhenVisible }
+export {
+  navbarEffect,
+  container,
+  mainTitle,
+  bioDescription,
+  bioSocial,
+  FadeInWhenVisible,
+}

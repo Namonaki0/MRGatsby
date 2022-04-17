@@ -238,7 +238,7 @@ nav {
 
       &[data-bio-effect="false"] {
         transition: all 100ms linear;
-        // display: none;
+        display: none;
         opacity: 0;
         position: absolute;
         pointer-events: none;

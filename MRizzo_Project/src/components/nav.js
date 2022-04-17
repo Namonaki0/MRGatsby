@@ -10,6 +10,8 @@ import {
   BsTwitter,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { navbarEffect } from "./FramerMotion"
 
 export default function Nav() {
   const [openMenu, setOpenMenu] = useState(null)
@@ -17,7 +19,7 @@ export default function Nav() {
 
   return (
     <div>
-      <nav>
+      <motion.nav variants={navbarEffect} initial="hidden" animate="show">
         <ul className={openMenu ? "menu-active" : ""}>
           <li className="nav-li">
             <Link
@@ -152,7 +154,7 @@ export default function Nav() {
           <span className={burgerEffect}></span>
           <span className={burgerEffect}></span>
         </div>
-      </nav>
+      </motion.nav>
     </div>
   )
 }
