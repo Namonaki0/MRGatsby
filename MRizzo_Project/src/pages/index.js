@@ -12,21 +12,13 @@ import {
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { bioDescription } from "../components/FramerMotion"
-
-const widthOut = () => {
-  return {
-    width: "100%",
-    height: "auto",
-  }
-}
-
-const widthIn = () => {
-  return {
-    width: "0",
-  }
-}
+import {
+  container,
+  bioDescription,
+  bioSocial,
+  FadeInWhenVisible,
+} from "../components/FramerMotion"
+import { motion, useViewportScroll } from "framer-motion"
 
 const BIO_DESCRIPTION_CLOSED = {
   display: "none",
@@ -47,20 +39,27 @@ function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
 
+  const { scrollYProgress } = useViewportScroll()
+
   return (
     <>
       <Layout>
         <Seo title="Home" />
 
         <div className="bio">
-          <h1>Marc Rizzo</h1>
+          <motion.h1 variants={container} initial="hidden" animate="show">
+            Marc Rizzo
+          </motion.h1>
 
-          <div
+          <motion.div
             className="bio-description-wrapper"
             onClick={() => {
               setDisplayBio(!displayBio)
               setDisplayBioEffect(!displayBioEffect)
             }}
+            variants={bioDescription}
+            initial="hidden"
+            animate="show"
           >
             <span
               className="about-mark-span"
@@ -79,9 +78,14 @@ function IndexPage() {
               of solo projects Acoustic Vendetta and Revenge Beast.
               <span className="bio-description-close-span">close ></span>
             </p>
-          </div>
+          </motion.div>
           <div className="bio-separator"></div>
-          <div className="bio-social-media">
+          <motion.div
+            className="bio-social-media"
+            variants={bioSocial}
+            initial="hidden"
+            animate="show"
+          >
             <a
               href="https://open.spotify.com/artist/4MzKbulWnDVjGnMDMz1g8j?si=Cw7D7ZOHT82IxqUa79OBLQ"
               target="_blank"
@@ -132,7 +136,7 @@ function IndexPage() {
             >
               <BsTwitter />
             </a>
-          </div>
+          </motion.div>
         </div>
 
         <div className="track-previews-wrapper">
@@ -209,7 +213,12 @@ function IndexPage() {
             }
           `}
           render={data => (
-            <div class="tweets-outer-wrapper">
+            <div
+              class="tweets-outer-wrapper"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
               <h2>SOCIAL</h2>
               <div className="tweets-wrapper">
                 {/* <h2>social:</h2> */}
