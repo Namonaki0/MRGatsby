@@ -1,0 +1,39 @@
+
+  body::-webkit-scrollbar,
+  .tweets-wrapper::-webkit-scrollbar
+   {
+    width: .8rem;
+  }
+
+  .tweets-wrapper::-webkit-scrollbar
+   {
+    height: .6rem;
+
+  }
+
+    body, 
+    .tweets-wrapper {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #131313;
+  }
+
+    body::-webkit-scrollbar-track,
+    .tweets-wrapper::-webkit-scrollbar-track {
+    background: #242424;
+     
+  }
+
+    body::-webkit-scrollbar-thumb,
+    .tweets-wrapper::-webkit-scrollbar-thumb {
+    background: #2f2f2f;
+    border-top: 1px solid rgba(192, 192, 192, 0.082);
+    border-left: 1px solid rgba(192, 192, 192, 0.082);
+  }
+
+    .tweets-wrapper::-webkit-scrollbar-thumb {
+    border-top: none;
+    border-right: 1px solid rgba(192, 192, 192, 0.053);
+    border-radius: 5px;
+  }
+

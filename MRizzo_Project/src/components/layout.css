@@ -469,6 +469,10 @@ nav ul .nav-social-media a svg {
   color: rgba(192, 192, 192, 0.596);
 }
 
+::-webkit-scrollbar-track {
+  background: cyan;
+}
+
 .upcoming-shows h2 {
   color: white;
   text-transform: uppercase;
@@ -1097,7 +1101,7 @@ footer .developed-by a {
   main .bio .bio-social-media {
     position: absolute;
     right: 15px;
-    bottom: 70px;
+    top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1155,15 +1159,7 @@ footer .developed-by a {
     border-bottom: 1px solid rgba(192, 192, 192, 0.377);
   }
   main .tweets-outer-wrapper .tweets-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    grid-auto-flow: unset;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    padding: .5rem;
     margin: 10px 0;
   }
   main .tweets-outer-wrapper .tweets-wrapper .individual-tweet {
@@ -1210,7 +1206,7 @@ footer .developed-by a {
     position: relative;
   }
   main .bio .bio-separator {
-    width: 580px;
+    width: 680px;
   }
   .tweets-wrapper {
     gap: 5rem;

@@ -198,12 +198,7 @@ function IndexPage() {
             }
           `}
           render={data => (
-            <div
-              class="tweets-outer-wrapper"
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
+            <div class="tweets-outer-wrapper">
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
                 <div className="tweets-wrapper">

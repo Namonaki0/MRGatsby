@@ -394,7 +394,14 @@ nav {
       }
     }
   }
+
+  
 }
+
+::-webkit-scrollbar-track {
+    background: cyan;
+  }
+
 
 //? UPCOMING SHOWS
 
@@ -993,7 +1000,7 @@ footer {
       .bio-social-media {
         position: absolute;
         right: 15px;
-        bottom: 70px;
+        top: 20px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -1049,11 +1056,13 @@ footer {
     }
 
     .tweets-outer-wrapper {
+      
       .tweets-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        grid-auto-flow: unset;
-        justify-content: center;
+        padding: .5rem; 
+        // display: flex;
+        // flex-wrap: wrap;
+        // grid-auto-flow: unset;
+        // justify-content: center;
         margin: 10px 0;
 
         .individual-tweet {
@@ -1113,7 +1122,7 @@ footer {
       position: relative;
 
       .bio-separator {
-        width: 580px;
+        width: 680px;
       }
     }
   }
