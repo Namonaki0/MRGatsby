@@ -186,11 +186,15 @@ function IndexPage() {
                 edges {
                   node {
                     full_text
-                    created_at
                     user {
                       name
                       profile_image_url
                       screen_name
+                    }
+                    entities {
+                      hashtags {
+                        text
+                      }
                     }
                   }
                 }

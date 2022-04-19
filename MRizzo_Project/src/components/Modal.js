@@ -1,11 +1,5 @@
 import React, { useEffect } from "react"
-import {
-  container,
-  mainTitle,
-  bioDescription,
-  bioSocial,
-  FadeInWhenVisible,
-} from "../components/FramerMotion"
+import { modalEffect } from "../components/FramerMotion"
 import { motion } from "framer-motion"
 
 const MERCH_MODAL_STYLING = {
@@ -50,7 +44,7 @@ export default function Modal({ isOpen, onClose, children }) {
     <>
       <motion.div
         style={MERCH_MODAL_OVERLAY}
-        variants={container}
+        variants={modalEffect}
         initial="hidden"
         animate="show"
       />

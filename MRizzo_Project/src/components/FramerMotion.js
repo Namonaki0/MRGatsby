@@ -25,6 +25,18 @@ const container = {
   },
 }
 
+const modalEffect = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.5,
+      duration: 0.2,
+    },
+  },
+}
+
 const mainTitle = {
   hidden: { opacity: 0, y: -10 },
   show: {
@@ -67,7 +79,7 @@ const FadeInWhenVisible = ({ children }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.3, delay: 0.5 }}
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 10 },
@@ -81,6 +93,7 @@ const FadeInWhenVisible = ({ children }) => {
 export {
   navbarEffect,
   container,
+  modalEffect,
   mainTitle,
   bioDescription,
   bioSocial,

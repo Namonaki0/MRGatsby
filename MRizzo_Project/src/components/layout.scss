@@ -102,11 +102,16 @@ nav {
 
   ul {
     visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     opacity: 0;
+    transform: translateY(-10%);
     flex-direction: column;
     list-style: none;
     transition: all 100ms linear;
-    height: max-content;
     background: black;
 
     &.menu-active {
@@ -141,7 +146,7 @@ nav {
         &:hover {
           border-bottom: 1px solid rgba(192, 192, 192, 0.63);
           color: $color-primary;
-          background-color: rgba(42, 79, 143, 0.322);
+          // background-color: rgba(42, 79, 143, 0.21);
         }
       }
     }
