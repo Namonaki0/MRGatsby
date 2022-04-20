@@ -25,10 +25,6 @@ main {
 
 nav {
   position: fixed;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-transition: all 100ms linear;
   transition: all 100ms linear;
   background: transparent;
@@ -106,34 +102,25 @@ nav .burger-menu .open:nth-child(3) {
 
 nav ul {
   visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   list-style: none;
-  -webkit-transition: all 100ms linear;
-  transition: all 100ms linear;
+  -webkit-transition: all 100ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 100ms cubic-bezier(0.19, 1, 0.22, 1);
   background: black;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 nav ul.menu-active {
   visibility: unset;
   opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
   background: black;
   height: 100vh;
   display: -ms-grid;
   display: grid;
   place-content: center;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 nav ul li {
@@ -1054,6 +1041,8 @@ footer .developed-by a {
         -ms-flex-pack: center;
             justify-content: center;
     background: rgba(62, 71, 87, 0.144);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   nav ul li {
     position: relative;
@@ -1162,7 +1151,7 @@ footer .developed-by a {
     border-bottom: 1px solid rgba(192, 192, 192, 0.377);
   }
   main .tweets-outer-wrapper .tweets-wrapper {
-    padding: .5rem;
+    padding: 0.5rem;
     margin: 10px 0;
   }
   main .tweets-outer-wrapper .tweets-wrapper .individual-tweet {

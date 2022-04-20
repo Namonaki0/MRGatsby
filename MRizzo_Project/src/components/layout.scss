@@ -35,7 +35,7 @@ main {
 
 nav {
   position: fixed;
-  flex-direction: column;
+  // opacity: 0;
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
@@ -47,6 +47,7 @@ nav {
   &.open-menu {
     height: max-content;
     background: $bg-primary;
+    // opacity: 1;
   }
 
   &.scroll-effect {
@@ -102,26 +103,20 @@ nav {
 
   ul {
     visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transform: translateY(-10%);
-    flex-direction: column;
     list-style: none;
-    transition: all 100ms linear;
+    transition: all 100ms cubic-bezier(0.19, 1, 0.22, 1);
     background: black;
+    opacity: 0;
+    transform: translateX(100%);
 
     &.menu-active {
       visibility: unset;
       opacity: 1;
-      transform: translateX(0);
       background: $bg-primary;
       height: 100vh;
       display: grid;
       place-content: center;
+      transform: translateX(0);
     }
 
     li {
@@ -259,7 +254,6 @@ nav {
           position: relative;
         }
       }
-
     }
 
     .bio-description-close-span {
@@ -399,14 +393,11 @@ nav {
       }
     }
   }
-
-  
 }
 
 ::-webkit-scrollbar-track {
-    background: cyan;
-  }
-
+  background: cyan;
+}
 
 //? UPCOMING SHOWS
 
@@ -951,6 +942,7 @@ footer {
       flex-direction: row;
       justify-content: center;
       background: rgba(62, 71, 87, 0.144);
+      transform: translateX(0);
 
       li {
         position: relative;
@@ -1061,9 +1053,8 @@ footer {
     }
 
     .tweets-outer-wrapper {
-      
       .tweets-wrapper {
-        padding: .5rem; 
+        padding: 0.5rem;
         // display: flex;
         // flex-wrap: wrap;
         // grid-auto-flow: unset;

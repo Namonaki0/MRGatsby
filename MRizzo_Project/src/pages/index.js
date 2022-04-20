@@ -202,7 +202,7 @@ function IndexPage() {
             }
           `}
           render={data => (
-            <div class="tweets-outer-wrapper">
+            <div className="tweets-outer-wrapper">
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
                 <div className="tweets-wrapper">
