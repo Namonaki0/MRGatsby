@@ -210,6 +210,10 @@ nav {
     display: block;
   }
 
+  .bio-description-wide-screen {
+    display: none;
+  }
+
   .bio-description-wrapper {
     position: absolute;
     bottom: 0;
@@ -984,14 +988,46 @@ footer {
     flex-direction: column;
 
     .bio {
-      grid-template-columns: 2fr 1fr;
+      // grid-template-columns: 2fr 1fr;
       padding-bottom: 3rem;
       position: relative;
+      display: grid;
       height: 100vh;
+      place-content: center;
+
+      .title-bio {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 4rem;
+          display: block;
+          text-align: right;
+          
+          height: unset;
+          font-size: 3.6rem;
+          writing-mode: unset;
+          position: relative;
+          // background: cyan;
+          margin-top: 55px;
+          margin-right: -150px;
+        }
+
+        .bio-description-wide-screen {
+          display: block;
+          z-index: 100;
+           margin-left: auto;
+           margin-right: -140px;
+           width: 90%;
+        }
+      }
 
       .bio-description-wrapper {
-        max-width: 550px;
-        font-size: 1.3rem;
+        display: none;
+
+        .about-mark-span {
+          display: none;
+        }
       }
 
       .bio-social-media {
@@ -1034,11 +1070,6 @@ footer {
       .bio-separator {
         display: grid;
       }
-
-      h1 {
-        font-size: 4rem;
-        bottom: -50px;
-      }
     }
 
     .merch-name-wrapper {
@@ -1055,10 +1086,7 @@ footer {
     .tweets-outer-wrapper {
       .tweets-wrapper {
         padding: 0.5rem;
-        // display: flex;
-        // flex-wrap: wrap;
-        // grid-auto-flow: unset;
-        // justify-content: center;
+
         margin: 10px 0;
 
         .individual-tweet {
@@ -1092,14 +1120,33 @@ footer {
       padding-bottom: 3rem;
       position: relative;
 
-      h1 {
-        font-size: 4.8rem;
+      .title-bio {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 5.8rem;
+          display: block;
+          text-align: right;
+          
+          height: unset;
+          font-size: 3.6rem;
+          writing-mode: unset;
+          position: relative;
+          // background: cyan;
+          margin-top: 55px;
+          margin-right: -150px;
+        }
+
+        .bio-description-wide-screen {
+          display: block;
+          z-index: 100;
+           margin-left: auto;
+           margin-right: -140px;
+           width: 90%;
+        }
       }
 
-      .bio-description-wrapper {
-        max-width: 700px;
-        border-left: 1px solid rgba(192, 192, 192, 0.158);
-      }
     }
   }
 

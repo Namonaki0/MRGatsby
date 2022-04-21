@@ -31,9 +31,18 @@ function IndexPage() {
         <Seo title="Home" />
 
         <div className="bio">
-          <motion.h1 variants={mainTitle} initial="hidden" animate="show">
-            Marc Rizzo
-          </motion.h1>
+          <div className="title-bio">
+            <motion.h1 variants={mainTitle} initial="hidden" animate="show">
+              Marc Rizzo
+            </motion.h1>
+
+            <span className="bio-description-wide-screen">
+              American guitarist Marc Rizzo is best known for his presence in
+              metal band Soulfly where he spent 18 years of his life and Ill
+              Nino where he first gained mainstream attention. He is also part
+              of solo projects Acoustic Vendetta and Revenge Beast.
+            </span>
+          </div>
 
           <motion.div
             className="bio-description-wrapper"
@@ -47,7 +56,9 @@ function IndexPage() {
           >
             <span
               className="about-mark-span"
-              style={{ display: displayBio ? "none" : "block" }}
+              style={{
+                display: displayBio ? "none" : "block",
+              }}
             >
               about marc
             </span>

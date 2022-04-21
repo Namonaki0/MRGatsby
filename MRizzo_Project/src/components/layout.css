@@ -239,6 +239,10 @@ nav ul .nav-social-media a svg {
   display: block;
 }
 
+.bio .bio-description-wide-screen {
+  display: none;
+}
+
 .bio .bio-description-wrapper {
   position: absolute;
   bottom: 0;
@@ -1080,15 +1084,47 @@ footer .developed-by a {
             flex-direction: column;
   }
   main .bio {
-    -ms-grid-columns: 2fr 1fr;
-        grid-template-columns: 2fr 1fr;
     padding-bottom: 3rem;
     position: relative;
+    display: -ms-grid;
+    display: grid;
     height: 100vh;
+    place-content: center;
+  }
+  main .bio .title-bio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .bio .title-bio h1 {
+    font-size: 4rem;
+    display: block;
+    text-align: right;
+    height: unset;
+    font-size: 3.6rem;
+    -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+            writing-mode: unset;
+    position: relative;
+    margin-top: 55px;
+    margin-right: -150px;
+  }
+  main .bio .title-bio .bio-description-wide-screen {
+    display: block;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: -140px;
+    width: 90%;
   }
   main .bio .bio-description-wrapper {
-    max-width: 550px;
-    font-size: 1.3rem;
+    display: none;
+  }
+  main .bio .bio-description-wrapper .about-mark-span {
+    display: none;
   }
   main .bio .bio-social-media {
     position: absolute;
@@ -1135,10 +1171,6 @@ footer .developed-by a {
     display: -ms-grid;
     display: grid;
   }
-  main .bio h1 {
-    font-size: 4rem;
-    bottom: -50px;
-  }
   main .merch-name-wrapper {
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
@@ -1177,12 +1209,34 @@ footer .developed-by a {
     padding-bottom: 3rem;
     position: relative;
   }
-  main .bio h1 {
-    font-size: 4.8rem;
+  main .bio .title-bio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  main .bio .bio-description-wrapper {
-    max-width: 700px;
-    border-left: 1px solid rgba(192, 192, 192, 0.158);
+  main .bio .title-bio h1 {
+    font-size: 5.8rem;
+    display: block;
+    text-align: right;
+    height: unset;
+    font-size: 3.6rem;
+    -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+            writing-mode: unset;
+    position: relative;
+    margin-top: 55px;
+    margin-right: -150px;
+  }
+  main .bio .title-bio .bio-description-wide-screen {
+    display: block;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: -140px;
+    width: 90%;
   }
   .merch-page-wrapper .merch-display {
     -ms-grid-columns: (1fr)[3];
