@@ -1019,6 +1019,21 @@ footer {
            margin-left: auto;
            margin-right: -140px;
            width: 90%;
+
+           .follow-marc {
+             display: block;
+             margin-top: 1rem;
+             text-align: right;
+
+             .social-media-arrow {
+               display: inline;
+                font-size: 1.5rem;
+                vertical-align: middle;
+                // background: cadetblue;
+                text-align: center;
+                color: #78161a;
+             }
+           }
         }
       }
 
@@ -1125,12 +1140,10 @@ footer {
         flex-direction: column;
 
         h1 {
-          font-size: 5.8rem;
+          font-size: 4.5rem;
           display: block;
           text-align: right;
-          
           height: unset;
-          font-size: 3.6rem;
           writing-mode: unset;
           position: relative;
           // background: cyan;
@@ -1139,11 +1152,15 @@ footer {
         }
 
         .bio-description-wide-screen {
-          display: block;
-          z-index: 100;
-           margin-left: auto;
-           margin-right: -140px;
-           width: 90%;
+        font-size: 1.2rem;
+
+        .follow-marc {
+            font-size: 1.3rem;
+
+            .social-media-arrow {
+              font-size: 2rem;
+            }
+        }
         }
       }
 

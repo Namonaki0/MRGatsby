@@ -8,6 +8,7 @@ import {
   BsFacebook,
   BsInstagram,
   BsTwitter,
+  BsArrowRightShort,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import Layout from "../components/layout"
@@ -36,12 +37,16 @@ function IndexPage() {
               Marc Rizzo
             </motion.h1>
 
-            <span className="bio-description-wide-screen">
+            <p className="bio-description-wide-screen">
               American guitarist Marc Rizzo is best known for his presence in
               metal band Soulfly where he spent 18 years of his life and Ill
               Nino where he first gained mainstream attention. He is also part
               of solo projects Acoustic Vendetta and Revenge Beast.
-            </span>
+              <span className="follow-marc">
+                follow Marc on social media{" "}
+                <BsArrowRightShort className="social-media-arrow" />
+              </span>
+            </p>
           </div>
 
           <motion.div
