@@ -8,6 +8,8 @@ $bg-secondary: #1c1c1c;
 $md-screen: 600px;
 $lg-screen: 1000px;
 $xl-screen: 1200px;
+$xxl-screen: 1400px;
+$super-wide-screen: 1800px;
 $section-divider: 2rem;
 //? VARIABLES ---
 
@@ -1003,7 +1005,7 @@ footer {
           font-size: 4rem;
           display: block;
           text-align: right;
-          
+
           height: unset;
           font-size: 3.6rem;
           writing-mode: unset;
@@ -1016,24 +1018,24 @@ footer {
         .bio-description-wide-screen {
           display: block;
           z-index: 100;
-           margin-left: auto;
-           margin-right: -140px;
-           width: 90%;
+          margin-left: auto;
+          margin-right: -140px;
+          width: 90%;
 
-           .follow-marc {
-             display: block;
-             margin-top: 1rem;
-             text-align: right;
+          .follow-marc {
+            display: block;
+            margin-top: 1rem;
+            text-align: right;
 
-             .social-media-arrow {
-               display: inline;
-                font-size: 1.5rem;
-                vertical-align: middle;
-                // background: cadetblue;
-                text-align: center;
-                color: #78161a;
-             }
-           }
+            .social-media-arrow {
+              display: inline;
+              font-size: 1.5rem;
+              vertical-align: middle;
+              // background: cadetblue;
+              text-align: center;
+              color: #78161a;
+            }
+          }
         }
       }
 
@@ -1152,18 +1154,17 @@ footer {
         }
 
         .bio-description-wide-screen {
-        font-size: 1.2rem;
+          font-size: 1.2rem;
 
-        .follow-marc {
+          .follow-marc {
             font-size: 1.3rem;
 
             .social-media-arrow {
               font-size: 2rem;
             }
-        }
+          }
         }
       }
-
     }
   }
 
@@ -1192,6 +1193,24 @@ footer {
 
     .individual-tweet {
       margin: 8px 10px;
+    }
+  }
+}
+
+@media (min-width: $xxl-screen) {
+  .bio {
+    background-size: 850px;
+  }
+}
+@media (min-width: $super-wide-screen) {
+  main {
+    margin: 0 4rem;
+
+    .bio {
+      background-size: 1050px;
+      .bio-separator {
+        width: 880px;
+      }
     }
   }
 }

@@ -1275,6 +1275,24 @@ footer .developed-by a {
   }
 }
 
+@media (min-width: 1400px) {
+  .bio {
+    background-size: 850px;
+  }
+}
+
+@media (min-width: 1800px) {
+  main {
+    margin: 0 4rem;
+  }
+  main .bio {
+    background-size: 1050px;
+  }
+  main .bio .bio-separator {
+    width: 880px;
+  }
+}
+
 @media screen and (orientation: landscape) and (min-device-width: 828px) and (max-device-width: 1792px) {
   .bio h1 {
     display: -webkit-box;

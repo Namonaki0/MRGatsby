@@ -25,7 +25,7 @@ export default function Merch() {
           className="merch-display"
         >
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_7_170032_1083_325093_470_black170746_nobg.png?1638400254"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_7_170032_1083_325093_470_black170746_nobg.png?1650664881"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/theflyer"
@@ -42,7 +42,7 @@ export default function Merch() {
           />
 
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_1_155452_1083_324971_470_black155810_nobg.png?itok=ljd-UQGE"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_1_155452_1083_324971_470_black155810_nobg.png?1650665084"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlive"
@@ -58,7 +58,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_2_160250_1083_324990_470_black160826_nobg.png?itok=buJkTnTz"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_2_160250_1083_324990_470_black160826_nobg.png?1650665351"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrsignature"
@@ -74,7 +74,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_3_161224_1083_325007_470_black161529_nobg.png?itok=9LLiVPvo"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_3_161224_1083_325007_470_black161529_nobg.png?1650665450"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrliveblackandwhite"
@@ -90,7 +90,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_5_164140_1083_325064_470_black164615_nobg.png?itok=juaAOPEX"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_5_164140_1083_325064_470_black164615_nobg.png?1650665498"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlivefeeling"
@@ -106,7 +106,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_8_171056_1083_325113_470_black171801_nobg.png?itok=AAhl2EjB"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_8_171056_1083_325113_470_black171801_nobg.png?1650665571"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/inadream"
@@ -121,7 +121,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_9_172200_1083_325128_470_black172607_nobg.png?itok=kkX_x-u_"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_9_172200_1083_325128_470_black172607_nobg.png?1650665609"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/ripandshredmmxx"
@@ -137,7 +137,7 @@ export default function Merch() {
             }}
           />
           <StaticImage
-            src="https://www.storefrontier.com/sites/default/files/styles/product_listing_large/public/product_mockups/66357/rizzo_10_173139_1083_325150_470_black173515_nobg.png?itok=m2pDW7zm"
+            src="https://www.storefrontier.com/sites/default/files/product_mockups/66357/rizzo_10_173139_1083_325150_470_black173515_nobg.png?1650665645"
             loading="lazy"
             className="merch-img"
             data-link-cta="https://www.storefrontier.com/product/mrlogo"

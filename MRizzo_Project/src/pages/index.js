@@ -16,6 +16,7 @@ import { useState } from "react"
 import {
   container,
   mainTitle,
+  followSpan,
   bioDescription,
   bioSocial,
   FadeInWhenVisible,
@@ -37,16 +38,26 @@ function IndexPage() {
               Marc Rizzo
             </motion.h1>
 
-            <p className="bio-description-wide-screen">
+            <motion.p
+              variants={bioDescription}
+              initial="hidden"
+              animate="show"
+              className="bio-description-wide-screen"
+            >
               American guitarist Marc Rizzo is best known for his presence in
               metal band Soulfly where he spent 18 years of his life and Ill
               Nino where he first gained mainstream attention. He is also part
               of solo projects Acoustic Vendetta and Revenge Beast.
-              <span className="follow-marc">
+              <motion.span
+                variants={followSpan}
+                initial="hidden"
+                animate="show"
+                className="follow-marc"
+              >
                 follow Marc on social media{" "}
                 <BsArrowRightShort className="social-media-arrow" />
-              </span>
-            </p>
+              </motion.span>
+            </motion.p>
           </div>
 
           <motion.div
