@@ -4,23 +4,24 @@ import Layout from "../components/layout"
 import { motion } from "framer-motion"
 import { container } from "../components/FramerMotion"
 import Modal from "../components/Modal"
+import {
+  BASE_URL,
+  PLAYLIST_FIELD,
+  CHANNEL_ID,
+  LIVESTREAM_PLAYLIST,
+} from "../../static/keys"
 
 export default function Videos() {
-  const baseUrl =
-    " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D"
-  const playlistFeed =
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fyoutube.com%2Ffeeds%2Fvideos.xml%3Fplaylist_id%3D"
+  const baseUrl = BASE_URL
+  const playlistFeed = PLAYLIST_FIELD
 
   const [videos, setVideos] = useState([])
   const [feedVideos, setFeedVideos] = useState([])
   const [openModal, setOpenModal] = useState(false)
   const [currentVideo, setCurrentvideo] = useState(null)
-  const [currentChannelId, setCurrentChannelId] = useState(
-    "UCkNW3tA-mFGnkviFNPzTq5A"
-  )
-  const [livestreamPlaylist, setLivestreamPlaylist] = useState(
-    "PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
-  )
+  const [currentChannelId, setCurrentChannelId] = useState(CHANNEL_ID)
+  const [livestreamPlaylist, setLivestreamPlaylist] =
+    useState(LIVESTREAM_PLAYLIST)
 
   useEffect(() => {
     ;(async () => {

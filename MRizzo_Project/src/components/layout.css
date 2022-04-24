@@ -1293,25 +1293,36 @@ footer .developed-by a {
   }
 }
 
-@media screen and (orientation: landscape) and (min-device-width: 828px) and (max-device-width: 1792px) {
-  .bio h1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+@media (orientation: landscape) and (max-width: 896px) and (min-aspect-ratio: 13 / 9) {
+  .bio .bio-social-media {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 85vh;
+    margin-right: 50px;
+  }
+  .bio .bio-social-media::before {
+    display: none !important;
+  }
+  .bio .bio-social-media::after {
+    content: "";
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-writing-mode: unset;
-        -ms-writing-mode: unset;
-            writing-mode: unset;
-    position: relative;
-    text-align: right;
-  }
-  .bio .bio-social-media {
-    display: none;
+    background: #78161a;
+    height: 3px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-left: 5px;
   }
 }
 /*# sourceMappingURL=layout.css.map */

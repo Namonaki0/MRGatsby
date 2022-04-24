@@ -71,3 +71,5 @@ yarn-error.log
 api_keys
 
 gatsby-config
+
+*keys.js
