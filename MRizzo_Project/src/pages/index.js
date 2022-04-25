@@ -1,5 +1,6 @@
 import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import { useEffect } from "react"
 import Seo from "../components/seo"
 import {
   BsSpotify,
@@ -22,10 +23,29 @@ import {
   FadeInWhenVisible,
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
+import { BIT_API, API_KEY, IN_ID, MR_ID } from "../../static/keys"
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
+  const [bandName, setBandName] = useState([])
+  const [liveEvents, setLiveEvents] = useState([])
+
+  useEffect(() => {
+    ;(async () => {
+      const band_name = await fetch(
+        `${BIT_API}id_${IN_ID}/?app_id=${API_KEY}`
+      ).then(res => res.json())
+      setBandName(band_name)
+      // console.log(band_name)
+
+      const live_events = await fetch(
+        `${BIT_API}id_${IN_ID}/events/?app_id=${API_KEY}`
+      ).then(res => res.json())
+      setLiveEvents(live_events)
+      console.log(live_events)
+    })()
+  }, [])
 
   return (
     <>
@@ -262,6 +282,7 @@ function IndexPage() {
 
         <div className="upcoming-shows">
           <h2>upcoming shows</h2>
+          <div></div>
         </div>
       </Layout>
     </>

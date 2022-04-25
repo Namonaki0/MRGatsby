@@ -326,6 +326,7 @@ nav {
 
     iframe {
       flex: 1;
+      min-width: 25%;
       position: relative;
       margin: 0 3px 5px;
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
@@ -934,8 +935,6 @@ footer {
   }
 }
 
-
-
 @media (min-width: $md-screen) {
   nav {
     background: $bg-secondary;
@@ -1026,8 +1025,9 @@ footer {
 
           .follow-marc {
             display: block;
-            margin-top: 1rem;
+            margin-top: 2.5rem;
             text-align: right;
+            // background: cyan;
 
             .social-media-arrow {
               display: inline;
@@ -1051,21 +1051,27 @@ footer {
 
       .bio-social-media {
         position: absolute;
-        right: 15px;
-        top: 20px;
+        right: 25px;
+        bottom: 25px;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        flex-direction: row !important;
+        align-items: flex-end;
+        z-index: 100;
 
-        &::before {
+        &:before {
+          display: none;
+        }
+
+        &::after {
           content: "";
-          display: block;
+          align-items: center;
           background: #78161a;
-          width: 3px;
-          height: 100px;
+          height: 3px;
+          width: 100px;
           margin: 0 auto;
           border-radius: 2px;
           margin-bottom: 5px;
+          margin-left: 5px;
         }
 
         a {
@@ -1127,8 +1133,6 @@ footer {
   }
 }
 
-
-
 @media (min-width: $lg-screen) {
   nav {
     margin: 0 4rem;
@@ -1152,7 +1156,6 @@ footer {
           height: unset;
           writing-mode: unset;
           position: relative;
-          // background: cyan;
           margin-top: 55px;
           margin-right: -150px;
         }
@@ -1167,6 +1170,28 @@ footer {
               font-size: 2rem;
             }
           }
+        }
+      }
+
+      .bio-social-media {
+        display: flex;
+        flex-direction: column !important;
+        right: 25px;
+        top: 0px;
+
+        &::before {
+          content: "";
+          display: block;
+          background: #78161a;
+          width: 3px;
+          height: 250px;
+          margin: 0 auto;
+          border-radius: 2px;
+          margin-bottom: 5px;
+        }
+
+        &::after {
+          display: none;
         }
       }
     }
@@ -1219,54 +1244,34 @@ footer {
   }
 }
 
+//? MOBILE - LANDSCAPE -
+// @media (orientation: landscape) and (max-width: 896px) and (min-aspect-ratio: 13/9) {
+//   .bio {
 
-//? MOBILE - LANDSCAPE - 
-@media (orientation: landscape) and (max-width: 896px) and (min-aspect-ratio: 13/9) {
-  .bio {
-    // background-color: cyan;
+//     .bio-social-media {
+//       // display: flex !important;
+//       // flex-direction: row !important;
+//       // align-items: flex-end;
+//       // height: 90vh;
+//       // margin-right: 50px;
 
-    .bio-social-media {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: flex-end;
-      height: 85vh;
-      margin-right: 50px;
+//       &::before {
+//         display: none !important;
+//       }
 
-      &::before {
-        display: none !important;
-      }
+//        &::after {
+//           content: "";
+//           align-items: center;
+//           background: #78161a;
+//           height: 3px;
+//           width: 100px;
+//           margin: 0 auto;
+//           border-radius: 2px;
+//           margin-bottom: 5px;
+//           margin-left: 5px;
+//         }
 
-       &::after {
-          content: "";
-          // display: flex;
-          align-items: center;
-          background: #78161a;
-          height: 3px;
-          width: 100px;
-          margin: 0 auto;
-          border-radius: 2px;
-          margin-bottom: 5px; 
-          margin-left: 5px;
-          // vertical-align: middle;
-        }
+//     }
+//   }
 
-        // a {
-        //   margin: 0;
-        //   svg {
-        //     background: #ffffffcb;
-        //     color: #c12127;
-        //     border-radius: 50%;
-        //     padding: 5px;
-        //     width: 35px;
-        //     height: auto;
-        //     transition: all 100ms linear;
-
-        //     &:hover {
-        //       color: #e1262d;
-        //     }
-        //   }
-        // }
-    }
-  }
-  
-}
+// }
