@@ -36,14 +36,15 @@ function IndexPage() {
       const band_name = await fetch(
         `${BIT_API}id_${IN_ID}/?app_id=${API_KEY}`
       ).then(res => res.json())
-      setBandName(band_name)
-      // console.log(band_name)
 
       const live_events = await fetch(
         `${BIT_API}id_${IN_ID}/events/?app_id=${API_KEY}`
       ).then(res => res.json())
+
+      setBandName(band_name)
       setLiveEvents(live_events)
-      console.log(live_events)
+      // console.log(liveEvents.map(liveEvent => liveEvent))
+      console.log(liveEvents.map(liveEvent => liveEvent.offers))
     })()
   }, [])
 
@@ -282,7 +283,27 @@ function IndexPage() {
 
         <div className="upcoming-shows">
           <h2>upcoming shows</h2>
-          <div></div>
+          <div className="upcoming-shows-wrapper">
+            {liveEvents.map(liveEvent => (
+              <div className="upcoming-show">
+                <div>
+                  <p>{liveEvent.title}</p>
+                  <p>{liveEvent.festival_start_date}</p>
+                  <p>{liveEvent.venue.city}</p>
+                  <p>{liveEvent.venue.country}</p>
+                </div>
+                <div>
+                  <a
+                    href={liveEvent.offers.map(offer => offer.url)}
+                    target="_blank"
+                  >
+                    tickets
+                  </a>
+                </div>
+                <span className="band-name-span">{bandName.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </Layout>
     </>

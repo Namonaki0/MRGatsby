@@ -380,7 +380,6 @@ nav ul .nav-social-media a svg {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  min-width: 25%;
   position: relative;
   margin: 0 3px 5px;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
@@ -477,31 +476,39 @@ nav ul .nav-social-media a svg {
   border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
-.upcoming-shows .img-wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  padding: 5px;
+.upcoming-shows .upcoming-shows-wrapper .upcoming-show {
+  position: relative;
+  background: #292929;
+  color: whitesmoke;
+  padding: 1rem .8rem;
+  margin: 0 .2rem .5rem;
+  border-radius: 3px;
+  overflow: hidden;
+  border-left: 5px solid #920202;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.upcoming-shows .img-wrapper img {
-  width: 100%;
+.upcoming-shows .upcoming-shows-wrapper .upcoming-show a {
+  text-decoration: none;
+  background: lightgray;
+  color: #131313;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 1px;
 }
 
-.upcoming-shows .img-wrapper img:nth-child(1) {
-  grid-column: span 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-}
-
-.upcoming-shows .img-wrapper img:nth-child(2) {
-  grid-column: 2 / -1;
-  grid-row: span 2;
-  margin-top: -50px;
+.upcoming-shows .upcoming-shows-wrapper .upcoming-show .band-name-span {
+  position: absolute;
+  color: white;
+  right: 10px;
+  bottom: -15px;
+  opacity: .1;
+  font-size: 2rem;
 }
 
 footer .social-media {
@@ -1201,6 +1208,9 @@ footer .developed-by a {
   }
   main .merch-name-wrapper span {
     border-bottom: 1px solid rgba(192, 192, 192, 0.377);
+  }
+  main .track-previews iframe {
+    min-width: 25%;
   }
   main .tweets-outer-wrapper .tweets-wrapper {
     padding: 0.5rem;
