@@ -12,6 +12,7 @@ import {
   BsArrowRightShort,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
+import { IoTicket } from "react-icons/io5"
 import Layout from "../components/layout"
 import { useState } from "react"
 import {
@@ -43,8 +44,8 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-      // console.log(liveEvents.map(liveEvent => liveEvent))
-      console.log(liveEvents.map(liveEvent => liveEvent.offers))
+      console.log(liveEvents.map(liveEvent => liveEvent))
+      // console.log(liveEvents.map(liveEvent => liveEvent.offers))
     })()
   }, [])
 
@@ -284,23 +285,19 @@ function IndexPage() {
         <div className="upcoming-shows">
           <h2>upcoming shows</h2>
           <div className="upcoming-shows-wrapper">
+            <span className="band-name-span">{bandName.name}</span>
             {liveEvents.map(liveEvent => (
               <div className="upcoming-show">
-                <div>
+                <div className="upcoming-show-info">
                   <p>{liveEvent.title}</p>
                   <p>{liveEvent.festival_start_date}</p>
                   <p>{liveEvent.venue.city}</p>
                   <p>{liveEvent.venue.country}</p>
                 </div>
-                <div>
-                  <a
-                    href={liveEvent.offers.map(offer => offer.url)}
-                    target="_blank"
-                  >
-                    tickets
-                  </a>
-                </div>
-                <span className="band-name-span">{bandName.name}</span>
+                <a href={liveEvent.url} target="_blank" className="tickets-cta">
+                  <IoTicket className="ticket-icon" />
+                  tickets
+                </a>
               </div>
             ))}
           </div>
