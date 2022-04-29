@@ -31,6 +31,7 @@ function IndexPage() {
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
   const [bandName, setBandName] = useState([])
   const [liveEvents, setLiveEvents] = useState([])
+  const [dateFormat, setDateFormat] = useState([])
 
   useEffect(() => {
     ;(async () => {
@@ -44,8 +45,15 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-      console.log(liveEvents.map(liveEvent => liveEvent))
-      // console.log(liveEvents.map(liveEvent => liveEvent.offers))
+
+      liveEvents.map(liveEvent => {
+        const dates = liveEvent.festival_start_date
+        const sliced_dates = `${dates.slice(8, 11)}th`
+        // console.log(sliced_dates)
+        // const new_date_format = `${sliced_dates}th`
+        setDateFormat(sliced_dates)
+      })
+      // console.log(dateFormat)
     })()
   }, [])
 
@@ -108,7 +116,7 @@ function IndexPage() {
               metal band Soulfly where he spent 18 years of his life and Ill
               Nino where he first gained mainstream attention. He is also part
               of solo projects Acoustic Vendetta and Revenge Beast.
-              <span className="bio-description-close-span">close ></span>
+              <span className="bio-description-close-span">close</span>
             </p>
           </motion.div>
           <div className="bio-separator"></div>
@@ -291,6 +299,7 @@ function IndexPage() {
                 <div className="upcoming-show-info">
                   <p>{liveEvent.title}</p>
                   <p>{liveEvent.festival_start_date}</p>
+                  {/* <p>{dateFormat}</p> */}
                   <p>{liveEvent.venue.city}</p>
                   <p>{liveEvent.venue.country}</p>
                 </div>
