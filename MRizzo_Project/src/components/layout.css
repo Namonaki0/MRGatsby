@@ -476,6 +476,16 @@ nav ul .nav-social-media a svg {
   border-bottom: 2px solid rgba(255, 0, 0, 0.432);
 }
 
+.upcoming-shows .band-name-span {
+  display: block;
+  text-align: right;
+  background: #78161a;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  padding: 5px 10px 2px;
+}
+
 .upcoming-shows .upcoming-shows-wrapper .upcoming-show {
   background: #292929;
   color: whitesmoke;
@@ -523,16 +533,6 @@ nav ul .nav-social-media a svg {
   pointer-events: none;
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
-}
-
-.upcoming-shows .upcoming-shows-wrapper .band-name-span {
-  display: block;
-  text-align: right;
-  background: #78161a;
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  padding: 5px 10px 2px;
 }
 
 footer .social-media {
@@ -1247,6 +1247,9 @@ footer .developed-by a {
   main .upcoming-shows h2 {
     padding: 0;
   }
+  main .upcoming-shows .upcoming-shows-wrapper {
+    padding: 0.5rem 1.2rem;
+  }
   .video-library-wrapper {
     margin-top: 4rem;
   }
@@ -1316,6 +1319,21 @@ footer .developed-by a {
   }
   main .bio .bio-social-media::after {
     display: none;
+  }
+  main .upcoming-shows .upcoming-shows-wrapper {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  main .upcoming-shows .upcoming-shows-wrapper .upcoming-show {
+    width: 45%;
+    margin-bottom: .5rem;
   }
   .merch-page-wrapper .merch-display {
     -ms-grid-columns: (1fr)[3];

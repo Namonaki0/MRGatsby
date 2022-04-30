@@ -419,7 +419,18 @@ nav {
     border-bottom: 2px solid rgba(255, 0, 0, 0.432);
   }
 
+  .band-name-span {
+      display: block;
+      text-align: right;
+      background: #78161a;
+      color: $color-primary;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      padding: 5px 10px 2px;
+    }
+
   .upcoming-shows-wrapper {
+
     .upcoming-show {
       background: #292929;
       color: whitesmoke;
@@ -461,15 +472,7 @@ nav {
       }
     }
 
-    .band-name-span {
-      display: block;
-      text-align: right;
-      background: #78161a;
-      color: $color-primary;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      padding: 5px 10px 2px;
-    }
+    
   }
 }
 
@@ -1163,6 +1166,16 @@ footer {
       h2 {
         padding: 0;
       }
+
+
+      .upcoming-shows-wrapper { 
+        padding: 0.5rem 1.2rem
+
+ 
+
+
+      }
+    
     }
   }
 
@@ -1209,6 +1222,8 @@ footer {
             }
           }
         }
+
+        
       }
 
       .bio-social-media {
@@ -1233,13 +1248,35 @@ footer {
         }
       }
     }
+
+.upcoming-shows {
+
+      .upcoming-shows-wrapper { 
+          padding: 0;
+        display: flex;
+        flex-flow: wrap;
+       justify-content: space-evenly;
+
+        .upcoming-show {
+          width: 45%;
+          margin-bottom: .5rem;
+        }
+
+
+      }
+    }
+    
   }
+
+    
 
   .merch-page-wrapper {
     .merch-display {
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+
 }
 
 @media (min-width: $xl-screen) {

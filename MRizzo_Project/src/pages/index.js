@@ -16,7 +16,7 @@ import { IoTicket } from "react-icons/io5"
 import Layout from "../components/layout"
 import { useState } from "react"
 import {
-  container,
+  // container,
   mainTitle,
   followSpan,
   bioDescription,
@@ -24,14 +24,13 @@ import {
   FadeInWhenVisible,
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
-import { BIT_API, API_KEY, IN_ID, MR_ID } from "../../static/keys"
+import { BIT_API, API_KEY, IN_ID } from "../../static/keys"
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
   const [bandName, setBandName] = useState([])
   const [liveEvents, setLiveEvents] = useState([])
-  const [dateFormat, setDateFormat] = useState([])
 
   useEffect(() => {
     ;(async () => {
@@ -45,15 +44,6 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-
-      liveEvents.map(liveEvent => {
-        const dates = liveEvent.festival_start_date
-        const sliced_dates = `${dates.slice(8, 11)}th`
-        // console.log(sliced_dates)
-        // const new_date_format = `${sliced_dates}th`
-        setDateFormat(sliced_dates)
-      })
-      // console.log(dateFormat)
     })()
   }, [])
 
@@ -292,18 +282,22 @@ function IndexPage() {
 
         <div className="upcoming-shows">
           <h2>upcoming shows</h2>
+          <span className="band-name-span">{bandName.name}</span>
           <div className="upcoming-shows-wrapper">
-            <span className="band-name-span">{bandName.name}</span>
             {liveEvents.map(liveEvent => (
               <div className="upcoming-show">
                 <div className="upcoming-show-info">
                   <p>{liveEvent.title}</p>
                   <p>{liveEvent.festival_start_date}</p>
-                  {/* <p>{dateFormat}</p> */}
                   <p>{liveEvent.venue.city}</p>
                   <p>{liveEvent.venue.country}</p>
                 </div>
-                <a href={liveEvent.url} target="_blank" className="tickets-cta">
+                <a
+                  href={liveEvent.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="tickets-cta"
+                >
                   <IoTicket className="ticket-icon" />
                   tickets
                 </a>
