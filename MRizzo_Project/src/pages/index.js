@@ -51,7 +51,6 @@ function IndexPage() {
     <>
       <Layout>
         <Seo title="Home" />
-
         <div className="bio">
           <div className="title-bio">
             <motion.h1 variants={mainTitle} initial="hidden" animate="show">
@@ -168,7 +167,6 @@ function IndexPage() {
             </a>
           </motion.div>
         </div>
-
         <FadeInWhenVisible>
           <div className="track-previews-wrapper">
             <h2>previews:</h2>
@@ -225,7 +223,6 @@ function IndexPage() {
             <div className="wave-image wave-svg"></div>
           </div>
         </FadeInWhenVisible>
-
         <StaticQuery
           query={graphql`
             query TwitterStream {
@@ -285,23 +282,29 @@ function IndexPage() {
           <span className="band-name-span">{bandName.name}</span>
           <div className="upcoming-shows-wrapper">
             {liveEvents.map(liveEvent => (
-              <div className="upcoming-show">
-                <div className="upcoming-show-info">
-                  <p>{liveEvent.title}</p>
-                  <p>{liveEvent.festival_start_date}</p>
-                  <p>{liveEvent.venue.city}</p>
-                  <p>{liveEvent.venue.country}</p>
+              <FadeInWhenVisible>
+                <div className="upcoming-show">
+                  <div className="upcoming-show-info">
+                    <p className="live-event-date">
+                      {liveEvent.festival_start_date}
+                    </p>
+                    <p className="live-event-title">{liveEvent.title}</p>
+                    <p className="live-event-city">{liveEvent.venue.city}</p>
+                    <p className="live-event-country">
+                      {liveEvent.venue.country}
+                    </p>
+                  </div>
+                  <a
+                    href={liveEvent.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="tickets-cta"
+                  >
+                    <IoTicket className="ticket-icon" />
+                    tickets
+                  </a>
                 </div>
-                <a
-                  href={liveEvent.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="tickets-cta"
-                >
-                  <IoTicket className="ticket-icon" />
-                  tickets
-                </a>
-              </div>
+              </FadeInWhenVisible>
             ))}
           </div>
         </div>
