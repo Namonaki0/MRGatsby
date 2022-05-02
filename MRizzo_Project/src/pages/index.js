@@ -44,6 +44,7 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
+      console.log(bandName)
     })()
   }, [])
 
@@ -280,32 +281,35 @@ function IndexPage() {
         <div className="upcoming-shows">
           <h2>upcoming shows</h2>
           <span className="band-name-span">{bandName.name}</span>
-          <div className="upcoming-shows-wrapper">
-            {liveEvents.map(liveEvent => (
-              <FadeInWhenVisible>
-                <div className="upcoming-show">
-                  <div className="upcoming-show-info">
-                    <p className="live-event-date">
-                      {liveEvent.festival_start_date}
-                    </p>
-                    <p className="live-event-title">{liveEvent.title}</p>
-                    <p className="live-event-city">{liveEvent.venue.city}</p>
-                    <p className="live-event-country">
-                      {liveEvent.venue.country}
-                    </p>
+          <div className="band-background-info-wrapper">
+            <div className="band-background-image"></div>
+            <div className="upcoming-shows-wrapper">
+              {liveEvents.map(liveEvent => (
+                <FadeInWhenVisible>
+                  <div className="upcoming-show">
+                    <div className="upcoming-show-info">
+                      <p className="live-event-date">
+                        {liveEvent.festival_start_date}
+                      </p>
+                      <p className="live-event-title">{liveEvent.title}</p>
+                      <p className="live-event-city">{liveEvent.venue.city}</p>
+                      <p className="live-event-country">
+                        {liveEvent.venue.country}
+                      </p>
+                    </div>
+                    <a
+                      href={liveEvent.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="tickets-cta"
+                    >
+                      <IoTicket className="ticket-icon" />
+                      tickets
+                    </a>
                   </div>
-                  <a
-                    href={liveEvent.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="tickets-cta"
-                  >
-                    <IoTicket className="ticket-icon" />
-                    tickets
-                  </a>
-                </div>
-              </FadeInWhenVisible>
-            ))}
+                </FadeInWhenVisible>
+              ))}
+            </div>
           </div>
         </div>
       </Layout>

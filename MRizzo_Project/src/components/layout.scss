@@ -5,7 +5,7 @@ $ff-primary: "basement grotesque", sans-serif;
 $color-primary: white;
 $bg-primary: black;
 $bg-secondary: #1c1c1c;
-$cta-bg: #303030;
+$cta-bg: #313131;
 $cta-bg-hover: #3e3e3e;
 $md-screen: 600px;
 $lg-screen: 1000px;
@@ -428,59 +428,70 @@ nav {
     padding: 5px 10px 2px;
   }
 
-  .upcoming-shows-wrapper {
-    .upcoming-show {
-      background: #292929;
-      color: whitesmoke;
-      overflow: hidden;
-      margin: 0 0.2rem 0.5rem;
-      border-radius: 3px;
-      border-left: 5px solid #920202;
-      display: flex;
-      justify-content: space-between;
+  .band-background-info-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
 
-      .upcoming-show-info {
-        padding: 1rem 0.8rem;
-        line-height: 22px;
-        height: 120px;
-        display: grid;
-        place-content: center;
+    .band-background-image {
+      display: none;
+    }
 
-        .live-event-city {
-          color: rgb(201, 201, 201);
-          margin-top: 2px;
-        }
+    .upcoming-shows-wrapper {
+      flex: 1;
 
-        .live-event-country {
-          text-transform: uppercase;
-          color: rgb(158, 158, 158);
-          font-size: 0.8rem;
-        }
-      }
-
-      .tickets-cta {
-        display: grid;
-        background: $cta-bg;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
+      .upcoming-show {
+        background: #292929;
         color: whitesmoke;
-        transition: background 150ms linear;
+        overflow: hidden;
+        margin: 0 0.2rem 0.5rem;
+        border-radius: 3px;
+        border-left: 5px solid #920202;
+        display: flex;
+        justify-content: space-between;
 
-        &:hover {
-          background: $cta-bg-hover;
+        .upcoming-show-info {
+          padding: 1rem 0.8rem;
+          line-height: 22px;
+          height: 120px;
+          display: grid;
+          place-content: center;
 
-          .ticket-icon {
-            transform: rotate(15deg);
+          .live-event-city {
+            color: rgb(201, 201, 201);
+            margin-top: 2px;
+          }
+
+          .live-event-country {
+            text-transform: uppercase;
+            color: rgb(158, 158, 158);
+            font-size: 0.8rem;
           }
         }
 
-        .ticket-icon {
-          display: block;
-          margin: auto;
-          margin-bottom: 10px;
-          font-size: 2rem;
-          pointer-events: none;
-          transition: all 150ms linear;
+        .tickets-cta {
+          display: grid;
+          background: $cta-bg;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          color: whitesmoke;
+          transition: background 150ms linear;
+
+          &:hover {
+            background: $cta-bg-hover;
+
+            .ticket-icon {
+              transform: rotate(15deg);
+            }
+          }
+
+          .ticket-icon {
+            display: block;
+            margin: auto;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            pointer-events: none;
+            transition: all 150ms linear;
+          }
         }
       }
     }
@@ -528,133 +539,133 @@ footer {
   }
 }
 
-.projects-outer-wrapper {
-  display: flex;
-  display: none;
-  height: 200px;
-  background: $bg-primary;
-  overflow: hidden;
+// .projects-outer-wrapper {
+//   display: flex;
+//   display: none;
+//   height: 200px;
+//   background: $bg-primary;
+//   overflow: hidden;
 
-  &::before {
-    content: "PROJECTS";
-    height: 150px;
-    width: 100px;
-    color: $color-primary;
-    position: absolute;
-    margin-top: -10px;
-  }
+//   &::before {
+//     content: "PROJECTS";
+//     height: 150px;
+//     width: 100px;
+//     color: $color-primary;
+//     position: absolute;
+//     margin-top: -10px;
+//   }
 
-  .slider-wrapper {
-    flex: 1;
-    text-align: center;
-    display: grid;
-    place-content: center;
-    height: 100%;
-    height: 200px;
-    width: 200px;
-    opacity: 0.8;
-    transition: all 150ms linear;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    transition: all 150ms linear;
+//   .slider-wrapper {
+//     flex: 1;
+//     text-align: center;
+//     display: grid;
+//     place-content: center;
+//     height: 100%;
+//     height: 200px;
+//     width: 200px;
+//     opacity: 0.8;
+//     transition: all 150ms linear;
+//     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+//     transition: all 150ms linear;
 
-    &:nth-of-type(1) {
-      background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-        no-repeat;
-      background-size: 400px;
-    }
+//     &:nth-of-type(1) {
+//       background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
+//         no-repeat;
+//       background-size: 400px;
+//     }
 
-    &:nth-of-type(2) {
-      background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-        no-repeat;
-      background-size: 400px;
-    }
+//     &:nth-of-type(2) {
+//       background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
+//         no-repeat;
+//       background-size: 400px;
+//     }
 
-    &:nth-of-type(3) {
-      background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-        no-repeat;
-      background-size: 400px;
-    }
+//     &:nth-of-type(3) {
+//       background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
+//         no-repeat;
+//       background-size: 400px;
+//     }
 
-    &:hover {
-      opacity: 1;
-      flex: 5;
-      background-size: 400px;
-      transform: translateX(-10px);
-      clip-path: unset;
-      z-index: 1;
+//     &:hover {
+//       opacity: 1;
+//       flex: 5;
+//       background-size: 400px;
+//       transform: translateX(-10px);
+//       clip-path: unset;
+//       z-index: 1;
 
-      &:nth-of-type(1) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 85%,
-              rgba(0, 0, 0, 0.8) 99%
-            )
-            no-repeat,
-          url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-            no-repeat;
-        background-size: 400px;
-      }
+//       &:nth-of-type(1) {
+//         background: linear-gradient(
+//               to left,
+//               rgba(0, 0, 0, 0.7) 20%,
+//               rgba(255, 255, 255, 0.1) 85%,
+//               rgba(0, 0, 0, 0.8) 99%
+//             )
+//             no-repeat,
+//           url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
+//             no-repeat;
+//         background-size: 400px;
+//       }
 
-      &:nth-of-type(2) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 49%,
-              rgba(0, 0, 0, 0.8) 90%
-            )
-            no-repeat,
-          url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-            no-repeat;
-        background-size: 400px;
-      }
+//       &:nth-of-type(2) {
+//         background: linear-gradient(
+//               to left,
+//               rgba(0, 0, 0, 0.7) 20%,
+//               rgba(255, 255, 255, 0.1) 49%,
+//               rgba(0, 0, 0, 0.8) 90%
+//             )
+//             no-repeat,
+//           url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
+//             no-repeat;
+//         background-size: 400px;
+//       }
 
-      &:nth-of-type(3) {
-        background: linear-gradient(
-              to left,
-              rgba(0, 0, 0, 0.7) 20%,
-              rgba(255, 255, 255, 0.1) 49%,
-              rgba(0, 0, 0, 0.8) 90%
-            )
-            no-repeat,
-          url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-            no-repeat;
-        background-size: 400px;
-      }
+//       &:nth-of-type(3) {
+//         background: linear-gradient(
+//               to left,
+//               rgba(0, 0, 0, 0.7) 20%,
+//               rgba(255, 255, 255, 0.1) 49%,
+//               rgba(0, 0, 0, 0.8) 90%
+//             )
+//             no-repeat,
+//           url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
+//             no-repeat;
+//         background-size: 400px;
+//       }
 
-      section {
-        text-align: left;
-        width: 70%;
-        margin-left: auto;
-        font-size: 1.2rem;
-        margin-top: 0;
-        font-family: sans-serif;
-        padding: 0.5rem;
-        display: unset;
-      }
+//       section {
+//         text-align: left;
+//         width: 70%;
+//         margin-left: auto;
+//         font-size: 1.2rem;
+//         margin-top: 0;
+//         font-family: sans-serif;
+//         padding: 0.5rem;
+//         display: unset;
+//       }
 
-      title {
-        display: none;
-      }
-    }
+//       title {
+//         display: none;
+//       }
+//     }
 
-    section {
-      color: $color-primary;
-      display: none;
-    }
+//     section {
+//       color: $color-primary;
+//       display: none;
+//     }
 
-    title {
-      color: $color-primary;
-      display: unset;
-      text-transform: uppercase;
-      font-family: sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      opacity: 1;
-      margin-right: -120px;
-    }
-  }
-}
+//     title {
+//       color: $color-primary;
+//       display: unset;
+//       text-transform: uppercase;
+//       font-family: sans-serif;
+//       font-weight: 700;
+//       font-size: 1.2rem;
+//       opacity: 1;
+//       margin-right: -120px;
+//     }
+//   }
+// }
 
 //? MERCH PAGE
 
@@ -1164,7 +1175,6 @@ footer {
     .tweets-outer-wrapper {
       .tweets-wrapper {
         padding: 0.5rem;
-
         margin: 10px 0;
 
         .individual-tweet {
@@ -1254,18 +1264,32 @@ footer {
     }
 
     .upcoming-shows {
-      .upcoming-shows-wrapper {
-        padding: 0;
-        // display: flex;
-        // flex-flow: wrap;
-        // justify-content: flex-start
-   
+      background: transparent;
 
-        .upcoming-show {
-          width: clamp(300px, 700px, 600px);
-          // min-width: 600px;
-          // width: 
-          margin-bottom: 0.5rem;
+      .band-background-info-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .band-background-image {
+          display: unset;
+          background-image: url("/images/Ill-Niño-press-photo-2021.jpg");
+          background-repeat: no-repeat;
+          background-position: right;
+          background-color: #3333338a;
+          background-blend-mode: multiply;
+          flex: 2;
+        }
+
+        .upcoming-shows-wrapper {
+          margin-top: 0.5rem;
+          flex: 1;
+          padding: 0;
+
+          .upcoming-show {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0.5rem;
+            width: 120%;
+          }
         }
       }
     }
