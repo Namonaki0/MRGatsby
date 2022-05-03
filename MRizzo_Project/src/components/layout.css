@@ -575,8 +575,17 @@ footer .social-media {
   background: #1c1c1c;
   font-size: 1.8rem;
   text-align: center;
-  padding: 15px 10px 10px;
+  padding: 15px 10px;
   border-top: 1px solid rgba(192, 192, 192, 0.164);
+}
+
+footer .social-media::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin-top: 10px;
+  background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
 }
 
 footer .social-media a {
@@ -588,25 +597,43 @@ footer .social-media a:last-child {
   margin-right: 0px;
 }
 
-footer .developed-by {
+footer .lower-footer {
+  display: -ms-grid;
+  display: grid;
+  height: 50vh;
+  place-content: center;
   background: #1c1c1c;
-  color: #1c1c1c;
+  text-align: center;
+}
+
+footer .lower-footer .developed-by {
   font-size: 0.8rem;
   text-align: center;
 }
 
-footer .developed-by::before {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 100%;
-  background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+footer .lower-footer .developed-by a {
+  display: inline-block;
+  color: white;
+  padding: 0.5rem 0;
 }
 
-footer .developed-by a {
-  display: inline-block;
-  color: #1c1c1c;
-  padding: 0.5rem 0;
+footer .lower-footer .affiliates-wrapper h3 {
+  text-transform: uppercase;
+}
+
+footer .lower-footer .affiliates-wrapper .affiliate-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .lower-footer .affiliates-wrapper .affiliate-links .affiliate-link {
+  text-decoration: none;
+  color: white;
 }
 
 .merch-page-wrapper {
@@ -1253,6 +1280,7 @@ footer .developed-by a {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    padding: .8rem 0 .8rem .5rem;
   }
   main .upcoming-shows .band-background-info-wrapper .band-background-image {
     display: unset;

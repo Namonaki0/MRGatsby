@@ -64,11 +64,56 @@ export default function Footer() {
           <BsTwitter />
         </a>
       </div>
-      <div className="developed-by">
-        Marc Rizzo 2022 | Developed by{" "}
-        <a href="https://github.com/Namonaki0" target="_blank" rel="noreferrer">
-          Namonaki0
-        </a>
+
+      <div className="lower-footer">
+        <div className="developed-by">
+          <p>Marc Rizzo 2022 </p>
+          <div>
+            Developed by
+            <a
+              href="https://github.com/Namonaki0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Namonaki0
+            </a>
+          </div>
+        </div>
+
+        <div className="affiliates-wrapper">
+          <h3>Affiliates</h3>
+          <div className="affiliate-links">
+            <a
+              classname="affiliate-link"
+              href="https://www.illnino1.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ill Niño
+            </a>
+            <a
+              href="https://www.storefrontier.com/marcrizzo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              store frontier
+            </a>
+            <a
+              href="https://www.bandsintown.com/a/1091590-marc-rizzo-band"
+              target="_blank"
+              rel="noreferrer"
+            >
+              bandsintown
+            </a>
+            <a
+              href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
+              target="_blank"
+              rel="noreferrer"
+            >
+              youtube
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   )
