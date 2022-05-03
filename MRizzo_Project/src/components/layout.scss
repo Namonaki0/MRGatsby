@@ -409,6 +409,7 @@ nav {
 //? UPCOMING SHOWS
 
 .upcoming-shows {
+  overflow: hidden;
   h2 {
     color: $color-primary;
     text-transform: uppercase;
@@ -438,6 +439,7 @@ nav {
 
     .upcoming-shows-wrapper {
       flex: 1;
+      z-index: 100;
 
       .upcoming-show {
         background: #292929;
@@ -448,6 +450,7 @@ nav {
         border-left: 5px solid #920202;
         display: flex;
         justify-content: space-between;
+        
 
         .upcoming-show-info {
           padding: 1rem 0.8rem;
@@ -499,22 +502,25 @@ nav {
 }
 
 footer {
-  .social-media {
-    background: $bg-secondary;
-    font-size: 1.8rem;
-    text-align: center;
-    padding: 15px 10px;
-    // margin: 1rem;
-    border-top: 1px solid rgba(192, 192, 192, 0.164);
+  display: grid;
+  place-content: center;
+  background: $bg-secondary;
+  border-top: 1px solid rgba(192, 192, 192, 0.164);
 
-     &::after {
-        content: "";
-        display: block;
-        height: 2px;
-        width: 100%;
-        margin-top: 10px;
-        background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
-      }
+  .social-media {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 0 1rem;
+    display: block;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      margin-top: 10px;
+      background-image: linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+    }
 
     a {
       color: $color-primary;
@@ -527,47 +533,44 @@ footer {
   }
 
   .lower-footer {
-    display: grid;
-    height: 50vh;
-    place-content: center;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
     background: $bg-secondary;
     text-align: center;
 
-    .developed-by {
-      
-      // color: #1c1c1c;
-      font-size: 0.8rem;
-      text-align: center;
-  
-      a {
-        display: inline-block;
-        color: $color-primary;
-        padding: 0.5rem 0;
-      }
-    }
-
     .affiliates-wrapper {
-      //  text-align: right;
+      padding: 1rem 0;
 
-       h3 {
-         text-transform: uppercase;
-       }
+      h3 {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
 
       .affiliate-links {
         display: flex;
         flex-direction: column;
-       
-        .affiliate-link {
-          text-decoration: none;
+
+        a {
           color: $color-primary;
+          font-size: 1rem;
+          margin-bottom: 5px;
         }
       }
     }
-  }
 
+    .developed-by {
+      padding: 1rem 0 0.1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+
+      a {
+        display: inline-block;
+        color: $color-primary;
+        padding: 5px 0 0.5rem;
+        margin-left: 5px;
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 // .projects-outer-wrapper {
@@ -1300,7 +1303,7 @@ footer {
       .band-background-info-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        padding: .8rem 0 .8rem .5rem;
+        padding: 0.8rem 0 0.8rem 0.5rem;
 
         .band-background-image {
           display: unset;

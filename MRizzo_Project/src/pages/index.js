@@ -21,6 +21,7 @@ import {
   followSpan,
   bioDescription,
   bioSocial,
+  upcomingShowsImg,
   FadeInWhenVisible,
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
@@ -282,7 +283,12 @@ function IndexPage() {
           <h2>upcoming shows</h2>
           <span className="band-name-span">{bandName.name}</span>
           <div className="band-background-info-wrapper">
-            <div className="band-background-image"></div>
+            <motion.div
+              className="band-background-image"
+              variants={upcomingShowsImg}
+              initial="hidden"
+              animate="show"
+            ></motion.div>
             <div className="upcoming-shows-wrapper">
               {liveEvents.map(liveEvent => (
                 <FadeInWhenVisible>

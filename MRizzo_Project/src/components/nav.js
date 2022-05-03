@@ -19,7 +19,7 @@ export default function Nav() {
 
   return (
     <div>
-      <motion.nav variants={navbarEffect} initial="hidden" animate="show">
+      <nav variants={navbarEffect} initial="hidden" animate="show">
         <ul className={openMenu ? "menu-active" : ""}>
           <li className="nav-li">
             <Link
@@ -154,7 +154,7 @@ export default function Nav() {
           <span className={burgerEffect}></span>
           <span className={burgerEffect}></span>
         </div>
-      </motion.nav>
+      </nav>
     </div>
   )
 }

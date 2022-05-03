@@ -66,29 +66,10 @@ export default function Footer() {
       </div>
 
       <div className="lower-footer">
-        <div className="developed-by">
-          <p>Marc Rizzo 2022 </p>
-          <div>
-            Developed by
-            <a
-              href="https://github.com/Namonaki0"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Namonaki0
-            </a>
-          </div>
-        </div>
-
         <div className="affiliates-wrapper">
           <h3>Affiliates</h3>
           <div className="affiliate-links">
-            <a
-              classname="affiliate-link"
-              href="https://www.illnino1.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.illnino1.com" target="_blank" rel="noreferrer">
               Ill Niño
             </a>
             <a
@@ -111,6 +92,19 @@ export default function Footer() {
               rel="noreferrer"
             >
               youtube
+            </a>
+          </div>
+        </div>
+        <div className="developed-by">
+          <p>Marc Rizzo 2022 </p>
+          <div>
+            Developed by
+            <a
+              href="https://github.com/Namonaki0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Namonaki0
             </a>
           </div>
         </div>
