@@ -45,21 +45,22 @@ export default function Videos() {
         <div className="videos-section-block">
           {videos.map(video => (
             <motion.div
+              className="library-video"
               variants={container}
               initial="hidden"
               animate="show"
               key={video.guid}
-              className="library-video"
-            >
-              <a
-                data-link-cta={video.link}
-                onClick={e => {
-                  setOpenModal(true)
-                  setCurrentvideo(
-                    e.target.dataset.linkCta.replace("watch?v=", "embed/")
+              onClick={e => {
+                setOpenModal(true)
+                setCurrentvideo(
+                  e.target.firstChild.dataset.linkCta.replace(
+                    "watch?v=",
+                    "embed/"
                   )
-                }}
-              >
+                )
+              }}
+            >
+              <a href={video.link} data-link-cta={video.link}>
                 <img
                   alt="video-template"
                   src={`https://i4.ytimg.com/vi/${
@@ -85,16 +86,20 @@ export default function Videos() {
         <h2>Livestreams</h2>
         <div className="videos-section-block">
           {feedVideos.map(feedVideo => (
-            <div key={feedVideo.guid} className="library-video">
-              <a
-                data-link-cta={feedVideo.link}
-                onClick={e => {
-                  setOpenModal(true)
-                  setCurrentvideo(
-                    e.target.dataset.linkCta.replace("watch?v=", "embed/")
+            <div
+              key={feedVideo.guid}
+              className="library-video"
+              onClick={e => {
+                setOpenModal(true)
+                setCurrentvideo(
+                  e.target.firstChild.dataset.linkCta.replace(
+                    "watch?v=",
+                    "embed/"
                   )
-                }}
-              >
+                )
+              }}
+            >
+              <a href={feedVideo.link} data-link-cta={feedVideo.link}>
                 <img
                   alt="video-template"
                   src={`https://i4.ytimg.com/vi/${

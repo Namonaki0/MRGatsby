@@ -77,21 +77,21 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              store frontier
+              Store Frontier
             </a>
             <a
               href="https://www.bandsintown.com/a/1091590-marc-rizzo-band"
               target="_blank"
               rel="noreferrer"
             >
-              bandsintown
+              BandsInTown
             </a>
             <a
               href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
               target="_blank"
               rel="noreferrer"
             >
-              youtube
+              YouTube
             </a>
           </div>
         </div>

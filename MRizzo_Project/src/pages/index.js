@@ -283,12 +283,12 @@ function IndexPage() {
           <h2>upcoming shows</h2>
           <span className="band-name-span">{bandName.name}</span>
           <div className="band-background-info-wrapper">
-            <motion.div
+            <div
               className="band-background-image"
               variants={upcomingShowsImg}
               initial="hidden"
               animate="show"
-            ></motion.div>
+            ></div>
             <div className="upcoming-shows-wrapper">
               {liveEvents.map(liveEvent => (
                 <FadeInWhenVisible>

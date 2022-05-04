@@ -535,6 +535,7 @@ footer {
   .lower-footer {
     background: $bg-secondary;
     text-align: center;
+    letter-spacing: 1.5px;
 
     .affiliates-wrapper {
       padding: 1rem 0;
@@ -547,11 +548,14 @@ footer {
       .affiliate-links {
         display: flex;
         flex-direction: column;
+       
 
         a {
           color: $color-primary;
-          font-size: 1rem;
-          margin-bottom: 5px;
+          font-size: .9rem;
+          margin-bottom: 3px;
+           color: rgb(211, 211, 211);
+           text-decoration: none;
         }
       }
     }
