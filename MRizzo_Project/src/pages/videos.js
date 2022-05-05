@@ -60,7 +60,7 @@ export default function Videos() {
                 )
               }}
             >
-              <a href={video.link} data-link-cta={video.link}>
+              <a data-link-cta={video.link}>
                 <img
                   alt="video-template"
                   src={`https://i4.ytimg.com/vi/${
@@ -99,7 +99,7 @@ export default function Videos() {
                 )
               }}
             >
-              <a href={feedVideo.link} data-link-cta={feedVideo.link}>
+              <a data-link-cta={feedVideo.link}>
                 <img
                   alt="video-template"
                   src={`https://i4.ytimg.com/vi/${

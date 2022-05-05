@@ -16,7 +16,6 @@ import { IoTicket } from "react-icons/io5"
 import Layout from "../components/layout"
 import { useState } from "react"
 import {
-  // container,
   mainTitle,
   followSpan,
   bioDescription,
@@ -45,7 +44,6 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-      console.log(bandName)
     })()
   }, [])
 

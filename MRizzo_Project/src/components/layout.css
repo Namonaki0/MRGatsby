@@ -615,16 +615,17 @@ footer .lower-footer {
   letter-spacing: 1.5px;
 }
 
-footer .lower-footer .affiliates-wrapper {
+footer .lower-footer .lower-footer-wrapper {
   padding: 1rem 0;
 }
 
-footer .lower-footer .affiliates-wrapper h3 {
+footer .lower-footer .lower-footer-wrapper h3 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
-footer .lower-footer .affiliates-wrapper .affiliate-links {
+footer .lower-footer .lower-footer-wrapper .footer-affiliate-links,
+footer .lower-footer .lower-footer-wrapper .footer-side-projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,14 +633,28 @@ footer .lower-footer .affiliates-wrapper .affiliate-links {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 1rem;
 }
 
-footer .lower-footer .affiliates-wrapper .affiliate-links a {
+footer .lower-footer .lower-footer-wrapper .footer-affiliate-links:last-child,
+footer .lower-footer .lower-footer-wrapper .footer-side-projects:last-child {
+  margin-bottom: 0;
+}
+
+footer .lower-footer .lower-footer-wrapper .footer-affiliate-links a,
+footer .lower-footer .lower-footer-wrapper .footer-side-projects a {
   color: white;
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 3px;
   color: lightgray;
   text-decoration: none;
+  -webkit-transition: color 100ms linear;
+  transition: color 100ms linear;
+}
+
+footer .lower-footer .lower-footer-wrapper .footer-affiliate-links a:hover,
+footer .lower-footer .lower-footer-wrapper .footer-side-projects a:hover {
+  color: #e4e4e4;
 }
 
 footer .lower-footer .developed-by {
@@ -1330,6 +1345,31 @@ footer .lower-footer .developed-by a {
   .merch-page-wrapper .merch-display {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 0 4.5rem;
+  }
+  footer .social-media {
+    text-align: right;
+  }
+  footer .lower-footer {
+    text-align: right;
+  }
+  footer .lower-footer .developed-by {
+    text-align: right;
   }
 }
 
