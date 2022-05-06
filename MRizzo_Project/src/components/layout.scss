@@ -135,7 +135,7 @@ nav {
         justify-content: center;
         text-decoration: none;
         text-transform: uppercase;
-        color: inherit;
+        color: #bababa;
         padding: 1rem 1.5rem;
         font-weight: 300;
         letter-spacing: 2px;
@@ -145,7 +145,6 @@ nav {
         &:hover {
           border-bottom: 1px solid rgba(192, 192, 192, 0.63);
           color: $color-primary;
-          // background-color: rgba(42, 79, 143, 0.21);
         }
       }
     }
@@ -1085,10 +1084,12 @@ footer {
           border: none;
           padding: 1rem 1.5rem;
           letter-spacing: 3px;
+          border-bottom: 2px solid rgba(73, 81, 95, 0.705);
 
           &:hover {
             border-bottom: none;
             color: $color-primary;
+            border-bottom: 2px solid #ababab;
           }
 
           &:last-child {
@@ -1379,16 +1380,6 @@ footer {
       bottom: -100px;
       width: 600px;
       background-size: 600px;
-      // animation: spin 180s linear infinite;
-
-      // @keyframes spin {
-      //   0% {
-      //     -webkit-transform: rotate(0deg);
-      //   }
-      //   100% {
-      //     -webkit-transform: rotate(360deg);
-      //   }
-      // }
     }
 
     .social-media {

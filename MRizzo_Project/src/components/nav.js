@@ -24,7 +24,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/"
-              activeStyle={{ color: "#c00000" }}
+              activeStyle={{ color: "white", borderBottom: "2px solid white" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)
@@ -41,7 +41,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/videos"
-              activeStyle={{ color: "#c00000" }}
+              activeStyle={{ color: "white", borderBottom: "2px solid white" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)
@@ -58,7 +58,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/merch"
-              activeStyle={{ color: "#c00000" }}
+              activeStyle={{ color: "white", borderBottom: "2px solid white" }}
               className="nav-link"
               onClick={() => {
                 setOpenMenu(null)

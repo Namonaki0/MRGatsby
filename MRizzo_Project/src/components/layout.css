@@ -141,7 +141,7 @@ nav ul li a {
           justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: inherit;
+  color: #bababa;
   padding: 1rem 1.5rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -1094,10 +1094,12 @@ footer .lower-footer .developed-by a {
     border: none;
     padding: 1rem 1.5rem;
     letter-spacing: 3px;
+    border-bottom: 2px solid rgba(73, 81, 95, 0.705);
   }
   nav ul li a:hover {
     border-bottom: none;
     color: white;
+    border-bottom: 2px solid #ababab;
   }
   nav ul li a:last-child {
     margin-right: 0;

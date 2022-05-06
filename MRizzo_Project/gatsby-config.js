@@ -29,7 +29,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Marc-Rizzo-Logo.png`,
+        icon: `src/images/Marc-Rizzo-Logo-PLAIN.png`,
       },
     },
 
