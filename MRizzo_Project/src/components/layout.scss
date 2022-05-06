@@ -505,6 +505,22 @@ footer {
   place-content: center;
   background: $bg-secondary;
   border-top: 1px solid rgba(192, 192, 192, 0.164);
+  position: relative;
+  overflow: hidden;
+
+  .footer-clear-logo {
+    background-image: url("/images/Marc-Rizzo-Logo-CLEAR.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: -180px;
+    top: 20px;
+    bottom: 0;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+  }
 
   .social-media {
     font-size: 1.5rem;
@@ -532,9 +548,10 @@ footer {
   }
 
   .lower-footer {
-    background: $bg-secondary;
+    background: transparent;
     text-align: center;
     letter-spacing: 1.5px;
+    z-index: 1000;
 
     .lower-footer-wrapper {
       padding: 1rem 0;
@@ -542,10 +559,9 @@ footer {
       h3 {
         text-transform: uppercase;
         margin-bottom: 10px;
-
       }
 
-      .footer-affiliate-links, 
+      .footer-affiliate-links,
       .footer-side-projects {
         display: flex;
         flex-direction: column;
@@ -1356,6 +1372,24 @@ footer {
     flex-direction: column;
     align-items: flex-end;
     padding: 0 4.5rem;
+
+    .footer-clear-logo {
+      left: -80px;
+      top: -10px;
+      bottom: -100px;
+      width: 600px;
+      background-size: 600px;
+      // animation: spin 180s linear infinite;
+
+      // @keyframes spin {
+      //   0% {
+      //     -webkit-transform: rotate(0deg);
+      //   }
+      //   100% {
+      //     -webkit-transform: rotate(360deg);
+      //   }
+      // }
+    }
 
     .social-media {
       text-align: right;

@@ -12,6 +12,7 @@ import { FaDeezer } from "react-icons/fa"
 export default function Footer() {
   return (
     <footer>
+      <div className="footer-clear-logo"></div>
       <div className="social-media">
         <a
           href="https://open.spotify.com/artist/4MzKbulWnDVjGnMDMz1g8j?si=Cw7D7ZOHT82IxqUa79OBLQ"
