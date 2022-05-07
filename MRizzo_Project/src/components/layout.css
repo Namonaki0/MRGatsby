@@ -1018,7 +1018,7 @@ footer .lower-footer .developed-by a {
   top: 0;
   right: 0;
   cursor: pointer;
-  background: white;
+  color: white;
   font-size: 2rem;
   z-index: 1500;
   height: -webkit-max-content;
@@ -1034,28 +1034,6 @@ footer .lower-footer .developed-by a {
   background: rgba(255, 0, 0, 0.685);
   color: white;
   cursor: pointer;
-}
-
-.modal .modal-close-btn::after {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 1px;
-  background: rgba(192, 192, 192, 0.123);
-  width: 80%;
-  left: -7px;
-  margin-top: 15px;
-}
-
-.modal .modal-close-btn::before {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 90%;
-  background: rgba(192, 192, 192, 0.125);
-  width: 1px;
-  left: -8px;
-  bottom: -8px;
 }
 
 .page-not-found-wrapper {
