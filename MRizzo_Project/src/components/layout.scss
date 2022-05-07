@@ -39,7 +39,6 @@ main {
 
 nav {
   position: fixed;
-  // opacity: 0;
   transition: all 100ms linear;
   background: transparent;
   height: 100px;
@@ -51,7 +50,6 @@ nav {
   &.open-menu {
     height: max-content;
     background: $bg-primary;
-    // opacity: 1;
   }
 
   &.scroll-effect {
@@ -140,7 +138,7 @@ nav {
         font-weight: 300;
         letter-spacing: 2px;
         border-bottom: 1px solid rgba(192, 192, 192, 0.219);
-        transition: all 100ms ease;
+        transition: all 250ms ease;
 
         &:hover {
           border-bottom: 1px solid rgba(192, 192, 192, 0.63);
@@ -550,7 +548,7 @@ footer {
     background: transparent;
     text-align: center;
     letter-spacing: 1.5px;
-    z-index: 1000;
+    z-index: 100;
 
     .lower-footer-wrapper {
       padding: 1rem 0;
@@ -791,7 +789,7 @@ footer {
     }
   }
 
-  //? MERCH MODAL
+  //? MODAL
   .modal {
     position: relative;
     overflow-x: hidden;
@@ -1051,6 +1049,57 @@ footer {
       width: 1px;
       left: -8px;
       bottom: -8px;
+    }
+  }
+}
+
+//? 404 - PAGE NOT FOUND
+
+.page-not-found-wrapper {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  place-content: center;
+  text-align: center;
+
+  .logo-background-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("/images/Marc-Rizzo-Logo-CLEAR.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .primary-error-message {
+    color: rgb(231, 231, 231);
+    margin-bottom: 0.3rem;
+  }
+
+  .back-to-links-wrapper {
+    // margin-top: 1rem;
+
+    .back-to-links {
+      display: flex;
+      justify-content: space-around;
+
+      .back-to-nav-link {
+        color: $color-primary;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -1391,6 +1440,28 @@ footer {
 
       .developed-by {
         text-align: right;
+      }
+    }
+  }
+
+  .page-not-found-wrapper {
+    h1 {
+      margin-bottom: 2.5rem;
+    }
+
+    .back-to-links-wrapper {
+      width: 700px;
+
+      .back-to-links {
+        justify-content: space-between;
+
+        .back-to-nav-link {
+          font-size: 1.5rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
   }

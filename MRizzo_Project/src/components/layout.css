@@ -146,8 +146,8 @@ nav ul li a {
   font-weight: 300;
   letter-spacing: 2px;
   border-bottom: 1px solid rgba(192, 192, 192, 0.219);
-  -webkit-transition: all 100ms ease;
-  transition: all 100ms ease;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
 }
 
 nav ul li a:hover {
@@ -630,7 +630,7 @@ footer .lower-footer {
   background: transparent;
   text-align: center;
   letter-spacing: 1.5px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 footer .lower-footer .lower-footer-wrapper {
@@ -1058,6 +1058,55 @@ footer .lower-footer .developed-by a {
   bottom: -8px;
 }
 
+.page-not-found-wrapper {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  height: 100vh;
+  place-content: center;
+  text-align: center;
+}
+
+.page-not-found-wrapper .logo-background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/images/Marc-Rizzo-Logo-CLEAR.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.page-not-found-wrapper h1 {
+  margin-bottom: 2rem;
+}
+
+.page-not-found-wrapper .primary-error-message {
+  color: #e7e7e7;
+  margin-bottom: 0.3rem;
+}
+
+.page-not-found-wrapper .back-to-links-wrapper .back-to-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.page-not-found-wrapper .back-to-links-wrapper .back-to-links .back-to-nav-link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.page-not-found-wrapper .back-to-links-wrapper .back-to-links .back-to-nav-link:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 600px) {
   nav {
     background: #1c1c1c;
@@ -1397,6 +1446,23 @@ footer .lower-footer .developed-by a {
   }
   footer .lower-footer .developed-by {
     text-align: right;
+  }
+  .page-not-found-wrapper h1 {
+    margin-bottom: 2.5rem;
+  }
+  .page-not-found-wrapper .back-to-links-wrapper {
+    width: 700px;
+  }
+  .page-not-found-wrapper .back-to-links-wrapper .back-to-links {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .page-not-found-wrapper .back-to-links-wrapper .back-to-links .back-to-nav-link {
+    font-size: 1.5rem;
+  }
+  .page-not-found-wrapper .back-to-links-wrapper .back-to-links .back-to-nav-link:hover {
+    cursor: pointer;
   }
 }
 
