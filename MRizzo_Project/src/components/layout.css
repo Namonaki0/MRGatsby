@@ -909,6 +909,9 @@ footer .lower-footer .developed-by a {
   text-transform: uppercase;
   margin: 2rem 0;
   font-size: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .video-library-wrapper .videos-section-block {
@@ -945,8 +948,13 @@ footer .lower-footer .developed-by a {
 .video-library-wrapper .videos-section-block .library-video .video-footer {
   font-size: 0.8rem;
   padding: 1rem 0.5rem;
+  height: 70px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
   background: rgba(250, 250, 250, 0.116);
   overflow: hidden;
+  pointer-events: none;
 }
 
 .video-library-wrapper .videos-section-block .more-videos-cta {
@@ -1064,6 +1072,10 @@ footer .lower-footer .developed-by a {
 .page-not-found-wrapper .primary-error-message {
   color: #e7e7e7;
   margin-bottom: 0.3rem;
+}
+
+.page-not-found-wrapper .back-to-links-wrapper {
+  z-index: 1000;
 }
 
 .page-not-found-wrapper .back-to-links-wrapper .back-to-links {

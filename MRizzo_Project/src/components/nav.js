@@ -41,6 +41,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/videos"
+              partiallyActive={true}
               activeStyle={{ color: "white", borderBottom: "2px solid white" }}
               className="nav-link"
               onClick={() => {
@@ -58,6 +59,7 @@ export default function Nav() {
           <li className="nav-li">
             <Link
               to="/merch"
+              partiallyActive={true}
               activeStyle={{ color: "white", borderBottom: "2px solid white" }}
               className="nav-link"
               onClick={() => {

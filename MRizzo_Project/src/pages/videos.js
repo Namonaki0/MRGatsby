@@ -43,36 +43,37 @@ export default function Videos() {
         {/* <h1>VIDEOS</h1> */}
         <h2>Latest</h2>
         <div className="videos-section-block">
-          {videos.map(video => (
-            <motion.div
-              className="library-video"
-              variants={container}
-              initial="hidden"
-              animate="show"
-              key={video.guid}
-              onClick={e => {
-                setOpenModal(true)
-                setCurrentvideo(
-                  e.target.firstChild.dataset.linkCta.replace(
-                    "watch?v=",
-                    "embed/"
+          {videos &&
+            videos.map(video => (
+              <motion.div
+                className="library-video"
+                variants={container}
+                initial="hidden"
+                animate="show"
+                key={video.guid}
+                onClick={e => {
+                  setOpenModal(true)
+                  setCurrentvideo(
+                    e.target.firstChild.dataset.linkCta.replace(
+                      "watch?v=",
+                      "embed/"
+                    )
                   )
-                )
-              }}
-            >
-              <a data-link-cta={video.link}>
-                <img
-                  alt="video-template"
-                  src={`https://i4.ytimg.com/vi/${
-                    video.guid.split(":")[2]
-                  }/mqdefault.jpg`}
-                />
-              </a>
-              <div className="video-footer">
-                <p>{video.title}</p>
-              </div>
-            </motion.div>
-          ))}
+                }}
+              >
+                <a data-link-cta={video.link}>
+                  <img
+                    alt="video-template"
+                    src={`https://i4.ytimg.com/vi/${
+                      video.guid.split(":")[2]
+                    }/mqdefault.jpg`}
+                  />
+                </a>
+                <div className="video-footer">
+                  <p>{video.title.replace("&amp;", " & ")}</p>
+                </div>
+              </motion.div>
+            ))}
           <a
             href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
             alt="more videos"
@@ -85,33 +86,34 @@ export default function Videos() {
         </div>
         <h2>Livestreams</h2>
         <div className="videos-section-block">
-          {feedVideos.map(feedVideo => (
-            <div
-              key={feedVideo.guid}
-              className="library-video"
-              onClick={e => {
-                setOpenModal(true)
-                setCurrentvideo(
-                  e.target.firstChild.dataset.linkCta.replace(
-                    "watch?v=",
-                    "embed/"
+          {feedVideos &&
+            feedVideos.map(feedVideo => (
+              <div
+                key={feedVideo.guid}
+                className="library-video"
+                onClick={e => {
+                  setOpenModal(true)
+                  setCurrentvideo(
+                    e.target.firstChild.dataset.linkCta.replace(
+                      "watch?v=",
+                      "embed/"
+                    )
                   )
-                )
-              }}
-            >
-              <a data-link-cta={feedVideo.link}>
-                <img
-                  alt="video-template"
-                  src={`https://i4.ytimg.com/vi/${
-                    feedVideo.guid.split(":")[2]
-                  }/mqdefault.jpg`}
-                />
-              </a>
-              <div className="video-footer">
-                <p>{feedVideo.title}</p>
+                }}
+              >
+                <a data-link-cta={feedVideo.link}>
+                  <img
+                    alt="video-template"
+                    src={`https://i4.ytimg.com/vi/${
+                      feedVideo.guid.split(":")[2]
+                    }/mqdefault.jpg`}
+                  />
+                </a>
+                <div className="video-footer">
+                  <p>{feedVideo.title.replace("&amp;", "&")}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           <a
             href="https://www.youtube.com/playlist?list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
             alt="more videos"

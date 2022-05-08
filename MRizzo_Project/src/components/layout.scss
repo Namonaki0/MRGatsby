@@ -927,6 +927,9 @@ footer {
     text-transform: uppercase;
     margin: 2rem 0;
     font-size: 2rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 
   .videos-section-block {
@@ -954,8 +957,12 @@ footer {
       .video-footer {
         font-size: 0.8rem;
         padding: 1rem 0.5rem;
+        height: 70px;
+        display: grid;
+        place-content: center;
         background: rgba(250, 250, 250, 0.116);
         overflow: hidden;
+        pointer-events: none;
       }
     }
 
@@ -1062,7 +1069,7 @@ footer {
   }
 
   .back-to-links-wrapper {
-    // margin-top: 1rem;
+    z-index: 1000;
 
     .back-to-links {
       display: flex;
@@ -1141,7 +1148,6 @@ footer {
     overflow-y: hidden;
 
     .bio {
-      // grid-template-columns: 2fr 1fr;
       padding-bottom: 3rem;
       position: relative;
       display: grid;
@@ -1177,13 +1183,11 @@ footer {
             display: block;
             margin-top: 2.5rem;
             text-align: right;
-            // background: cyan;
 
             .social-media-arrow {
               display: inline;
               font-size: 1.5rem;
               vertical-align: middle;
-              // background: cadetblue;
               text-align: center;
               color: #78161a;
             }
