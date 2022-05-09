@@ -10,6 +10,8 @@ import {
   BsInstagram,
   BsTwitter,
   BsArrowRightShort,
+  BsFillArrowDownCircleFill,
+  BsFillArrowUpCircleFill,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import { IoTicket } from "react-icons/io5"
@@ -31,6 +33,10 @@ function IndexPage() {
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
   const [bandName, setBandName] = useState([])
   const [liveEvents, setLiveEvents] = useState([])
+  const [upcomingShowsSectionHeight, setUpcomingShowsSectionHeight] =
+    useState("510px")
+  const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
+  const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
 
   useEffect(() => {
     ;(async () => {
@@ -250,7 +256,6 @@ function IndexPage() {
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
                 <div className="tweets-wrapper">
-                  {/* <h2>social:</h2> */}
                   {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
                     (item, i) => (
                       <div className="individual-tweet">
@@ -266,7 +271,7 @@ function IndexPage() {
                           </div>
                         </div>
                         <div id={i} className="full-text">
-                          {item.node.full_text}
+                          {item.node.full_text.replace("&amp;", " & ")}
                         </div>
                       </div>
                     )
@@ -287,7 +292,10 @@ function IndexPage() {
               initial="hidden"
               animate="show"
             ></div>
-            <div className="upcoming-shows-wrapper">
+            <div
+              className="upcoming-shows-wrapper"
+              style={{ height: upcomingShowsSectionHeight }}
+            >
               {liveEvents.map(liveEvent => (
                 <FadeInWhenVisible>
                   <div className="upcoming-show">
@@ -315,6 +323,26 @@ function IndexPage() {
               ))}
             </div>
           </div>
+          <span>
+            <BsFillArrowDownCircleFill
+              className="upcoming-shows-section-expand-down-arrow"
+              display={upcomingShowsDownArrow}
+              onClick={() => {
+                setUpcomingShowsSectionHeight("auto")
+                setUpcomingShowsDownArrow("none")
+                setUpcomingShowsUpArrow("")
+              }}
+            />
+            <BsFillArrowUpCircleFill
+              className="upcoming-shows-section-expand-up-arrow"
+              display={upcomingShowsUpArrow}
+              onClick={() => {
+                setUpcomingShowsSectionHeight("510px")
+                setUpcomingShowsUpArrow("none")
+                setUpcomingShowsDownArrow("")
+              }}
+            />
+          </span>
         </div>
       </Layout>
     </>

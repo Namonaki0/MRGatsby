@@ -461,14 +461,32 @@ nav ul .nav-social-media a svg {
 
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper span {
   color: rgba(192, 192, 192, 0.596);
-}
-
-::-webkit-scrollbar-track {
-  background: cyan;
+  font-size: .8rem;
+  letter-spacing: 1px;
 }
 
 .upcoming-shows {
   overflow: hidden;
+}
+
+.upcoming-shows .upcoming-shows-section-expand-down-arrow,
+.upcoming-shows .upcoming-shows-section-expand-up-arrow {
+  background: #2b2b2b;
+  width: 100%;
+  font-size: 2.5rem;
+  margin: .2rem 0 .5rem;
+  color: #9b9b9b;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: grey;
+}
+
+.upcoming-shows .upcoming-shows-section-expand-down-arrow:hover,
+.upcoming-shows .upcoming-shows-section-expand-up-arrow:hover {
+  cursor: pointer;
+  background: #424242;
+  color: #b4b4b4;
 }
 
 .upcoming-shows h2 {
@@ -498,6 +516,7 @@ nav ul .nav-social-media a svg {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  position: relative;
 }
 
 .upcoming-shows .band-background-info-wrapper .band-background-image {
@@ -509,6 +528,7 @@ nav ul .nav-social-media a svg {
       -ms-flex: 1;
           flex: 1;
   z-index: 100;
+  overflow-y: hidden;
 }
 
 .upcoming-shows .band-background-info-wrapper .upcoming-shows-wrapper .upcoming-show {
@@ -1288,6 +1308,9 @@ footer .lower-footer .developed-by a {
     margin: 8px 5px;
     width: 400px;
   }
+  main .upcoming-shows .upcoming-shows-section-expand-down-arrow {
+    margin-top: .8rem;
+  }
   main .upcoming-shows h2 {
     padding: 0;
   }
@@ -1366,6 +1389,11 @@ footer .lower-footer .developed-by a {
   }
   main .upcoming-shows {
     background: transparent;
+    width: 120%;
+  }
+  main .upcoming-shows .upcoming-shows-section-expand-down-arrow,
+  main .upcoming-shows .upcoming-shows-section-expand-up-arrow {
+    display: none;
   }
   main .upcoming-shows .band-background-info-wrapper {
     display: -webkit-box;
@@ -1394,6 +1422,8 @@ footer .lower-footer .developed-by a {
         -ms-flex: 1;
             flex: 1;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   main .upcoming-shows .band-background-info-wrapper .upcoming-shows-wrapper .upcoming-show {
     -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
