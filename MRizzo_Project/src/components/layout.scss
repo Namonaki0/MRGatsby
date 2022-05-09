@@ -393,7 +393,7 @@ nav {
 
         span {
           color: rgba(192, 192, 192, 0.596);
-          font-size: .8rem;
+          font-size: 0.8rem;
           letter-spacing: 1px;
         }
       }
@@ -401,32 +401,28 @@ nav {
   }
 }
 
-
-
 //? UPCOMING SHOWS
 
 .upcoming-shows {
   overflow: hidden;
 
   .upcoming-shows-section-expand-down-arrow,
-  .upcoming-shows-section-expand-up-arrow
-   {
+  .upcoming-shows-section-expand-up-arrow {
     background: #2b2b2b;
     width: 100%;
     font-size: 2.5rem;
-    margin: .2rem 0 .5rem;
-    color:#9b9b9b;
+    margin: 0.2rem 0 0.5rem;
+    color: #9b9b9b;
     transition: all 150ms linear;
-     -webkit-text-stroke-width: 2px;
-     -webkit-text-stroke-color: grey;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: grey;
 
     &:hover {
       cursor: pointer;
       background: #424242;
-      color:#b4b4b4;
+      color: #b4b4b4;
     }
   }
-
 
   h2 {
     color: $color-primary;
@@ -451,7 +447,6 @@ nav {
     display: flex;
     flex-direction: row-reverse;
     position: relative;
-
 
     .band-background-image {
       display: none;
@@ -1305,15 +1300,9 @@ footer {
     }
 
     .upcoming-shows {
-
       .upcoming-shows-section-expand-down-arrow {
-
-    margin-top: .8rem;
-
-
-  }
-
-
+        margin-top: 0.8rem;
+      }
 
       h2 {
         padding: 0;
@@ -1395,18 +1384,21 @@ footer {
 
     .upcoming-shows {
       background: transparent;
-      width: 120%;
+
+      .band-name-span {
+        padding: 0.8rem 1rem;
+        font-size: 1.5rem;
+      }
 
       .upcoming-shows-section-expand-down-arrow,
-  .upcoming-shows-section-expand-up-arrow
-   {
-display: none;
-  }
+      .upcoming-shows-section-expand-up-arrow {
+        display: none;
+      }
 
       .band-background-info-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        padding: 0.8rem 0 0.8rem 0.5rem;
+        padding: 0.8rem 0 0.8rem 0.2rem;
 
         .band-background-image {
           display: unset;
@@ -1415,22 +1407,23 @@ display: none;
           background-position: right;
           background-color: #3333338a;
           background-blend-mode: multiply;
-          flex: 2;
-         
+          width: 60%;
+          z-index: 10;
+          margin: 0 5px;
         }
 
         .upcoming-shows-wrapper {
           margin-top: 0.5rem;
-          flex: 1;
           padding: 0;
           overflow-x: hidden;
           overflow-y: auto;
+          position: relative;
+          z-index: 100;
 
           .upcoming-show {
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
             margin-bottom: 0.5rem;
-            width: 120%;
-     
+            width: 98%;
           }
         }
       }
