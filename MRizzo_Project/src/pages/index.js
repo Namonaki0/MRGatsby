@@ -323,7 +323,7 @@ function IndexPage() {
               ))}
             </div>
           </div>
-          <span>
+          <span className="upcoming-shows-section-expand-wrapper">
             <BsFillArrowDownCircleFill
               className="upcoming-shows-section-expand-down-arrow"
               display={upcomingShowsDownArrow}

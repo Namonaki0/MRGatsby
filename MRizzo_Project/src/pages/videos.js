@@ -34,13 +34,13 @@ export default function Videos() {
 
       setVideos(data.items)
       setFeedVideos(livestream.items)
+      console.log(data)
     })()
   }, [currentChannelId, livestreamPlaylist])
 
   return (
     <Layout>
       <div className="video-library-wrapper">
-        {/* <h1>VIDEOS</h1> */}
         <h2>Latest</h2>
         <div className="videos-section-block">
           {videos &&
@@ -51,17 +51,17 @@ export default function Videos() {
                 initial="hidden"
                 animate="show"
                 key={video.guid}
-                onClick={e => {
-                  setOpenModal(true)
-                  setCurrentvideo(
-                    e.target.firstChild.dataset.linkCta.replace(
-                      "watch?v=",
-                      "embed/"
-                    )
-                  )
-                }}
               >
-                <a data-link-cta={video.link}>
+                <a
+                  className="video-data-link"
+                  data-link-cta={video.link}
+                  onClick={e => {
+                    setOpenModal(true)
+                    setCurrentvideo(
+                      e.target.dataset.linkCta.replace("watch?v=", "embed/")
+                    )
+                  }}
+                >
                   <img
                     alt="video-template"
                     src={`https://i4.ytimg.com/vi/${
@@ -70,7 +70,7 @@ export default function Videos() {
                   />
                 </a>
                 <div className="video-footer">
-                  <p>{video.title.replace("&amp;", " & ")}</p>
+                  <p>{video.title.replace("&amp;", " & ").toUpperCase()}</p>
                 </div>
               </motion.div>
             ))}
@@ -88,20 +88,20 @@ export default function Videos() {
         <div className="videos-section-block">
           {feedVideos &&
             feedVideos.map(feedVideo => (
-              <div
-                key={feedVideo.guid}
-                className="library-video"
-                onClick={e => {
-                  setOpenModal(true)
-                  setCurrentvideo(
-                    e.target.firstChild.dataset.linkCta.replace(
-                      "watch?v=",
-                      "embed/"
+              <div key={feedVideo.guid} className="library-video">
+                <a
+                  className="video-data-link"
+                  data-link-cta={feedVideo.link}
+                  onClick={e => {
+                    setOpenModal(true)
+                    setCurrentvideo(
+                      e.target.firstChild.dataset.linkCta.replace(
+                        "watch?v=",
+                        "embed/"
+                      )
                     )
-                  )
-                }}
-              >
-                <a data-link-cta={feedVideo.link}>
+                  }}
+                >
                   <img
                     alt="video-template"
                     src={`https://i4.ytimg.com/vi/${
@@ -110,7 +110,7 @@ export default function Videos() {
                   />
                 </a>
                 <div className="video-footer">
-                  <p>{feedVideo.title.replace("&amp;", "&")}</p>
+                  <p>{feedVideo.title.replace("&amp;", "&").toUpperCase()}</p>
                 </div>
               </div>
             ))}
