@@ -34,7 +34,6 @@ export default function Videos() {
 
       setVideos(data.items)
       setFeedVideos(livestream.items)
-      console.log(data)
     })()
   }, [currentChannelId, livestreamPlaylist])
 
@@ -63,6 +62,7 @@ export default function Videos() {
                   }}
                 >
                   <img
+                    className="video-template"
                     alt="video-template"
                     src={`https://i4.ytimg.com/vi/${
                       video.guid.split(":")[2]
@@ -95,10 +95,7 @@ export default function Videos() {
                   onClick={e => {
                     setOpenModal(true)
                     setCurrentvideo(
-                      e.target.firstChild.dataset.linkCta.replace(
-                        "watch?v=",
-                        "embed/"
-                      )
+                      e.target.dataset.linkCta.replace("watch?v=", "embed/")
                     )
                   }}
                 >

@@ -971,16 +971,49 @@ footer {
       margin-bottom: 1.8rem;
       margin: 1rem 0.5rem;
       inline-size: min-content;
-      cursor: pointer;
       transition: all 150ms linear;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.237);
+        background: rgba(255, 255, 255, 0.171);
         box-shadow: 0 0 1px rgba(192, 192, 192, 0.274);
       }
 
       .video-data-link {
         isolation: isolate;
+        position: relative;
+
+        &::before {
+          content: "watch";
+          background: rgba(0, 0, 0, 0.381);
+          position: absolute;
+          width: inherit;
+          display: grid;
+          place-content: center;
+          // width: 100%;
+          height: 100%;
+          // inline-size: max-content;
+          visibility: hidden;
+          opacity: 0;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          transition: all 150ms linear;
+          pointer-events: none;
+          letter-spacing: 2px;
+          font-size: 1.8rem;
+        }
+
+        &:hover {
+          &::before {
+            visibility: visible;
+            opacity: 1;
+            left: -100%;
+          }
+
+      
+        }
+
       }
 
       .video-footer {

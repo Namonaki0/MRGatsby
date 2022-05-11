@@ -963,19 +963,47 @@ footer .lower-footer .developed-by a {
   inline-size: -webkit-min-content;
   inline-size: -moz-min-content;
   inline-size: min-content;
-  cursor: pointer;
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
 }
 
 .video-library-wrapper .videos-section-block .library-video:hover {
-  background: rgba(255, 255, 255, 0.237);
+  background: rgba(255, 255, 255, 0.171);
   -webkit-box-shadow: 0 0 1px rgba(192, 192, 192, 0.274);
           box-shadow: 0 0 1px rgba(192, 192, 192, 0.274);
 }
 
 .video-library-wrapper .videos-section-block .library-video .video-data-link {
   isolation: isolate;
+  position: relative;
+}
+
+.video-library-wrapper .videos-section-block .library-video .video-data-link::before {
+  content: "watch";
+  background: rgba(0, 0, 0, 0.381);
+  position: absolute;
+  width: inherit;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  pointer-events: none;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+}
+
+.video-library-wrapper .videos-section-block .library-video .video-data-link:hover::before {
+  visibility: visible;
+  opacity: 1;
+  left: -100%;
 }
 
 .video-library-wrapper .videos-section-block .library-video .video-footer {
