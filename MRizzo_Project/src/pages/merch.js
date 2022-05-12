@@ -151,6 +151,13 @@ export default function Merch() {
               setExtSubName(e.target.dataset.subName)
             }}
           />
+          <div className="frontier-shop">
+            <a
+              href="https://www.storefrontier.com/marcrizzo"
+              target="_blank"
+              rel="noreferrer"
+            ></a>
+          </div>
         </motion.div>
 
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
@@ -172,7 +179,7 @@ export default function Merch() {
           </div>
         </Modal>
 
-        <div className="frontier-shop">
+        <div className="frontier-shop-cta-button">
           <a
             href="https://www.storefrontier.com/marcrizzo"
             target="_blank"
