@@ -16,8 +16,6 @@ export default function Merch() {
   return (
     <Layout>
       <div className="merch-page-wrapper">
-        {/* <h1>MERCH</h1> */}
-
         <motion.div
           variants={container}
           initial="hidden"

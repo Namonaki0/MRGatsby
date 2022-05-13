@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { motion } from "framer-motion"
 import { container } from "../components/FramerMotion"
 import Modal from "../components/Modal"
+import SkeletonLoading from "../components/SkeletonLoading"
 import {
   BASE_URL,
   PLAYLIST_FIELD,
@@ -41,6 +42,8 @@ export default function Videos() {
     <Layout>
       <div className="video-library-wrapper">
         <h2>Latest</h2>
+        {/* <SkeletonLoading type="loading-wrapper" /> */}
+
         <div className="videos-section-block">
           {videos &&
             videos.map(video => (
