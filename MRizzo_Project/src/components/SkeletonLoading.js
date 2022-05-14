@@ -4,12 +4,11 @@ import skeleton from "./skeleton.css"
 const SkeletonLoading = ({ type }) => {
   const classes = `skeleton ${type}`
   return (
-    <>
-      <div className={classes}>
-        <div className="video-thumbnail"></div>
-        <div className="video-footer"></div>
-      </div>
-    </>
+    <div className={classes}>
+      <span>LOADING...</span>
+      <div className="skeleton video-thumbnail"></div>
+      <div className="skeleton video-footer"></div>
+    </div>
   )
 }
 

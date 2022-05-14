@@ -3,20 +3,50 @@
 .skeleton.loading-wrapper {
   width: 320px;
   height: 250px;
-  outline: 1px solid silver;
   background: transparent;
+  position: relative;
+
+  span {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .skeleton.video-thumbnail {
   width: 320px;
   height: 180px;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
   background: rgb(71, 71, 71);
+  animation: loadingAnimation 1.8s linear infinite;
 }
+
 
 .skeleton.video-footer {
   width: 320px;
   height: 70px;
-  background: rgb(44, 44, 44);
+  background: rgb(71, 71, 71);
+   animation: loadingAnimation 1.8s linear infinite ;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background:rgb(41, 41, 41);
+    opacity: .2;
+  }
+  50% {
+     background: rgb(56, 56, 56);
+     opacity: 9;
+  }
+  100% {
+     background: rgb(44, 44, 44);
+     opacity: 9;
+  }
+
 }
 
 //? SKELETON LOADING - END

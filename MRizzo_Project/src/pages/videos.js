@@ -25,23 +25,26 @@ export default function Videos() {
     useState(LIVESTREAM_PLAYLIST)
 
   useEffect(() => {
-    ;(async () => {
-      const data = await fetch(`${baseUrl}${currentChannelId}`).then(res =>
-        res.json()
-      )
-      const livestream = await fetch(
-        `${playlistFeed}${livestreamPlaylist}`
-      ).then(res => res.json())
+    setTimeout(() => {
+      ;(async () => {
+        const data = await fetch(`${baseUrl}${currentChannelId}`).then(res =>
+          res.json()
+        )
+        const livestream = await fetch(
+          `${playlistFeed}${livestreamPlaylist}`
+        ).then(res => res.json())
 
-      setVideos(data.items)
-      setFeedVideos(livestream.items)
-    })()
+        setVideos(data.items)
+        setFeedVideos(livestream.items)
+      })()
+    }, 5000)
   }, [currentChannelId, livestreamPlaylist])
 
   return (
     <Layout>
       <div className="video-library-wrapper">
         <h2>Latest</h2>
+
         {/* <SkeletonLoading type="loading-wrapper" /> */}
 
         <div className="videos-section-block">
@@ -86,6 +89,11 @@ export default function Videos() {
           >
             more videos
           </a>
+          {!videos && (
+            <div>
+              <SkeletonLoading type="loading-wrapper" />
+            </div>
+          )}
         </div>
         <h2>Livestreams</h2>
         <div className="videos-section-block">

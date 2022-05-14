@@ -1,19 +1,64 @@
 .skeleton.loading-wrapper {
   width: 320px;
   height: 250px;
-  outline: 1px solid silver;
   background: transparent;
+  position: relative;
+}
+
+.skeleton.loading-wrapper span {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .skeleton.video-thumbnail {
   width: 320px;
   height: 180px;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
   background: #474747;
+  -webkit-animation: loadingAnimation 1.8s linear infinite;
+          animation: loadingAnimation 1.8s linear infinite;
 }
 
 .skeleton.video-footer {
   width: 320px;
   height: 70px;
-  background: #2c2c2c;
+  background: #474747;
+  -webkit-animation: loadingAnimation 1.8s linear infinite;
+          animation: loadingAnimation 1.8s linear infinite;
+}
+
+@-webkit-keyframes loadingAnimation {
+  0% {
+    background: #292929;
+    opacity: .2;
+  }
+  50% {
+    background: #383838;
+    opacity: 9;
+  }
+  100% {
+    background: #2c2c2c;
+    opacity: 9;
+  }
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background: #292929;
+    opacity: .2;
+  }
+  50% {
+    background: #383838;
+    opacity: 9;
+  }
+  100% {
+    background: #2c2c2c;
+    opacity: 9;
+  }
 }
 /*# sourceMappingURL=skeleton.css.map */
