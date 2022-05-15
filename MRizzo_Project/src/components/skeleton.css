@@ -3,6 +3,7 @@
   height: 250px;
   background: transparent;
   position: relative;
+  margin: 10px;
 }
 
 .skeleton.loading-wrapper span {

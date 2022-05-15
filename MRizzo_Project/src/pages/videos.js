@@ -25,19 +25,17 @@ export default function Videos() {
     useState(LIVESTREAM_PLAYLIST)
 
   useEffect(() => {
-    setTimeout(() => {
-      ;(async () => {
-        const data = await fetch(`${baseUrl}${currentChannelId}`).then(res =>
-          res.json()
-        )
-        const livestream = await fetch(
-          `${playlistFeed}${livestreamPlaylist}`
-        ).then(res => res.json())
+    ;(async () => {
+      const data = await fetch(`${baseUrl}${currentChannelId}`).then(res =>
+        res.json()
+      )
+      const livestream = await fetch(
+        `${playlistFeed}${livestreamPlaylist}`
+      ).then(res => res.json())
 
-        setVideos(data.items)
-        setFeedVideos(livestream.items)
-      })()
-    }, 5000)
+      setVideos(data.items)
+      setFeedVideos(livestream.items)
+    })()
   }, [currentChannelId, livestreamPlaylist])
 
   return (
@@ -45,41 +43,43 @@ export default function Videos() {
       <div className="video-library-wrapper">
         <h2>Latest</h2>
 
-        {/* <SkeletonLoading type="loading-wrapper" /> */}
-
         <div className="videos-section-block">
-          {videos &&
-            videos.map(video => (
-              <motion.div
-                className="library-video"
-                variants={container}
-                initial="hidden"
-                animate="show"
-                key={video.guid}
-              >
-                <a
-                  className="video-data-link"
-                  data-link-cta={video.link}
-                  onClick={e => {
-                    setOpenModal(true)
-                    setCurrentvideo(
-                      e.target.dataset.linkCta.replace("watch?v=", "embed/")
-                    )
-                  }}
+          {videos.length < 1
+            ? Array.from({ length: 3 }, i => (
+                <SkeletonLoading type="loading-wrapper" key={i} />
+              ))
+            : videos.map(video => (
+                <motion.div
+                  className="library-video"
+                  variants={container}
+                  initial="hidden"
+                  animate="show"
+                  key={video.guid}
                 >
-                  <img
-                    className="video-template"
-                    alt="video-template"
-                    src={`https://i4.ytimg.com/vi/${
-                      video.guid.split(":")[2]
-                    }/mqdefault.jpg`}
-                  />
-                </a>
-                <div className="video-footer">
-                  <p>{video.title.replace("&amp;", " & ").toUpperCase()}</p>
-                </div>
-              </motion.div>
-            ))}
+                  <a
+                    className="video-data-link"
+                    data-link-cta={video.link}
+                    onClick={e => {
+                      setOpenModal(true)
+                      setCurrentvideo(
+                        e.target.dataset.linkCta.replace("watch?v=", "embed/")
+                      )
+                    }}
+                  >
+                    <img
+                      className="video-template"
+                      alt="video-template"
+                      src={`https://i4.ytimg.com/vi/${
+                        video.guid.split(":")[2]
+                      }/mqdefault.jpg`}
+                    />
+                  </a>
+                  <div className="video-footer">
+                    <p>{video.title.replace("&amp;", " & ").toUpperCase()}</p>
+                  </div>
+                </motion.div>
+              ))}
+
           <a
             href="https://www.youtube.com/c/MarcRizzoOfficial/videos"
             alt="more videos"
@@ -89,39 +89,37 @@ export default function Videos() {
           >
             more videos
           </a>
-          {!videos && (
-            <div>
-              <SkeletonLoading type="loading-wrapper" />
-            </div>
-          )}
         </div>
         <h2>Livestreams</h2>
         <div className="videos-section-block">
-          {feedVideos &&
-            feedVideos.map(feedVideo => (
-              <div key={feedVideo.guid} className="library-video">
-                <a
-                  className="video-data-link"
-                  data-link-cta={feedVideo.link}
-                  onClick={e => {
-                    setOpenModal(true)
-                    setCurrentvideo(
-                      e.target.dataset.linkCta.replace("watch?v=", "embed/")
-                    )
-                  }}
-                >
-                  <img
-                    alt="video-template"
-                    src={`https://i4.ytimg.com/vi/${
-                      feedVideo.guid.split(":")[2]
-                    }/mqdefault.jpg`}
-                  />
-                </a>
-                <div className="video-footer">
-                  <p>{feedVideo.title.replace("&amp;", "&").toUpperCase()}</p>
+          {videos.length < 1
+            ? Array.from({ length: 3 }, i => (
+                <SkeletonLoading type="loading-wrapper" key={i} />
+              ))
+            : feedVideos.map(feedVideo => (
+                <div key={feedVideo.guid} className="library-video">
+                  <a
+                    className="video-data-link"
+                    data-link-cta={feedVideo.link}
+                    onClick={e => {
+                      setOpenModal(true)
+                      setCurrentvideo(
+                        e.target.dataset.linkCta.replace("watch?v=", "embed/")
+                      )
+                    }}
+                  >
+                    <img
+                      alt="video-template"
+                      src={`https://i4.ytimg.com/vi/${
+                        feedVideo.guid.split(":")[2]
+                      }/mqdefault.jpg`}
+                    />
+                  </a>
+                  <div className="video-footer">
+                    <p>{feedVideo.title.replace("&amp;", "&").toUpperCase()}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           <a
             href="https://www.youtube.com/playlist?list=PLZDs0akd6CkwHzetjWFKMWDnLolVuT47_"
             alt="more videos"

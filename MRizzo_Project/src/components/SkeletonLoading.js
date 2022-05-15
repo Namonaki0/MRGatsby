@@ -3,13 +3,18 @@ import skeleton from "./skeleton.css"
 
 const SkeletonLoading = ({ type }) => {
   const classes = `skeleton ${type}`
-  return (
-    <div className={classes}>
-      <span>LOADING...</span>
-      <div className="skeleton video-thumbnail"></div>
-      <div className="skeleton video-footer"></div>
-    </div>
-  )
+
+  {
+    for (let i = 0; i < 6; i++) {
+      return (
+        <div className={classes}>
+          <span>LOADING...</span>
+          <div className="skeleton video-thumbnail"></div>
+          <div className="skeleton video-footer"></div>
+        </div>
+      )
+    }
+  }
 }
 
 export default SkeletonLoading
