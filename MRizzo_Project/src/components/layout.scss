@@ -354,6 +354,34 @@ nav {
     grid-gap: 10px;
     padding: 2px 10px;
     overflow-x: auto;
+    position: relative;
+
+    .tweets-navigation-outer-wrapper {
+      display: flex;
+      position: sticky;
+      align-items: flex-end;
+     
+      right: 10px;
+      margin-bottom: 10px;
+      
+          .tweets-navigation-buttons {
+            display: flex;
+            padding: .5rem 1rem;
+             gap: 1rem;
+            font-size: 2rem;
+            color: rgb(193, 193, 193);
+            transition: all 150ms linear;
+            background: #0000003f;
+
+       
+      
+            &:hover {
+              cursor: pointer;
+              color: rgb(234, 234, 234);
+            }
+          }
+
+    }
 
     .individual-tweet {
       margin: 15px 0;
@@ -1122,8 +1150,11 @@ footer {
   }
 }
 
-
 //? HORIZONTAL SCROLLER
+
+.menu-item-wrapper {
+  display: flex;
+}
 
 .menu-item {
   padding: 0 40px;
@@ -1137,15 +1168,20 @@ footer {
 }
 .menu-item.active {
   border: 1px green solid;
+  height: 10px;
+  width: 10px;
 }
- 
+
 .scroll-menu-arrow {
   padding: 20px;
   cursor: pointer;
 }
 
-//? HORIZONTAL SCROLLER - END
+.scroller-app {
+  display: flex;
+}
 
+//? HORIZONTAL SCROLLER - END
 
 @media (min-width: $md-screen) {
   nav {

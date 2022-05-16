@@ -410,6 +410,38 @@ nav ul .nav-social-media a svg {
   grid-gap: 10px;
   padding: 2px 10px;
   overflow-x: auto;
+  position: relative;
+}
+
+.tweets-outer-wrapper .tweets-wrapper .tweets-navigation-outer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  right: 10px;
+  margin-bottom: 10px;
+}
+
+.tweets-outer-wrapper .tweets-wrapper .tweets-navigation-outer-wrapper .tweets-navigation-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .5rem 1rem;
+  gap: 1rem;
+  font-size: 2rem;
+  color: #c1c1c1;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  background: #0000003f;
+}
+
+.tweets-outer-wrapper .tweets-wrapper .tweets-navigation-outer-wrapper .tweets-navigation-buttons:hover {
+  cursor: pointer;
+  color: #eaeaea;
 }
 
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet {
@@ -1134,6 +1166,12 @@ footer .lower-footer .developed-by a {
   cursor: pointer;
 }
 
+.menu-item-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .menu-item {
   padding: 0 40px;
   margin: 5px 10px;
@@ -1151,11 +1189,19 @@ footer .lower-footer .developed-by a {
 
 .menu-item.active {
   border: 1px green solid;
+  height: 10px;
+  width: 10px;
 }
 
 .scroll-menu-arrow {
   padding: 20px;
   cursor: pointer;
+}
+
+.scroller-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 600px) {

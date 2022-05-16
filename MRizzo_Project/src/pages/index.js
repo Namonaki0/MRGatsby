@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { useEffect } from "react"
 import Seo from "../components/seo"
@@ -12,6 +12,8 @@ import {
   BsArrowRightShort,
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
+  BsArrowLeftCircle,
+  BsArrowRightCircle,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import { IoTicket } from "react-icons/io5"
@@ -27,76 +29,17 @@ import {
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
 import { BIT_API, API_KEY, IN_ID } from "../../static/keys"
-import ScrollMenu from "react-horizontal-scroll-menu"
+import { Menu } from "../components/horizontalScrolling"
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
   const [displayBioEffect, setDisplayBioEffect] = useState(false)
-  const [tweets, setTweets] = useState([])
   const [bandName, setBandName] = useState([])
   const [liveEvents, setLiveEvents] = useState([])
   const [upcomingShowsSectionHeight, setUpcomingShowsSectionHeight] =
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
-
-  const MenuItem = ({ section, selected }) => {
-    return (
-      <div className={`menu-item ${selected ? "active" : ""}`}>{section}</div>
-    )
-  }
-
-  const HorizontalScroller = (tweetList, selected) =>
-    tweetList.map(el => {
-      const { name } = el
-
-      return <MenuItem text={name} key={name} selected={selected} />
-    })
-
-  const Arrow = ({ section, className }) => {
-    return <div className={className}>{section}</div>
-  }
-
-  const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" })
-  const ArrowRight = Arrow({ text: ">", className: "arrow-next" })
-
-  const tweetList = [...tweets]
-
-  const selected = tweetList[0]
-
-  class Scroller extends Component {
-    constructor(props) {
-      super(props)
-      // call it again if items count changes
-      this.menuItems = HorizontalScroller(tweetList, selected)
-    }
-
-    state = {
-      selected,
-    }
-
-    onSelect = key => {
-      this.setState({ selected: key })
-    }
-
-    render() {
-      const { selected } = this.state
-      // Create menu from items
-      const menu = this.menuItems
-
-      return (
-        <div className="Scroller">
-          <ScrollMenu
-            data={menu}
-            arrowLeft={ArrowLeft}
-            arrowRight={ArrowRight}
-            selected={selected}
-            onSelect={this.onSelect}
-          />
-        </div>
-      )
-    }
-  }
 
   useEffect(() => {
     ;(async () => {
@@ -311,40 +254,41 @@ function IndexPage() {
               }
             }
           `}
-          render={data =>
-            setTweets(data) && (
-              <div className="tweets-outer-wrapper">
-                <h2>SOCIAL</h2>
-                <FadeInWhenVisible>
-                  <div className="tweets-wrapper">
-                    {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
-                      (item, i) => (
-                        <div className="individual-tweet">
-                          <div className="avatar-name-wrapper">
-                            <img
-                              alt="Mark's twitter profile avatar"
-                              src={item.node.user.profile_image_url}
-                              id={i}
-                            ></img>
-                            <div className="name-handle-wrapper">
-                              <h3 id={i}>{item.node.user.name}</h3>
-                              <span>@{item.node.user.screen_name}</span>
-                            </div>
-                          </div>
-                          <div id={i} className="full-text">
-                            {item.node.full_text.replace("&amp;", " & ")}
+          render={data => (
+            <div className="tweets-outer-wrapper">
+              <h2>SOCIAL</h2>
+              <FadeInWhenVisible>
+                <div className="tweets-wrapper">
+                  {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
+                    (item, i) => (
+                      <div className="individual-tweet">
+                        <div className="avatar-name-wrapper">
+                          <img
+                            alt="Mark's twitter profile avatar"
+                            src={item.node.user.profile_image_url}
+                            id={i}
+                          ></img>
+                          <div className="name-handle-wrapper">
+                            <h3 id={i}>{item.node.user.name}</h3>
+                            <span>@{item.node.user.screen_name}</span>
                           </div>
                         </div>
-                      )
-                    )}
+                        <div id={i} className="full-text">
+                          {item.node.full_text.replace("&amp;", " & ")}
+                        </div>
+                      </div>
+                    )
+                  )}
+                  <div className="tweets-navigation-outer-wrapper ">
+                    <div className="tweets-navigation-buttons">
+                      <BsArrowLeftCircle className="left-arrow" />
+                      <BsArrowRightCircle className="right-arrow" />
+                    </div>
                   </div>
-                </FadeInWhenVisible>
-                {/* HORIZONTAL SCROLLER */}
-                <Scroller />
-                {/* HORIZONTAL SCROLLER */}
-              </div>
-            )
-          }
+                </div>
+              </FadeInWhenVisible>
+            </div>
+          )}
         />
 
         <div className="upcoming-shows">

@@ -1,8 +1,26 @@
 import React, { Component } from "react"
 import ScrollMenu from "react-horizontal-scroll-menu"
-import "./App.css"
+// import "./App.css"
 
-const HorizontalScroller = (list, selected) =>
+// list of items
+const list = [
+  { name: "item1" },
+  { name: "item2" },
+  { name: "item3" },
+  { name: "item4" },
+  { name: "item5" },
+  { name: "item6" },
+]
+
+// One item component
+// selected prop will be passed
+const MenuItem = ({ text, selected }) => {
+  return <div className={`menu-item ${selected ? "active" : ""}`}>{text}</div>
+}
+
+// All items component
+// Important! add unique key
+export const Menu = (list, selected) =>
   list.map(el => {
     const { name } = el
 
@@ -39,7 +57,7 @@ class App extends Component {
     const menu = this.menuItems
 
     return (
-      <div className="App">
+      <div className="scroller-app">
         <ScrollMenu
           data={menu}
           arrowLeft={ArrowLeft}
@@ -51,5 +69,3 @@ class App extends Component {
     )
   }
 }
-
-export default HorizontalScroller
