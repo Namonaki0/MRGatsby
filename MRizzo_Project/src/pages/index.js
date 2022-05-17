@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import Seo from "../components/seo"
 import {
   BsSpotify,
@@ -29,7 +29,7 @@ import {
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
 import { BIT_API, API_KEY, IN_ID } from "../../static/keys"
-import { Menu } from "../components/horizontalScrolling"
+// import { Menu } from "../components/horizontalScrolling"
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
@@ -40,6 +40,11 @@ function IndexPage() {
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
+  const [tweetsWrapperSliderLength, setTweetsWrapperSliderLength] = useState()
+  const [tweetsWrapperSliderOffsetWidth, setTweetsWrapperSliderOffsetWidth] =
+    useState()
+
+  const tweetsWrapperLength = useRef()
 
   useEffect(() => {
     ;(async () => {
@@ -53,6 +58,9 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
+
+      setTweetsWrapperSliderLength(tweetsWrapperLength.current.scrollWidth)
+      setTweetsWrapperSliderOffsetWidth(tweetsWrapperLength.current.offsetWidth)
     })()
   }, [])
 
@@ -258,7 +266,15 @@ function IndexPage() {
             <div className="tweets-outer-wrapper">
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
-                <div className="tweets-wrapper">
+                <div
+                  className="tweets-wrapper"
+                  // drag="x"
+                  // dragConstraints={{ right: 0 }}
+                  ref={tweetsWrapperLength}
+                  // onLoad={setTweetsWrapperSliderLength(
+                  //   tweetsWrapperLength.current.scrollWidth
+                  // )}
+                >
                   {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
                     (item, i) => (
                       <div className="individual-tweet">
@@ -281,8 +297,20 @@ function IndexPage() {
                   )}
                   <div className="tweets-navigation-outer-wrapper ">
                     <div className="tweets-navigation-buttons">
-                      <BsArrowLeftCircle className="left-arrow" />
-                      <BsArrowRightCircle className="right-arrow" />
+                      <BsArrowLeftCircle
+                        className="left-arrow"
+                        ref={tweetsWrapperLength.current}
+                        onClick={() => {
+                          console.log(tweetsWrapperSliderLength)
+                        }}
+                      />
+                      <BsArrowRightCircle
+                        className="right-arrow"
+                        ref={tweetsWrapperLength.current}
+                        onClick={() =>
+                          console.log(tweetsWrapperSliderOffsetWidth)
+                        }
+                      />
                     </div>
                   </div>
                 </div>

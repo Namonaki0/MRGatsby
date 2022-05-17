@@ -571,6 +571,7 @@ footer {
     text-align: center;
     padding: 2rem 0 1rem;
     display: block;
+    z-index: 100;
 
     &::after {
       content: "";
