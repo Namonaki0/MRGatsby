@@ -1,71 +1,50 @@
 import React, { Component } from "react"
-import ScrollMenu from "react-horizontal-scroll-menu"
-// import "./App.css"
-
-// list of items
-const list = [
-  { name: "item1" },
-  { name: "item2" },
-  { name: "item3" },
-  { name: "item4" },
-  { name: "item5" },
-  { name: "item6" },
-]
-
-// One item component
-// selected prop will be passed
-const MenuItem = ({ text, selected }) => {
-  return <div className={`menu-item ${selected ? "active" : ""}`}>{text}</div>
-}
-
-// All items component
-// Important! add unique key
-export const Menu = (list, selected) =>
-  list.map(el => {
-    const { name } = el
-
-    return <MenuItem text={name} key={name} selected={selected} />
-  })
-
-const Arrow = ({ text, className }) => {
-  return <div className={className}>{text}</div>
-}
-
-const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" })
-const ArrowRight = Arrow({ text: ">", className: "arrow-next" })
-
-const selected = "item1"
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    // call it again if items count changes
-    this.menuItems = Menu(list, selected)
-  }
-
+  // Create state
   state = {
-    selected,
+    xoffset: 0,
+    yoffset: 0,
+    delta: 10,
   }
 
-  onSelect = key => {
-    this.setState({ selected: key })
+  moveTitleToDown = () => {
+    this.setState({ yoffset: this.state.yoffset + this.state.delta })
+  }
+  moveTitleToRight = () => {
+    this.setState({ xoffset: this.state.xoffset + this.state.delta })
+  }
+  moveTitleToLeft = () => {
+    this.setState({ xoffset: this.state.xoffset - this.state.delta })
+  }
+  moveTitleToUp = () => {
+    this.setState({ yoffset: this.state.yoffset - this.state.delta })
   }
 
   render() {
-    const { selected } = this.state
-    // Create menu from items
-    const menu = this.menuItems
-
     return (
-      <div className="scroller-app">
-        <ScrollMenu
-          data={menu}
-          arrowLeft={ArrowLeft}
-          arrowRight={ArrowRight}
-          selected={selected}
-          onSelect={this.onSelect}
-        />
+      <div>
+        {/* Element to Move Dynamically */}
+        <h2
+          style={{
+            position: "absolute",
+            left: `${this.state.xoffset}px`,
+            top: `${this.state.yoffset}px`,
+          }}
+        >
+          GeeksforGeeks
+        </h2>
+
+        {/* Move Controls */}
+        <div style={{ marginTop: "80px" }}>
+          <button onClick={this.moveTitleToRight}>Move Title To Right</button>
+          <button onClick={this.moveTitleToDown}>Move Title To Down</button>
+          <button onClick={this.moveTitleToLeft}>Move Title To Left</button>
+          <button onClick={this.moveTitleToUp}>Move Title To Up</button>
+        </div>
       </div>
     )
   }
 }
+
+export default App

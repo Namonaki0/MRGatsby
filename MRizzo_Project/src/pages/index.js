@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { useEffect, useRef } from "react"
 import Seo from "../components/seo"
@@ -29,7 +29,6 @@ import {
 } from "../components/FramerMotion"
 import { motion } from "framer-motion"
 import { BIT_API, API_KEY, IN_ID } from "../../static/keys"
-// import { Menu } from "../components/horizontalScrolling"
 
 function IndexPage() {
   const [displayBio, setDisplayBio] = useState(false)
@@ -40,11 +39,7 @@ function IndexPage() {
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
-  const [tweetsWrapperSliderLength, setTweetsWrapperSliderLength] = useState()
-  const [tweetsWrapperSliderOffsetWidth, setTweetsWrapperSliderOffsetWidth] =
-    useState()
-
-  const tweetsWrapperLength = useRef()
+  const [newState, setNewState] = useState()
 
   useEffect(() => {
     ;(async () => {
@@ -58,11 +53,26 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-
-      setTweetsWrapperSliderLength(tweetsWrapperLength.current.scrollWidth)
-      setTweetsWrapperSliderOffsetWidth(tweetsWrapperLength.current.offsetWidth)
     })()
   }, [])
+
+  const horizontalScrollXOffset = useRef()
+
+  let state = {
+    xoffset: 0,
+    delta: 10,
+  }
+
+  const moveTitleToRight = () => {
+    // this.setState({ xoffset: this.state.xoffset + this.state.delta })
+    setNewState({ xoffset: state.xoffset + state.delta })
+    console.log(newState)
+  }
+  const moveTitleToLeft = () => {
+    // this.setState({ xoffset: this.state.xoffset - this.state.delta })
+    setNewState({ xoffset: state.xoffset - state.delta })
+    console.log(newState)
+  }
 
   return (
     <>
@@ -268,12 +278,10 @@ function IndexPage() {
               <FadeInWhenVisible>
                 <div
                   className="tweets-wrapper"
-                  // drag="x"
-                  // dragConstraints={{ right: 0 }}
-                  ref={tweetsWrapperLength}
-                  // onLoad={setTweetsWrapperSliderLength(
-                  //   tweetsWrapperLength.current.scrollWidth
-                  // )}
+                  ref={horizontalScrollXOffset}
+                  style={{
+                    scrollX: `${newState}px`,
+                  }}
                 >
                   {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
                     (item, i) => (
@@ -295,21 +303,15 @@ function IndexPage() {
                       </div>
                     )
                   )}
-                  <div className="tweets-navigation-outer-wrapper ">
+                  <div className="tweets-navigation-outer-wrapper">
                     <div className="tweets-navigation-buttons">
                       <BsArrowLeftCircle
                         className="left-arrow"
-                        ref={tweetsWrapperLength.current}
-                        onClick={() => {
-                          console.log(tweetsWrapperSliderLength)
-                        }}
+                        onClick={moveTitleToLeft}
                       />
                       <BsArrowRightCircle
                         className="right-arrow"
-                        ref={tweetsWrapperLength.current}
-                        onClick={() =>
-                          console.log(tweetsWrapperSliderOffsetWidth)
-                        }
+                        onClick={moveTitleToRight}
                       />
                     </div>
                   </div>
