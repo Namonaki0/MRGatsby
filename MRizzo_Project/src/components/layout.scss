@@ -58,10 +58,10 @@ nav {
 
   .burger-menu {
     width: max-content;
-    height: 28px;
+    padding: 0.5rem 0;
     position: absolute;
     top: 1rem;
-    right: 35px;
+    right: 25px;
     z-index: 100;
     transition: all 100ms linear;
 
@@ -82,6 +82,8 @@ nav {
       background-color: $color-primary;
       margin-bottom: 7px;
       transition: all 100ms linear;
+      margin-left: auto;
+      margin-right: 1rem;
     }
 
     span:nth-child(1) {
@@ -360,28 +362,24 @@ nav {
       display: flex;
       position: sticky;
       align-items: flex-end;
-      // display: none;
-     
+      display: none;
       right: 10px;
       margin-bottom: 10px;
-      
-          .tweets-navigation-buttons {
-            display: flex;
-            padding: .5rem 1rem;
-             gap: 1rem;
-            font-size: 2rem;
-            color: rgb(193, 193, 193);
-            transition: all 150ms linear;
-            background: #0000003f;
 
-       
-      
-            &:hover {
-              cursor: pointer;
-              color: rgb(234, 234, 234);
-            }
-          }
+      .tweets-navigation-buttons {
+        display: flex;
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+        font-size: 2rem;
+        color: rgb(193, 193, 193);
+        transition: all 150ms linear;
+        background: #0000003f;
 
+        &:hover {
+          cursor: pointer;
+          color: rgb(234, 234, 234);
+        }
+      }
     }
 
     .individual-tweet {

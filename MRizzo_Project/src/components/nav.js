@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import {
   BsSpotify,
   BsYoutube,
@@ -16,6 +16,17 @@ import { navbarEffect } from "./FramerMotion"
 export default function Nav() {
   const [openMenu, setOpenMenu] = useState(null)
   const [burgerEffect, setBurgerEffect] = useState("close")
+  const [pageYOffset, setPageYOffset] = useState(null)
+
+  const windowScrollYOffset = {
+    height: 50,
+    width: "90%",
+    background: "#00000085",
+  }
+
+  window.addEventListener("scroll", () => {
+    setPageYOffset(window.pageYOffset)
+  })
 
   return (
     <div>
@@ -130,6 +141,16 @@ export default function Nav() {
         </ul>
 
         <div
+          style={{
+            background:
+              pageYOffset > windowScrollYOffset.height
+                ? windowScrollYOffset.background
+                : "",
+            width:
+              pageYOffset > windowScrollYOffset.height
+                ? windowScrollYOffset.width
+                : "",
+          }}
           className="burger-menu"
           aria-hidden="true"
           onClick={() => {

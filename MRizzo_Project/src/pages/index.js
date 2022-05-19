@@ -39,7 +39,7 @@ function IndexPage() {
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
-  const [newState, setNewState] = useState()
+  const [newState, setNewState] = useState(null)
 
   useEffect(() => {
     ;(async () => {
@@ -56,22 +56,17 @@ function IndexPage() {
     })()
   }, [])
 
-  const horizontalScrollXOffset = useRef()
-
   let state = {
-    xoffset: 0,
     delta: 10,
   }
 
   const moveTitleToRight = () => {
     // this.setState({ xoffset: this.state.xoffset + this.state.delta })
-    setNewState({ xoffset: state.xoffset + state.delta })
-    console.log(newState)
+    setNewState((newState += state.delta))
   }
   const moveTitleToLeft = () => {
     // this.setState({ xoffset: this.state.xoffset - this.state.delta })
-    setNewState({ xoffset: state.xoffset - state.delta })
-    console.log(newState)
+    setNewState((newState -= state.delta))
   }
 
   return (
@@ -278,7 +273,6 @@ function IndexPage() {
               <FadeInWhenVisible>
                 <div
                   className="tweets-wrapper"
-                  ref={horizontalScrollXOffset}
                   style={{
                     scrollX: `${newState}px`,
                   }}
@@ -307,11 +301,17 @@ function IndexPage() {
                     <div className="tweets-navigation-buttons">
                       <BsArrowLeftCircle
                         className="left-arrow"
-                        onClick={moveTitleToLeft}
+                        onClick={() => {
+                          moveTitleToLeft()
+                          console.log(newState)
+                        }}
                       />
                       <BsArrowRightCircle
                         className="right-arrow"
-                        onClick={moveTitleToRight}
+                        onClick={() => {
+                          moveTitleToRight()
+                          console.log(newState)
+                        }}
                       />
                     </div>
                   </div>

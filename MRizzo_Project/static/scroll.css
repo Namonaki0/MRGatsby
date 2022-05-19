@@ -17,6 +17,8 @@
 
   }
 
+
+
     body, 
     .tweets-wrapper
 ,  .upcoming-shows-wrapper   {
@@ -48,3 +50,8 @@
     border-radius: 5px;
   }
 
+    .tweets-wrapper::-webkit-scrollbar,
+     .tweets-wrapper::-webkit-scrollbar-track,
+         .tweets-wrapper::-webkit-scrollbar-thumb {
+      visibility: hidden;
+    }
