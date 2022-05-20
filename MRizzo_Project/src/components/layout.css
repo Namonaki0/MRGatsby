@@ -448,6 +448,19 @@ nav ul .nav-social-media a svg {
 }
 
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 15px 0;
   padding: 30px 18px;
   font-size: 14px;
@@ -456,6 +469,7 @@ nav ul .nav-social-media a svg {
   border-radius: 3px;
   background: #292929;
   width: 340px;
+  height: 220px;
   margin-inline: auto;
 }
 
@@ -469,9 +483,13 @@ nav ul .nav-social-media a svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 15px;
 }
 
@@ -1478,6 +1496,21 @@ footer .lower-footer .developed-by a {
   main .bio .bio-social-media::after {
     display: none;
   }
+  main .tweets-wrapper {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    grid-auto-flow: unset;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    overflow-x: hidden;
+  }
   main .upcoming-shows {
     background: transparent;
   }
@@ -1497,6 +1530,8 @@ footer .lower-footer .developed-by a {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     padding: 0.8rem 0 0.8rem 0.2rem;
   }
   main .upcoming-shows .band-background-info-wrapper .band-background-image {
@@ -1504,7 +1539,6 @@ footer .lower-footer .developed-by a {
     background-image: url("/images/Ill-Niño-press-photo-2021.jpg");
     background-repeat: no-repeat;
     background-position: right;
-    background-color: #3333338a;
     background-blend-mode: multiply;
     width: 60%;
     z-index: 10;
@@ -1682,15 +1716,30 @@ footer .lower-footer .developed-by a {
   }
   .tweets-wrapper {
     gap: 5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .tweets-wrapper .individual-tweet {
     margin: 8px 10px;
+    width: 30%;
+    max-width: 35%;
   }
 }
 
 @media (min-width: 1400px) {
   .bio {
     background-size: 850px;
+  }
+  .tweets-wrapper {
+    gap: 5rem;
+  }
+  .tweets-wrapper .individual-tweet {
+    width: 35%;
+    min-width: 20%;
+  }
+  .band-background-info-wrapper .band-background-image {
+    width: 70%;
   }
 }
 

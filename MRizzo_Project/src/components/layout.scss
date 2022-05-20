@@ -383,6 +383,10 @@ nav {
     }
 
     .individual-tweet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin: 15px 0;
       padding: 30px 18px;
       font-size: 14px;
@@ -391,6 +395,7 @@ nav {
       border-radius: 3px;
       background: #292929;
       width: 340px;
+      height: 220px;
       margin-inline: auto;
 
       .full-text {
@@ -401,7 +406,9 @@ nav {
 
       .avatar-name-wrapper {
         display: flex;
-        align-items: center;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
         margin-bottom: 15px;
 
         img {
@@ -904,7 +911,6 @@ footer {
 
         &:hover {
           background: white;
-          // letter-spacing: 2px;
         }
       }
     }
@@ -1457,8 +1463,21 @@ footer {
       }
     }
 
+
+    .tweets-wrapper {
+      display: flex !important;
+      flex-wrap: wrap;
+      grid-auto-flow: unset;
+      justify-content: center;
+      align-items: center !important;
+      overflow-x: hidden;
+
+    }
+
+
     .upcoming-shows {
       background: transparent;
+  
 
       .band-name-span {
         padding: 0.8rem 1rem;
@@ -1473,6 +1492,7 @@ footer {
       .band-background-info-wrapper {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: space-around;
         padding: 0.8rem 0 0.8rem 0.2rem;
 
         .band-background-image {
@@ -1480,7 +1500,6 @@ footer {
           background-image: url("/images/Ill-Niño-press-photo-2021.jpg");
           background-repeat: no-repeat;
           background-position: right;
-          background-color: #3333338a;
           background-blend-mode: multiply;
           width: 60%;
           z-index: 10;
@@ -1677,9 +1696,12 @@ footer {
 
   .tweets-wrapper {
     gap: 5rem;
+    align-items: center;
 
     .individual-tweet {
       margin: 8px 10px;
+      width: 30%;
+      max-width: 35%;
     }
   }
 }
@@ -1688,6 +1710,24 @@ footer {
   .bio {
     background-size: 850px;
   }
+
+  .tweets-wrapper {
+    gap: 5rem;
+
+    .individual-tweet {
+      width: 35%;
+      min-width: 20%;
+    }
+  }
+
+  .band-background-info-wrapper {
+
+
+        .band-background-image {
+          width: 70%;
+        }
+
+      }
 }
 @media (min-width: $super-wide-screen) {
   main {

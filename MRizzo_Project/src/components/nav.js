@@ -24,9 +24,16 @@ export default function Nav() {
     background: "#00000085",
   }
 
-  window.addEventListener("scroll", () => {
-    setPageYOffset(window.pageYOffset)
-  })
+  if (window) {
+    window.addEventListener("scroll", () => {
+      setPageYOffset(window.pageYOffset)
+    })
+  }
+
+  // typeof window !== "undefined" &&
+  //   this.addEventListener("scroll", () => {
+  //     setPageYOffset(window.pageYOffset)
+  //   })
 
   return (
     <div>

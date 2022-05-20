@@ -53,21 +53,22 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
+      console.log(liveEvents)
     })()
   }, [])
 
-  let state = {
-    delta: 10,
-  }
+  // let state = {
+  //   delta: 10,
+  // }
 
-  const moveTitleToRight = () => {
-    // this.setState({ xoffset: this.state.xoffset + this.state.delta })
-    setNewState((newState += state.delta))
-  }
-  const moveTitleToLeft = () => {
-    // this.setState({ xoffset: this.state.xoffset - this.state.delta })
-    setNewState((newState -= state.delta))
-  }
+  // const moveTitleToRight = () => {
+  //   // this.setState({ xoffset: this.state.xoffset + this.state.delta })
+  //   setNewState((newState += state.delta))
+  // }
+  // const moveTitleToLeft = () => {
+  //   // this.setState({ xoffset: this.state.xoffset - this.state.delta })
+  //   setNewState((newState -= state.delta))
+  // }
 
   return (
     <>
@@ -297,7 +298,7 @@ function IndexPage() {
                       </div>
                     )
                   )}
-                  <div className="tweets-navigation-outer-wrapper">
+                  {/* <div className="tweets-navigation-outer-wrapper">
                     <div className="tweets-navigation-buttons">
                       <BsArrowLeftCircle
                         className="left-arrow"
@@ -314,7 +315,7 @@ function IndexPage() {
                         }}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </FadeInWhenVisible>
             </div>
@@ -340,9 +341,9 @@ function IndexPage() {
                   <div className="upcoming-show">
                     <div className="upcoming-show-info">
                       <p className="live-event-date">
-                        {liveEvent.festival_start_date}
+                        {liveEvent.starts_at.slice(0, 10)}
                       </p>
-                      <p className="live-event-title">{liveEvent.title}</p>
+                      <p className="live-event-title">{liveEvent.venue.name}</p>
                       <p className="live-event-city">{liveEvent.venue.city}</p>
                       <p className="live-event-country">
                         {liveEvent.venue.country}
