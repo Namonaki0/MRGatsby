@@ -853,7 +853,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgba(192, 192, 192, 0.301);
+    border: 1px solid rgba(192, 192, 192, 0.205);
     max-width: clamp(400px, 900px, 700px);
     margin: 0 auto;
     margin-top: 1rem;
@@ -863,12 +863,22 @@ footer {
     background-color: rgba(0, 0, 0, 0.048);
     z-index: 1500;
 
+    &::after {
+      content: "";
+      background: rgba(138, 138, 138, 0.297);
+      opacity: .9;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      z-index: -1;
+    }
+
     .modal-inner-wrapper {
-      // display: grid;
-      // place-content: center;
-      margin-top: 1rem;
-      height: 100%;
-      overflow-x: hidden;
+      display: grid;
+      place-content: center;
+      overflow: hidden;
 
       img {
         min-width: 300px;
@@ -891,8 +901,14 @@ footer {
           font-size: 1rem;
           margin-left: 2px;
           display: block;
-          color: rgb(121, 121, 121);
-          border-bottom: 2px solid rgba(192, 192, 192, 0.377);
+          color: rgb(160, 160, 160);
+          border-bottom: 2px solid linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+        }
+
+        hr {
+          height: 3px;
+          border: none;
+          background: linear-gradient(125deg, #c12127, #ff4b01, #c12127);
         }
       }
 
@@ -938,27 +954,6 @@ footer {
         color: white;
       }
 
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   display: block;
-      //   height: 1px;
-      //   background: rgba(192, 192, 192, 0.123);
-      //   width: 80%;
-      //   left: -7px;
-      //   margin-top: 15px;
-      // }
-
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   display: block;
-      //   height: 90%;
-      //   background: rgba(192, 192, 192, 0.125);
-      //   width: 1px;
-      //   left: -8px;
-      //   bottom: -8px;
-      // }
     }
 
     .modal-description-wrapper {

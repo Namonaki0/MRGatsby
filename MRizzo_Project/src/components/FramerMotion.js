@@ -110,6 +110,40 @@ const upcomingShowsImg = {
   },
 }
 
+const innerModalEffectsHR = {
+  hidden: { opacity: 0, x: -100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+
+const innerModalEffectsText = {
+  hidden: { opacity: 0, x: -100 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.5,
+    },
+  },
+}
+
+const innerModalEffectsImage = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+
 const FadeInWhenVisible = ({ children }) => {
   return (
     <motion.div
@@ -137,5 +171,8 @@ export {
   bioSpan,
   bioSocial,
   upcomingShowsImg,
+  innerModalEffectsHR,
+  innerModalEffectsText,
+  innerModalEffectsImage,
   FadeInWhenVisible,
 }

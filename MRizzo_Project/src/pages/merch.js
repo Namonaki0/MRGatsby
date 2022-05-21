@@ -5,6 +5,11 @@ import Layout from "../components/layout"
 import { container } from "../components/FramerMotion"
 import { motion } from "framer-motion"
 import Modal from "../components/Modal"
+import {
+  innerModalEffectsHR,
+  innerModalEffectsText,
+  innerModalEffectsImage,
+} from "../components/FramerMotion"
 
 export default function Merch() {
   const [openModal, setOpenModal] = useState(false)
@@ -161,10 +166,33 @@ export default function Merch() {
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
           <div className="modal-inner-wrapper">
             <div className="merch-name-wrapper">
-              <span>{extSubName}</span>
-              <p>{extName}</p>
+              <motion.span
+                variants={innerModalEffectsText}
+                initial="hidden"
+                animate="show"
+              >
+                {extSubName}
+              </motion.span>
+              <motion.hr
+                variants={innerModalEffectsHR}
+                initial="hidden"
+                animate="show"
+              />
+              <motion.p
+                variants={innerModalEffectsText}
+                initial="hidden"
+                animate="show"
+              >
+                {extName}
+              </motion.p>
             </div>
-            <img src={imgSrc} alt="" />
+            <motion.img
+              variants={innerModalEffectsImage}
+              initial="hidden"
+              animate="show"
+              src={imgSrc}
+              alt=""
+            />
 
             <a
               className="purchase-cta"
