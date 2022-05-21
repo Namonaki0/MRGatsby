@@ -1,6 +1,6 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import {
   BsSpotify,
   BsYoutube,
@@ -10,7 +10,6 @@ import {
   BsTwitter,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
-import { motion } from "framer-motion"
 import { navbarEffect } from "./FramerMotion"
 
 export default function Nav() {
@@ -24,7 +23,9 @@ export default function Nav() {
     background: "#00000085",
   }
 
-  if (window) {
+  const isBrowser = typeof window !== "undefined"
+
+  if (isBrowser) {
     window.addEventListener("scroll", () => {
       setPageYOffset(window.pageYOffset)
     })

@@ -62,12 +62,25 @@ const followSpan = {
 }
 
 const bioDescription = {
-  hidden: { opacity: 0, y: -10 },
+  hidden: { opacity: 0, x: -10 },
   show: {
     opacity: 1,
     y: 0,
+    x: 0,
     transition: {
-      delay: 0.6,
+      delay: 0.5,
+      duration: 0.5,
+    },
+  },
+}
+
+const bioSpan = {
+  show: {
+    opacity: 1,
+    y: -50,
+    x: 100,
+    transition: {
+      delay: 0.5,
       duration: 0.5,
     },
   },
@@ -121,6 +134,7 @@ export {
   mainTitle,
   followSpan,
   bioDescription,
+  bioSpan,
   bioSocial,
   upcomingShowsImg,
   FadeInWhenVisible,

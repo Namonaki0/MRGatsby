@@ -23,6 +23,7 @@ import {
   mainTitle,
   followSpan,
   bioDescription,
+  bioSpan,
   bioSocial,
   upcomingShowsImg,
   FadeInWhenVisible,
@@ -56,19 +57,6 @@ function IndexPage() {
       console.log(liveEvents)
     })()
   }, [])
-
-  // let state = {
-  //   delta: 10,
-  // }
-
-  // const moveTitleToRight = () => {
-  //   // this.setState({ xoffset: this.state.xoffset + this.state.delta })
-  //   setNewState((newState += state.delta))
-  // }
-  // const moveTitleToLeft = () => {
-  //   // this.setState({ xoffset: this.state.xoffset - this.state.delta })
-  //   setNewState((newState -= state.delta))
-  // }
 
   return (
     <>
