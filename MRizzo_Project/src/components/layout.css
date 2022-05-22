@@ -469,8 +469,9 @@ nav ul .nav-social-media a svg {
   border-radius: 3px;
   background: #292929;
   width: 340px;
-  height: 220px;
+  height: 230px;
   margin-inline: auto;
+  position: relative;
 }
 
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet .full-text {
@@ -516,6 +517,15 @@ nav ul .nav-social-media a svg {
   color: rgba(192, 192, 192, 0.596);
   font-size: 0.8rem;
   letter-spacing: 1px;
+}
+
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .tweet-creation-span {
+  position: absolute;
+  font-size: .7rem;
+  bottom: 8px;
+  right: 10px;
+  color: #cdcdcd;
+  letter-spacing: 2px;
 }
 
 .upcoming-shows {

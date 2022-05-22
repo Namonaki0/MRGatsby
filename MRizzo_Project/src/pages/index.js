@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import Seo from "../components/seo"
 import {
   BsSpotify,
@@ -12,8 +12,8 @@ import {
   BsArrowRightShort,
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
-  BsArrowLeftCircle,
-  BsArrowRightCircle,
+  // BsArrowLeftCircle,
+  // BsArrowRightCircle,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import { IoTicket } from "react-icons/io5"
@@ -23,7 +23,7 @@ import {
   mainTitle,
   followSpan,
   bioDescription,
-  bioSpan,
+  // bioSpan,
   bioSocial,
   upcomingShowsImg,
   FadeInWhenVisible,
@@ -40,7 +40,7 @@ function IndexPage() {
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
-  const [newState, setNewState] = useState(null)
+  // const [newState, setNewState] = useState(null)
 
   useEffect(() => {
     ;(async () => {
@@ -54,7 +54,6 @@ function IndexPage() {
 
       setBandName(band_name)
       setLiveEvents(live_events)
-      console.log(liveEvents)
     })()
   }, [])
 
@@ -240,13 +239,17 @@ function IndexPage() {
               allTwitterStatusesUserTimelineGetTweets(limit: 6) {
                 edges {
                   node {
+                    created_at
                     full_text
                     user {
                       name
-                      profile_image_url
+                      profile_image_url_https
                       screen_name
                     }
                     entities {
+                      media {
+                        url
+                      }
                       hashtags {
                         text
                       }
@@ -257,22 +260,20 @@ function IndexPage() {
             }
           `}
           render={data => (
-            <div className="tweets-outer-wrapper">
+            <div
+              className="tweets-outer-wrapper"
+              onLoad={() => console.log(data)}
+            >
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
-                <div
-                  className="tweets-wrapper"
-                  style={{
-                    scrollX: `${newState}px`,
-                  }}
-                >
+                <div className="tweets-wrapper">
                   {data.allTwitterStatusesUserTimelineGetTweets.edges.map(
                     (item, i) => (
                       <div className="individual-tweet">
                         <div className="avatar-name-wrapper">
                           <img
                             alt="Mark's twitter profile avatar"
-                            src={item.node.user.profile_image_url}
+                            src={item.node.user.profile_image_url_https}
                             id={i}
                           ></img>
                           <div className="name-handle-wrapper">
@@ -282,7 +283,28 @@ function IndexPage() {
                         </div>
                         <div id={i} className="full-text">
                           {item.node.full_text.replace("&amp;", " & ")}
+                          {/* <a
+                            href={item.node.entities.media.url}
+                            target="_blank"
+                            className="tweet-hashtag"
+                          >
+            
+                          </a> */}
                         </div>
+                        <span className="tweet-creation-span">
+                          posted:{" "}
+                          {item.node.created_at.slice(8, 10) === 31
+                            ? `${item.node.created_at.slice(4, 10)}st`
+                            : item.node.created_at.slice(8, 10) === 21
+                            ? `${item.node.created_at.slice(4, 10)}st`
+                            : item.node.created_at.slice(8, 10) === 1
+                            ? `${item.node.created_at.slice(4, 10)}st`
+                            : item.node.created_at.slice(8, 10) === 22
+                            ? `${item.node.created_at.slice(4, 10)}nd`
+                            : item.node.created_at.slice(8, 10) === 2
+                            ? `${item.node.created_at.slice(4, 10)}nd`
+                            : `${item.node.created_at.slice(4, 10)}th`}
+                        </span>
                       </div>
                     )
                   )}

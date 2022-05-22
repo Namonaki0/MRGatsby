@@ -395,13 +395,19 @@ nav {
       border-radius: 3px;
       background: #292929;
       width: 340px;
-      height: 220px;
+      height: 230px;
       margin-inline: auto;
+      position: relative;
 
       .full-text {
         border-left: 2px solid #4b4b4b;
         padding-left: 8px;
         line-height: 20px;
+
+        // .tweet-hashtag {
+        //   display: block;
+        //   background-color: red;
+        // }
       }
 
       .avatar-name-wrapper {
@@ -430,6 +436,15 @@ nav {
           font-size: 0.8rem;
           letter-spacing: 1px;
         }
+      }
+
+      .tweet-creation-span {
+        position: absolute;
+        font-size: .7rem;
+        bottom: 8px;
+        right: 10px;
+        color: rgb(205, 205, 205);
+        letter-spacing: 2px;
       }
     }
   }
