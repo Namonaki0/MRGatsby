@@ -480,6 +480,12 @@ nav ul .nav-social-media a svg {
   line-height: 20px;
 }
 
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .full-text .tweet-hashtags {
+  display: block;
+  color: rgba(180, 180, 180, 0.742);
+  margin-top: 5px;
+}
+
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -517,15 +523,6 @@ nav ul .nav-social-media a svg {
   color: rgba(192, 192, 192, 0.596);
   font-size: 0.8rem;
   letter-spacing: 1px;
-}
-
-.tweets-outer-wrapper .tweets-wrapper .individual-tweet .tweet-creation-span {
-  position: absolute;
-  font-size: .7rem;
-  bottom: 8px;
-  right: 10px;
-  color: #cdcdcd;
-  letter-spacing: 2px;
 }
 
 .upcoming-shows {

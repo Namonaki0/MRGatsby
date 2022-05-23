@@ -404,10 +404,13 @@ nav {
         padding-left: 8px;
         line-height: 20px;
 
-        // .tweet-hashtag {
-        //   display: block;
-        //   background-color: red;
-        // }
+        .tweet-hashtags {
+          display: block;
+          color: rgba(180, 180, 180, 0.742);
+          margin-top: 5px;
+    
+   
+        }
       }
 
       .avatar-name-wrapper {
@@ -425,6 +428,8 @@ nav {
         .name-handle-wrapper {
           display: flex;
           flex-direction: column;
+
+    
         }
 
         h3 {
@@ -438,14 +443,14 @@ nav {
         }
       }
 
-      .tweet-creation-span {
-        position: absolute;
-        font-size: .7rem;
-        bottom: 8px;
-        right: 10px;
-        color: rgb(205, 205, 205);
-        letter-spacing: 2px;
-      }
+      // .tweet-creation-span {
+      //   position: absolute;
+      //   font-size: .7rem;
+      //   bottom: 8px;
+      //   right: 10px;
+      //   color: rgb(205, 205, 205);
+      //   letter-spacing: 2px;
+      // }
     }
   }
 }

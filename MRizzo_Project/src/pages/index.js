@@ -278,20 +278,46 @@ function IndexPage() {
                           ></img>
                           <div className="name-handle-wrapper">
                             <h3 id={i}>{item.node.user.name}</h3>
-                            <span>@{item.node.user.screen_name}</span>
+                            <span>
+                              @{item.node.user.screen_name} |{" "}
+                              {item.node.created_at.slice(8, 10) === 31
+                                ? `${item.node.created_at.slice(4, 10)}st`
+                                : item.node.created_at.slice(8, 10) === 21
+                                ? `${item.node.created_at.slice(4, 10)}st`
+                                : item.node.created_at.slice(8, 10) === 1
+                                ? `${item.node.created_at.slice(4, 10)}st`
+                                : item.node.created_at.slice(8, 10) === 22
+                                ? `${item.node.created_at.slice(4, 10)}nd`
+                                : item.node.created_at.slice(8, 10) === 2
+                                ? `${item.node.created_at.slice(4, 10)}nd`
+                                : `${item.node.created_at.slice(4, 10)}th`}
+                            </span>
                           </div>
                         </div>
                         <div id={i} className="full-text">
                           {item.node.full_text.replace("&amp;", " & ")}
-                          {/* <a
-                            href={item.node.entities.media.url}
+                          <a
+                            href={
+                              item.node.entities.media &&
+                              item.node.entities.media.map(link =>
+                                Object.values(link)
+                              )
+                            }
                             target="_blank"
-                            className="tweet-hashtag"
+                            className="tweet-link"
                           >
-            
-                          </a> */}
+                            {item.node.entities.media &&
+                              item.node.entities.media.map(link =>
+                                Object.values(link)
+                              )}
+                          </a>
+                          <span className="tweet-hashtags">
+                            {item.node.entities.hashtags.map(
+                              text => "#" + Object.values(text)
+                            )}
+                          </span>
                         </div>
-                        <span className="tweet-creation-span">
+                        {/* <span className="tweet-creation-span">
                           posted:{" "}
                           {item.node.created_at.slice(8, 10) === 31
                             ? `${item.node.created_at.slice(4, 10)}st`
@@ -304,7 +330,7 @@ function IndexPage() {
                             : item.node.created_at.slice(8, 10) === 2
                             ? `${item.node.created_at.slice(4, 10)}nd`
                             : `${item.node.created_at.slice(4, 10)}th`}
-                        </span>
+                        </span> */}
                       </div>
                     )
                   )}
