@@ -455,12 +455,12 @@ nav ul .nav-social-media a svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 15px 0;
   padding: 30px 18px;
   font-size: 14px;
@@ -484,6 +484,13 @@ nav ul .nav-social-media a svg {
   display: block;
   color: rgba(180, 180, 180, 0.742);
   margin-top: 5px;
+}
+
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .tweet-link {
+  color: rgba(223, 223, 223, 0.742);
+  margin-top: 10px;
+  border-left: 2px solid #4b4b4b;
+  padding-left: 8px;
 }
 
 .tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper {
@@ -515,14 +522,12 @@ nav ul .nav-social-media a svg {
           flex-direction: column;
 }
 
-.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper h3 {
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper .name-handle-wrapper h3 {
   margin-bottom: 1px;
 }
 
-.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper span {
-  color: rgba(192, 192, 192, 0.596);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+.tweets-outer-wrapper .tweets-wrapper .individual-tweet .avatar-name-wrapper .name-handle-wrapper span {
+  color: #a7a7a7;
 }
 
 .upcoming-shows {
@@ -867,7 +872,7 @@ footer .lower-footer .developed-by a {
 .merch-page-wrapper .modal::after {
   content: "";
   background: rgba(138, 138, 138, 0.297);
-  opacity: .9;
+  opacity: 0.9;
   position: absolute;
   right: 0;
   top: 0;

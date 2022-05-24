@@ -385,8 +385,8 @@ nav {
     .individual-tweet {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       margin: 15px 0;
       padding: 30px 18px;
       font-size: 14px;
@@ -408,9 +408,14 @@ nav {
           display: block;
           color: rgba(180, 180, 180, 0.742);
           margin-top: 5px;
-    
-   
         }
+      }
+
+      .tweet-link {
+        color: rgba(223, 223, 223, 0.742);
+        margin-top: 10px;
+        border-left: 2px solid #4b4b4b;
+        padding-left: 8px;
       }
 
       .avatar-name-wrapper {
@@ -429,28 +434,15 @@ nav {
           display: flex;
           flex-direction: column;
 
-    
-        }
+          h3 {
+            margin-bottom: 1px;
+          }
 
-        h3 {
-          margin-bottom: 1px;
-        }
-
-        span {
-          color: rgba(192, 192, 192, 0.596);
-          font-size: 0.8rem;
-          letter-spacing: 1px;
+          span {
+            color: rgb(167, 167, 167);
+          }
         }
       }
-
-      // .tweet-creation-span {
-      //   position: absolute;
-      //   font-size: .7rem;
-      //   bottom: 8px;
-      //   right: 10px;
-      //   color: rgb(205, 205, 205);
-      //   letter-spacing: 2px;
-      // }
     }
   }
 }
@@ -886,7 +878,7 @@ footer {
     &::after {
       content: "";
       background: rgba(138, 138, 138, 0.297);
-      opacity: .9;
+      opacity: 0.9;
       position: absolute;
       right: 0;
       top: 0;
@@ -922,7 +914,8 @@ footer {
           margin-left: 2px;
           display: block;
           color: rgb(160, 160, 160);
-          border-bottom: 2px solid linear-gradient(139deg, #c12127, #ff4b01, #c12127);
+          border-bottom: 2px solid
+            linear-gradient(139deg, #c12127, #ff4b01, #c12127);
         }
 
         hr {
@@ -973,7 +966,6 @@ footer {
         background: rgba(255, 0, 0, 0.685);
         color: white;
       }
-
     }
 
     .modal-description-wrapper {
@@ -1482,7 +1474,6 @@ footer {
       }
     }
 
-
     .tweets-wrapper {
       display: flex !important;
       flex-wrap: wrap;
@@ -1490,13 +1481,10 @@ footer {
       justify-content: center;
       align-items: center !important;
       overflow-x: hidden;
-
     }
-
 
     .upcoming-shows {
       background: transparent;
-  
 
       .band-name-span {
         padding: 0.8rem 1rem;
@@ -1740,13 +1728,10 @@ footer {
   }
 
   .band-background-info-wrapper {
-
-
-        .band-background-image {
-          width: 70%;
-        }
-
-      }
+    .band-background-image {
+      width: 70%;
+    }
+  }
 }
 @media (min-width: $super-wide-screen) {
   main {
@@ -1764,7 +1749,6 @@ footer {
 //? MOBILE - LANDSCAPE -
 @media (orientation: portrait) and (max-width: 896px) and (min-aspect-ratio: 13/9) {
   .bio {
-
     .bio-social-media {
       // display: flex !important;
       // flex-direction: row !important;
@@ -1776,19 +1760,17 @@ footer {
         display: none !important;
       }
 
-       &::after {
-          content: "";
-          align-items: center;
-          background: #78161a;
-          height: 3px;
-          width: 100px;
-          margin: 0 auto;
-          border-radius: 2px;
-          margin-bottom: 5px;
-          margin-left: 5px;
-        }
-
+      &::after {
+        content: "";
+        align-items: center;
+        background: #78161a;
+        height: 3px;
+        width: 100px;
+        margin: 0 auto;
+        border-radius: 2px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+      }
     }
   }
-
 }

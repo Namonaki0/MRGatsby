@@ -296,41 +296,22 @@ function IndexPage() {
                         </div>
                         <div id={i} className="full-text">
                           {item.node.full_text.replace("&amp;", " & ")}
-                          <a
-                            href={
-                              item.node.entities.media &&
-                              item.node.entities.media.map(link =>
-                                Object.values(link)
-                              )
-                            }
-                            target="_blank"
-                            className="tweet-link"
-                          >
-                            {item.node.entities.media &&
-                              item.node.entities.media.map(link =>
-                                Object.values(link)
-                              )}
-                          </a>
-                          <span className="tweet-hashtags">
-                            {item.node.entities.hashtags.map(
-                              text => "#" + Object.values(text)
-                            )}
-                          </span>
                         </div>
-                        {/* <span className="tweet-creation-span">
-                          posted:{" "}
-                          {item.node.created_at.slice(8, 10) === 31
-                            ? `${item.node.created_at.slice(4, 10)}st`
-                            : item.node.created_at.slice(8, 10) === 21
-                            ? `${item.node.created_at.slice(4, 10)}st`
-                            : item.node.created_at.slice(8, 10) === 1
-                            ? `${item.node.created_at.slice(4, 10)}st`
-                            : item.node.created_at.slice(8, 10) === 22
-                            ? `${item.node.created_at.slice(4, 10)}nd`
-                            : item.node.created_at.slice(8, 10) === 2
-                            ? `${item.node.created_at.slice(4, 10)}nd`
-                            : `${item.node.created_at.slice(4, 10)}th`}
-                        </span> */}
+                        <a
+                          href={
+                            item.node.entities.media &&
+                            item.node.entities.media.map(link =>
+                              Object.values(link)
+                            )
+                          }
+                          target="_blank"
+                          className="tweet-link"
+                        >
+                          {item.node.entities.media &&
+                            item.node.entities.media.map(link =>
+                              Object.values(link)
+                            )}
+                        </a>
                       </div>
                     )
                   )}
