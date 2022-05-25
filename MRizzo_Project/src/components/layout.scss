@@ -386,7 +386,7 @@ nav {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
       margin: 15px 0;
       padding: 30px 18px;
       font-size: 14px;
@@ -398,32 +398,43 @@ nav {
       height: 230px;
       margin-inline: auto;
       position: relative;
+      overflow: hidden;
 
       .full-text {
         border-left: 2px solid #4b4b4b;
         padding-left: 8px;
         line-height: 20px;
-
-        .tweet-hashtags {
-          display: block;
-          color: rgba(180, 180, 180, 0.742);
-          margin-top: 5px;
-        }
+        letter-spacing: 2px;
       }
 
       .tweet-link {
-        color: rgba(223, 223, 223, 0.742);
-        margin-top: 10px;
-        border-left: 2px solid #4b4b4b;
+        color: #eaeaea;
+        margin-top: 15px;
+        border-left: 2px solid #c0c0c0;
         padding-left: 8px;
+        margin-bottom: 10px;
+        transition: all 150ms linear;
+        letter-spacing: 2px;
+
+        &:hover {
+          border-left: 2px solid #920202;
+        }
       }
+
+      // .tweet-hashtags {
+      //   position: absolute;
+      //   display: block;
+      //   color: rgba(180, 180, 180, 0.742);
+      //   right: 10px;
+      //   bottom: 0;
+      // }
 
       .avatar-name-wrapper {
         display: flex;
         width: 100%;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
 
         img {
           border-radius: 50%;
@@ -435,11 +446,13 @@ nav {
           flex-direction: column;
 
           h3 {
-            margin-bottom: 1px;
+            margin-bottom: 5px;
           }
 
           span {
             color: rgb(167, 167, 167);
+            letter-spacing: 2px;
+            vertical-align: bottom;
           }
         }
       }
@@ -1289,18 +1302,41 @@ footer {
           margin-left: auto;
           margin-right: -140px;
           width: 90%;
+          line-height: 25px;
+          font-size: 1.2rem;
 
           .follow-marc {
             display: block;
+            width: 100%;
             margin-top: 2.5rem;
             text-align: right;
 
-            .social-media-arrow {
+            .social-media-down-arrow {
               display: inline;
-              font-size: 1.5rem;
+              font-size: 2rem;
               vertical-align: middle;
               text-align: center;
               color: #78161a;
+              animation: 5s arrowEffect 750ms ease-in-out infinite;
+
+              @keyframes arrowEffect {
+                0% {
+                  opacity: 0;
+                  transform: translateY(0);
+                }
+                50% {
+                  opacity: 1;
+                  transform: translateY(5px);
+                }
+                100% {
+                  opacity: 0;
+                  transform: translateY(10px);
+                }
+              }
+            }
+
+            .social-media-right-arrow {
+              display: none;
             }
           }
         }
@@ -1439,13 +1475,38 @@ footer {
         }
 
         .bio-description-wide-screen {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
+          line-height: 35px;
 
           .follow-marc {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
 
-            .social-media-arrow {
-              font-size: 2rem;
+            .social-media-down-arrow {
+              display: none;
+            }
+
+            .social-media-right-arrow {
+              display: inline;
+              font-size: 3rem;
+              animation: 5s arrowEffect 250ms ease-in-out infinite forwards;
+              vertical-align: middle;
+              text-align: center;
+              color: #78161a;
+
+              @keyframes arrowEffect {
+                0% {
+                  opacity: 0;
+                  transform: translateX(0);
+                }
+                50% {
+                  opacity: 1;
+                  transform: translateX(5px);
+                }
+                100% {
+                  opacity: 0;
+                  transform: translateX(10px);
+                }
+              }
             }
           }
         }

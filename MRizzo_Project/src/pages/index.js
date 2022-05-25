@@ -9,6 +9,7 @@ import {
   BsFacebook,
   BsInstagram,
   BsTwitter,
+  BsArrowDownShort,
   BsArrowRightShort,
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
@@ -84,7 +85,8 @@ function IndexPage() {
                 className="follow-marc"
               >
                 follow Marc on social media{" "}
-                <BsArrowRightShort className="social-media-arrow" />
+                <BsArrowDownShort className="social-media-down-arrow" />
+                <BsArrowRightShort className="social-media-right-arrow" />
               </motion.span>
             </motion.p>
           </div>
@@ -295,7 +297,9 @@ function IndexPage() {
                           </div>
                         </div>
                         <div id={i} className="full-text">
-                          {item.node.full_text.replace("&amp;", " & ")}
+                          {item.node.full_text
+                            .replace("&amp;", " & ")
+                            .replace(/https.+$/, "")}
                         </div>
                         <a
                           href={
@@ -312,6 +316,13 @@ function IndexPage() {
                               Object.values(link)
                             )}
                         </a>
+
+                        {/* <span className="tweet-hashtag">
+                          {item.node.entities.hashtags &&
+                            item.node.entities.hashtags.map(
+                              hashtag => "#" + Object.values(hashtag)
+                            )}
+                        </span> */}
                       </div>
                     )
                   )}
