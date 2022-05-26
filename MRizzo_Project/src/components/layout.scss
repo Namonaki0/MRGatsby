@@ -7,6 +7,7 @@ $bg-primary: black;
 $bg-secondary: #1c1c1c;
 $cta-bg: #313131;
 $cta-bg-hover: #3e3e3e;
+$sm-screen: 530px;
 $md-screen: 600px;
 $lg-screen: 1000px;
 $xl-screen: 1200px;
@@ -192,7 +193,7 @@ nav {
   height: 85vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
-  background-size: 650px;
+  background-size: 680px;
   background-color: #c00000;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -289,7 +290,7 @@ nav {
 
   .bio-separator {
     display: none;
-    width: 420px;
+    width: 580px;
     height: 100vh;
     background: linear-gradient(to right, #7d0000c1, #430000e8);
     position: absolute;
@@ -303,6 +304,7 @@ nav {
       background: rgba(0, 0, 0, 0.705);
     }
   }
+
 }
 
 .track-previews-wrapper {
@@ -420,14 +422,6 @@ nav {
           border-left: 2px solid #920202;
         }
       }
-
-      // .tweet-hashtags {
-      //   position: absolute;
-      //   display: block;
-      //   color: rgba(180, 180, 180, 0.742);
-      //   right: 10px;
-      //   bottom: 0;
-      // }
 
       .avatar-name-wrapper {
         display: flex;
@@ -679,133 +673,6 @@ footer {
   }
 }
 
-// .projects-outer-wrapper {
-//   display: flex;
-//   display: none;
-//   height: 200px;
-//   background: $bg-primary;
-//   overflow: hidden;
-
-//   &::before {
-//     content: "PROJECTS";
-//     height: 150px;
-//     width: 100px;
-//     color: $color-primary;
-//     position: absolute;
-//     margin-top: -10px;
-//   }
-
-//   .slider-wrapper {
-//     flex: 1;
-//     text-align: center;
-//     display: grid;
-//     place-content: center;
-//     height: 100%;
-//     height: 200px;
-//     width: 200px;
-//     opacity: 0.8;
-//     transition: all 150ms linear;
-//     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-//     transition: all 150ms linear;
-
-//     &:nth-of-type(1) {
-//       background: url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-//         no-repeat;
-//       background-size: 400px;
-//     }
-
-//     &:nth-of-type(2) {
-//       background: url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-//         no-repeat;
-//       background-size: 400px;
-//     }
-
-//     &:nth-of-type(3) {
-//       background: url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-//         no-repeat;
-//       background-size: 400px;
-//     }
-
-//     &:hover {
-//       opacity: 1;
-//       flex: 5;
-//       background-size: 400px;
-//       transform: translateX(-10px);
-//       clip-path: unset;
-//       z-index: 1;
-
-//       &:nth-of-type(1) {
-//         background: linear-gradient(
-//               to left,
-//               rgba(0, 0, 0, 0.7) 20%,
-//               rgba(255, 255, 255, 0.1) 85%,
-//               rgba(0, 0, 0, 0.8) 99%
-//             )
-//             no-repeat,
-//           url("https://metalshockfinland.files.wordpress.com/2017/12/marcrizzo-2017.jpg?w=584")
-//             no-repeat;
-//         background-size: 400px;
-//       }
-
-//       &:nth-of-type(2) {
-//         background: linear-gradient(
-//               to left,
-//               rgba(0, 0, 0, 0.7) 20%,
-//               rgba(255, 255, 255, 0.1) 49%,
-//               rgba(0, 0, 0, 0.8) 90%
-//             )
-//             no-repeat,
-//           url("https://metaladdicts.com/wp-content/uploads/2016/06/Marc-Rizzo.jpg")
-//             no-repeat;
-//         background-size: 400px;
-//       }
-
-//       &:nth-of-type(3) {
-//         background: linear-gradient(
-//               to left,
-//               rgba(0, 0, 0, 0.7) 20%,
-//               rgba(255, 255, 255, 0.1) 49%,
-//               rgba(0, 0, 0, 0.8) 90%
-//             )
-//             no-repeat,
-//           url("https://www.metal-archives.com/images/4/8/3/6/48367_photo.jpg?1901")
-//             no-repeat;
-//         background-size: 400px;
-//       }
-
-//       section {
-//         text-align: left;
-//         width: 70%;
-//         margin-left: auto;
-//         font-size: 1.2rem;
-//         margin-top: 0;
-//         font-family: sans-serif;
-//         padding: 0.5rem;
-//         display: unset;
-//       }
-
-//       title {
-//         display: none;
-//       }
-//     }
-
-//     section {
-//       color: $color-primary;
-//       display: none;
-//     }
-
-//     title {
-//       color: $color-primary;
-//       display: unset;
-//       text-transform: uppercase;
-//       font-family: sans-serif;
-//       font-weight: 700;
-//       font-size: 1.2rem;
-//       opacity: 1;
-//       margin-right: -120px;
-//     }
-//   }
-// }
 
 //? MERCH PAGE
 
@@ -1213,6 +1080,18 @@ footer {
 
 //? HORIZONTAL SCROLLER - END
 
+@media (min-width: $sm-screen) {
+
+  .bio {
+    overflow-y: hidden;
+
+    .bio-separator {
+      display: grid;
+      width: 250px;
+    }
+  }
+}
+
 @media (min-width: $md-screen) {
   nav {
     background: $bg-secondary;
@@ -1276,6 +1155,7 @@ footer {
       position: relative;
       display: grid;
       height: 100vh;
+      background-size: 700px;
       place-content: center;
 
       .title-bio {
@@ -1286,12 +1166,10 @@ footer {
           font-size: 4rem;
           display: block;
           text-align: right;
-
           height: unset;
           font-size: 3.6rem;
           writing-mode: unset;
           position: relative;
-          // background: cyan;
           margin-top: 55px;
           margin-right: -150px;
         }
@@ -1306,38 +1184,14 @@ footer {
           font-size: 1.2rem;
 
           .follow-marc {
-            display: block;
-            width: 100%;
-            margin-top: 2.5rem;
-            text-align: right;
+            display: none;
 
-            .social-media-down-arrow {
-              display: inline;
-              font-size: 2rem;
-              vertical-align: middle;
-              text-align: center;
-              color: #78161a;
-              animation: 5s arrowEffect 750ms ease-in-out infinite;
-
-              @keyframes arrowEffect {
-                0% {
-                  opacity: 0;
-                  transform: translateY(0);
-                }
-                50% {
-                  opacity: 1;
-                  transform: translateY(5px);
-                }
-                100% {
-                  opacity: 0;
-                  transform: translateY(10px);
-                }
-              }
-            }
-
-            .social-media-right-arrow {
+            .social-media-right-arrow,
+            .social-media-down-arrow
+             {
               display: none;
             }
+   
           }
         }
       }
@@ -1352,8 +1206,8 @@ footer {
 
       .bio-social-media {
         position: absolute;
-        right: 25px;
-        bottom: 25px;
+        right: 45px;
+        bottom: 15px;
         display: flex;
         flex-direction: row !important;
         align-items: flex-end;
@@ -1394,7 +1248,7 @@ footer {
       }
 
       .bio-separator {
-        display: grid;
+        width: 580px;
       }
     }
 
@@ -1459,12 +1313,16 @@ footer {
       padding-bottom: 3rem;
       position: relative;
 
+      .bio-separator {
+        width: 700px;
+      }
+
       .title-bio {
         display: flex;
         flex-direction: column;
 
         h1 {
-          font-size: 4.5rem;
+          font-size: 3.5rem;
           display: block;
           text-align: right;
           height: unset;
@@ -1475,15 +1333,16 @@ footer {
         }
 
         .bio-description-wide-screen {
-          font-size: 1.5rem;
-          line-height: 35px;
+          font-size: 1.2rem;
+          line-height: 30px;
 
           .follow-marc {
-            font-size: 1.6rem;
-
-            .social-media-down-arrow {
-              display: none;
-            }
+            font-size: 1.3rem;
+            display: block;
+            width: 100%;
+            margin-top: 1.5rem;
+            text-align: right;
+            text-transform: uppercase;
 
             .social-media-right-arrow {
               display: inline;
@@ -1757,7 +1616,7 @@ footer {
       position: relative;
 
       .bio-separator {
-        width: 680px;
+        width: 750px;
       }
     }
   }
@@ -1775,9 +1634,6 @@ footer {
 }
 
 @media (min-width: $xxl-screen) {
-  .bio {
-    background-size: 850px;
-  }
 
   .tweets-wrapper {
     gap: 5rem;
@@ -1799,7 +1655,6 @@ footer {
     margin: 0 4rem;
 
     .bio {
-      background-size: 1050px;
       .bio-separator {
         width: 880px;
       }
@@ -1808,30 +1663,16 @@ footer {
 }
 
 //? MOBILE - LANDSCAPE -
-@media (orientation: portrait) and (max-width: 896px) and (min-aspect-ratio: 13/9) {
+@media (orientation: landscape) {
   .bio {
-    .bio-social-media {
-      // display: flex !important;
-      // flex-direction: row !important;
-      // align-items: flex-end;
-      // height: 90vh;
-      // margin-right: 50px;
-
-      &::before {
-        display: none !important;
-      }
-
-      &::after {
-        content: "";
-        align-items: center;
-        background: #78161a;
-        height: 3px;
-        width: 100px;
-        margin: 0 auto;
-        border-radius: 2px;
-        margin-bottom: 5px;
-        margin-left: 5px;
-      }
-    }
+     background-size: contain !important;
   }
+}
+
+@media (orientation: portrait) {
+  .bio {
+    background-size: cover !important;
+  
+    }
+  
 }

@@ -218,7 +218,7 @@ nav ul .nav-social-media a svg {
   height: 85vh;
   place-content: center;
   background-image: url("/images/Marc_Rizzo_stage_pose.jpg");
-  background-size: 650px;
+  background-size: 680px;
   background-color: #c00000;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -334,7 +334,7 @@ nav ul .nav-social-media a svg {
 
 .bio .bio-separator {
   display: none;
-  width: 420px;
+  width: 580px;
   height: 100vh;
   background: -webkit-gradient(linear, left top, right top, from(#7d0000c1), to(#430000e8));
   background: linear-gradient(to right, #7d0000c1, #430000e8);
@@ -1241,6 +1241,17 @@ footer .lower-footer .developed-by a {
   display: flex;
 }
 
+@media (min-width: 530px) {
+  .bio {
+    overflow-y: hidden;
+  }
+  .bio .bio-separator {
+    display: -ms-grid;
+    display: grid;
+    width: 250px;
+  }
+}
+
 @media (min-width: 600px) {
   nav {
     background: #1c1c1c;
@@ -1309,6 +1320,7 @@ footer .lower-footer .developed-by a {
     display: -ms-grid;
     display: grid;
     height: 100vh;
+    background-size: 700px;
     place-content: center;
   }
   main .bio .title-bio {
@@ -1343,55 +1355,10 @@ footer .lower-footer .developed-by a {
     font-size: 1.2rem;
   }
   main .bio .title-bio .bio-description-wide-screen .follow-marc {
-    display: block;
-    width: 100%;
-    margin-top: 2.5rem;
-    text-align: right;
+    display: none;
   }
+  main .bio .title-bio .bio-description-wide-screen .follow-marc .social-media-right-arrow,
   main .bio .title-bio .bio-description-wide-screen .follow-marc .social-media-down-arrow {
-    display: inline;
-    font-size: 2rem;
-    vertical-align: middle;
-    text-align: center;
-    color: #78161a;
-    -webkit-animation: 5s arrowEffect 750ms ease-in-out infinite;
-            animation: 5s arrowEffect 750ms ease-in-out infinite;
-  }
-  @-webkit-keyframes arrowEffect {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    50% {
-      opacity: 1;
-      -webkit-transform: translateY(5px);
-              transform: translateY(5px);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-  }
-  @keyframes arrowEffect {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    50% {
-      opacity: 1;
-      -webkit-transform: translateY(5px);
-              transform: translateY(5px);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-  }
-  main .bio .title-bio .bio-description-wide-screen .follow-marc .social-media-right-arrow {
     display: none;
   }
   main .bio .bio-description-wrapper {
@@ -1402,8 +1369,8 @@ footer .lower-footer .developed-by a {
   }
   main .bio .bio-social-media {
     position: absolute;
-    right: 25px;
-    bottom: 25px;
+    right: 45px;
+    bottom: 15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1449,8 +1416,7 @@ footer .lower-footer .developed-by a {
     color: #e1262d;
   }
   main .bio .bio-separator {
-    display: -ms-grid;
-    display: grid;
+    width: 580px;
   }
   main .merch-name-wrapper {
     -webkit-writing-mode: vertical-rl;
@@ -1499,6 +1465,9 @@ footer .lower-footer .developed-by a {
     padding-bottom: 3rem;
     position: relative;
   }
+  main .bio .bio-separator {
+    width: 700px;
+  }
   main .bio .title-bio {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1509,7 +1478,7 @@ footer .lower-footer .developed-by a {
             flex-direction: column;
   }
   main .bio .title-bio h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     display: block;
     text-align: right;
     height: unset;
@@ -1521,14 +1490,16 @@ footer .lower-footer .developed-by a {
     margin-right: -150px;
   }
   main .bio .title-bio .bio-description-wide-screen {
-    font-size: 1.5rem;
-    line-height: 35px;
+    font-size: 1.2rem;
+    line-height: 30px;
   }
   main .bio .title-bio .bio-description-wide-screen .follow-marc {
-    font-size: 1.6rem;
-  }
-  main .bio .title-bio .bio-description-wide-screen .follow-marc .social-media-down-arrow {
-    display: none;
+    font-size: 1.3rem;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: right;
+    text-transform: uppercase;
   }
   main .bio .title-bio .bio-description-wide-screen .follow-marc .social-media-right-arrow {
     display: inline;
@@ -1813,7 +1784,7 @@ footer .lower-footer .developed-by a {
     position: relative;
   }
   main .bio .bio-separator {
-    width: 680px;
+    width: 750px;
   }
   .tweets-wrapper {
     gap: 5rem;
@@ -1829,9 +1800,6 @@ footer .lower-footer .developed-by a {
 }
 
 @media (min-width: 1400px) {
-  .bio {
-    background-size: 850px;
-  }
   .tweets-wrapper {
     gap: 5rem;
   }
@@ -1848,30 +1816,20 @@ footer .lower-footer .developed-by a {
   main {
     margin: 0 4rem;
   }
-  main .bio {
-    background-size: 1050px;
-  }
   main .bio .bio-separator {
     width: 880px;
   }
 }
 
-@media (orientation: portrait) and (max-width: 896px) and (min-aspect-ratio: 13 / 9) {
-  .bio .bio-social-media::before {
-    display: none !important;
+@media (orientation: landscape) {
+  .bio {
+    background-size: contain !important;
   }
-  .bio .bio-social-media::after {
-    content: "";
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background: #78161a;
-    height: 3px;
-    width: 100px;
-    margin: 0 auto;
-    border-radius: 2px;
-    margin-bottom: 5px;
-    margin-left: 5px;
+}
+
+@media (orientation: portrait) {
+  .bio {
+    background-size: cover !important;
   }
 }
 /*# sourceMappingURL=layout.css.map */

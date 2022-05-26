@@ -13,8 +13,6 @@ import {
   BsArrowRightShort,
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
-  // BsArrowLeftCircle,
-  // BsArrowRightCircle,
 } from "react-icons/bs"
 import { FaDeezer } from "react-icons/fa"
 import { IoTicket } from "react-icons/io5"
@@ -24,7 +22,6 @@ import {
   mainTitle,
   followSpan,
   bioDescription,
-  // bioSpan,
   bioSocial,
   upcomingShowsImg,
   FadeInWhenVisible,
@@ -41,7 +38,6 @@ function IndexPage() {
     useState("510px")
   const [upcomingShowsDownArrow, setUpcomingShowsDownArrow] = useState("")
   const [upcomingShowsUpArrow, setUpcomingShowsUpArrow] = useState("none")
-  // const [newState, setNewState] = useState(null)
 
   useEffect(() => {
     ;(async () => {
