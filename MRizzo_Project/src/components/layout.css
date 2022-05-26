@@ -1825,11 +1825,17 @@ footer .lower-footer .developed-by a {
   .bio {
     background-size: contain !important;
   }
+  .bio .bio-separator {
+    width: 65% !important;
+  }
 }
 
 @media (orientation: portrait) {
   .bio {
     background-size: cover !important;
+  }
+  .bio .bio-separator {
+    width: 40% !important;
   }
 }
 /*# sourceMappingURL=layout.css.map */

@@ -1666,12 +1666,20 @@ footer {
 @media (orientation: landscape) {
   .bio {
      background-size: contain !important;
+
+     .bio-separator {
+      width: 65% !important;
+    }
   }
 }
 
 @media (orientation: portrait) {
   .bio {
     background-size: cover !important;
+
+    .bio-separator {
+      width: 40% !important;
+    }
   
     }
   
