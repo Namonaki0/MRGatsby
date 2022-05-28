@@ -258,10 +258,7 @@ function IndexPage() {
             }
           `}
           render={data => (
-            <div
-              className="tweets-outer-wrapper"
-              onLoad={() => console.log(data)}
-            >
+            <div className="tweets-outer-wrapper">
               <h2>SOCIAL</h2>
               <FadeInWhenVisible>
                 <div className="tweets-wrapper">
@@ -305,6 +302,7 @@ function IndexPage() {
                             )
                           }
                           target="_blank"
+                          rel="noreferrer"
                           className="tweet-link"
                         >
                           {item.node.entities.media &&
@@ -312,34 +310,9 @@ function IndexPage() {
                               Object.values(link)
                             )}
                         </a>
-
-                        {/* <span className="tweet-hashtag">
-                          {item.node.entities.hashtags &&
-                            item.node.entities.hashtags.map(
-                              hashtag => "#" + Object.values(hashtag)
-                            )}
-                        </span> */}
                       </div>
                     )
                   )}
-                  {/* <div className="tweets-navigation-outer-wrapper">
-                    <div className="tweets-navigation-buttons">
-                      <BsArrowLeftCircle
-                        className="left-arrow"
-                        onClick={() => {
-                          moveTitleToLeft()
-                          console.log(newState)
-                        }}
-                      />
-                      <BsArrowRightCircle
-                        className="right-arrow"
-                        onClick={() => {
-                          moveTitleToRight()
-                          console.log(newState)
-                        }}
-                      />
-                    </div>
-                  </div> */}
                 </div>
               </FadeInWhenVisible>
             </div>

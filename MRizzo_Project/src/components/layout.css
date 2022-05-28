@@ -19,7 +19,7 @@ body {
 
 main {
   overflow-x: hidden;
-  background-color: black;
+  background: black;
   -webkit-box-shadow: 0px 5px 1px #2e2e2e;
           box-shadow: 0px 5px 1px #2e2e2e;
 }
@@ -1201,44 +1201,6 @@ footer .lower-footer .developed-by a {
 
 .page-not-found-wrapper .back-to-links-wrapper .back-to-links .back-to-nav-link:hover {
   cursor: pointer;
-}
-
-.menu-item-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.menu-item {
-  padding: 0 40px;
-  margin: 5px 10px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  border: none;
-}
-
-.menu-item-wrapper.active {
-  border: 1px blue solid;
-}
-
-.menu-item.active {
-  border: 1px green solid;
-  height: 10px;
-  width: 10px;
-}
-
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
-}
-
-.scroller-app {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media (min-width: 530px) {

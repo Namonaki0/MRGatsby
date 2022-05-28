@@ -34,7 +34,7 @@ body {
 
 main {
   overflow-x: hidden;
-  background-color: black;
+  background: $bg-primary;
   box-shadow: 0px 5px 1px rgb(46, 46, 46);
 }
 
@@ -110,7 +110,7 @@ nav {
     visibility: hidden;
     list-style: none;
     transition: all 100ms cubic-bezier(0.19, 1, 0.22, 1);
-    background: black;
+    background: $bg-primary;
     opacity: 0;
     transform: translateX(100%);
 
@@ -304,7 +304,6 @@ nav {
       background: rgba(0, 0, 0, 0.705);
     }
   }
-
 }
 
 .track-previews-wrapper {
@@ -672,7 +671,6 @@ footer {
     }
   }
 }
-
 
 //? MERCH PAGE
 
@@ -1047,41 +1045,7 @@ footer {
   }
 }
 
-//? HORIZONTAL SCROLLER
-
-.menu-item-wrapper {
-  display: flex;
-}
-
-.menu-item {
-  padding: 0 40px;
-  margin: 5px 10px;
-  user-select: none;
-  cursor: pointer;
-  border: none;
-}
-.menu-item-wrapper.active {
-  border: 1px blue solid;
-}
-.menu-item.active {
-  border: 1px green solid;
-  height: 10px;
-  width: 10px;
-}
-
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
-}
-
-.scroller-app {
-  display: flex;
-}
-
-//? HORIZONTAL SCROLLER - END
-
 @media (min-width: $sm-screen) {
-
   .bio {
     overflow-y: hidden;
 
@@ -1187,11 +1151,9 @@ footer {
             display: none;
 
             .social-media-right-arrow,
-            .social-media-down-arrow
-             {
+            .social-media-down-arrow {
               display: none;
             }
-   
           }
         }
       }
@@ -1634,7 +1596,6 @@ footer {
 }
 
 @media (min-width: $xxl-screen) {
-
   .tweets-wrapper {
     gap: 5rem;
 
@@ -1650,6 +1611,7 @@ footer {
     }
   }
 }
+
 @media (min-width: $super-wide-screen) {
   main {
     margin: 0 4rem;
@@ -1665,14 +1627,15 @@ footer {
 //? MOBILE - LANDSCAPE -
 @media (orientation: landscape) {
   .bio {
-     background-size: contain !important;
+    background-size: contain !important;
 
-     .bio-separator {
+    .bio-separator {
       width: 65% !important;
     }
   }
 }
 
+//? MOBILE - PORTRAIT -
 @media (orientation: portrait) {
   .bio {
     background-size: cover !important;
@@ -1680,7 +1643,5 @@ footer {
     .bio-separator {
       width: 40% !important;
     }
-  
-    }
-  
+  }
 }
